@@ -1,0 +1,40 @@
+# ── Arquivos-fonte / material de trabalho (nao fazem parte do site publicado) ──
+/Projetos/
+/novachain-crypto-trading-protocol-1.aura.build/
+/exemplo_portfolio.pdf
+/matheus_foto.jpeg
+/copy-portfolio.md
+
+# ── Segredos e credenciais (nunca versionar) ──
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+config.local.*
+
+# ── Sistema operacional ──
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# ── Editores / IDEs ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Dependencias e build ──
+node_modules/
+dist/
+build/
+.cache/
+*.log
+npm-debug.log*

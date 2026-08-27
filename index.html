@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Matheus Costa | Product Designer &amp; IA Specialist</title>
+<meta name="description" content="Product Designer com mais de 6 anos de mercado. Crio produtos digitais funcionais que realmente vendem, do design de interface à implementação inteligente."/>
+<meta name="theme-color" content="#030303"/>
+<meta property="og:title" content="Matheus Costa | Product Designer &amp; IA Specialist"/>
+<meta property="og:description" content="Do design de interface à implementação inteligente."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="assets/matheus.jpg"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%23030303'/%3E%3Ctext%20x='16'%20y='23'%20font-family='monospace'%20font-size='18'%20font-weight='700'%20fill='%23f43f5e'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"/>
+<link rel="stylesheet" href="assets/css/site.css"/>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="bg-layer bg-grid" id="grid"></div>
+<div class="bg-layer bg-texture"></div>
+<div class="bg-layer bg-vignette"></div>
+<div class="bg-layer"><div class="bg-rails"></div></div>
+
+<!-- ================= SVG sprite ================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- sparkle / IA -->
+    <g id="i-spark"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></g>
+    <!-- Figma (official 5-shape mark, scaled from 38x57 into the 24x24 sprite box) -->
+    <g id="b-figma" transform="translate(4,0) scale(.42105)">
+      <path fill="#0ACF83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/>
+      <path fill="#A259FF" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/>
+      <path fill="#F24E1E" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/>
+      <path fill="#FF7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/>
+      <path fill="#1ABCFE" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/>
+    </g>
+    <!-- Claude -->
+    <g id="b-claude"><path fill="#D97757" d="m4.714 15.956l4.718-2.648l.079-.23l-.08-.128h-.23l-.79-.048l-2.695-.073l-2.337-.097l-2.265-.122l-.57-.121l-.535-.704l.055-.353l.48-.321l.685.06l1.518.104l2.277.157l1.651.098l2.447.255h.389l.054-.158l-.133-.097l-.103-.098l-2.356-1.596l-2.55-1.688l-1.336-.972l-.722-.491L2 6.223l-.158-1.008l.656-.722l.88.06l.224.061l.893.686l1.906 1.476l2.49 1.833l.364.304l.146-.104l.018-.072l-.164-.274l-1.354-2.446l-1.445-2.49l-.644-1.032l-.17-.619a3 3 0 0 1-.103-.729L6.287.133L6.7 0l.995.134l.42.364l.619 1.415L9.735 4.14l1.555 3.03l.455.898l.243.832l.09.255h.159V9.01l.127-1.706l.237-2.095l.23-2.695l.08-.76l.376-.91l.747-.492l.583.28l.48.685l-.067.444l-.286 1.851l-.558 2.903l-.365 1.942h.213l.243-.242l.983-1.306l1.652-2.064l.728-.82l.85-.904l.547-.431h1.032l.759 1.129l-.34 1.166l-1.063 1.347l-.88 1.142l-1.263 1.7l-.79 1.36l.074.11l.188-.02l2.853-.606l1.542-.28l1.84-.315l.832.388l.09.395l-.327.807l-1.967.486l-2.307.462l-3.436.813l-.043.03l.049.061l1.548.146l.662.036h1.62l3.018.225l.79.522l.473.638l-.08.485l-1.213.62l-1.64-.389l-3.825-.91l-1.31-.329h-.183v.11l1.093 1.068l2.003 1.81l2.508 2.33l.127.578l-.321.455l-.34-.049l-2.204-1.657l-.85-.747l-1.925-1.62h-.127v.17l.443.649l2.343 3.521l.122 1.08l-.17.353l-.607.213l-.668-.122l-1.372-1.924l-1.415-2.168l-1.141-1.943l-.14.08l-.674 7.254l-.316.37l-.728.28l-.607-.461l-.322-.747l.322-1.476l.388-1.924l.316-1.53l.285-1.9l.17-.632l-.012-.042l-.14.018l-1.432 1.967l-2.18 2.945l-1.724 1.845l-.413.164l-.716-.37l.066-.662l.401-.589l2.386-3.036l1.439-1.882l.929-1.086l-.006-.158h-.055L4.138 18.56l-1.13.146l-.485-.456l.06-.746l.231-.243l1.907-1.312Z"/></g>
+    <!-- ChatGPT / OpenAI -->
+    <g id="b-openai"><path fill="#000000" d="M22.282 9.821a6 6 0 0 0-.516-4.91a6.05 6.05 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a6 6 0 0 0-3.998 2.9a6.05 6.05 0 0 0 .743 7.097a5.98 5.98 0 0 0 .51 4.911a6.05 6.05 0 0 0 6.515 2.9A6 6 0 0 0 13.26 24a6.06 6.06 0 0 0 5.772-4.206a6 6 0 0 0 3.997-2.9a6.06 6.06 0 0 0-.747-7.073M13.26 22.43a4.48 4.48 0 0 1-2.876-1.04l.141-.081l4.779-2.758a.8.8 0 0 0 .392-.681v-6.737l2.02 1.168a.07.07 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494M3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085l4.783 2.759a.77.77 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646M2.34 7.896a4.5 4.5 0 0 1 2.366-1.973V11.6a.77.77 0 0 0 .388.677l5.815 3.354l-2.02 1.168a.08.08 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.08.08 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667m2.01-3.023l-.141-.085l-4.774-2.782a.78.78 0 0 0-.785 0L9.409 9.23V6.897a.07.07 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08l-4.778 2.758a.79.79 0 0 0-.393.681zm1.097-2.365l2.602-1.5l2.607 1.5v2.999l-2.597 1.5l-2.607-1.5z"/></g>
+    <!-- Trello -->
+    <g id="b-trello"><path fill="#0052CC" d="M21.147 0H2.853A2.86 2.86 0 0 0 0 2.853v18.294A2.86 2.86 0 0 0 2.853 24h18.294A2.86 2.86 0 0 0 24 21.147V2.853A2.86 2.86 0 0 0 21.147 0M10.34 17.287a.953.953 0 0 1-.953.953h-4a.954.954 0 0 1-.954-.953V5.38a.953.953 0 0 1 .954-.953h4a.954.954 0 0 1 .953.953zm9.233-5.467a.944.944 0 0 1-.953.947h-4a.947.947 0 0 1-.953-.947V5.38a.953.953 0 0 1 .953-.953h4a.954.954 0 0 1 .953.953z"/></g>
+    <!-- linkedin -->
+    <g id="i-linkedin" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21h-4z"/></g>
+    <!-- whatsapp -->
+    <g id="i-whatsapp" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2.1 22l5.35-1.4a9.8 9.8 0 0 0 4.59 1.17h.01c5.43 0 9.84-4.4 9.84-9.84 0-2.63-1.02-5.1-2.88-6.96A9.78 9.78 0 0 0 12.04 2zm0 17.03h-.01a8.2 8.2 0 0 1-4.16-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.13 8.13 0 0 1-1.25-4.35c0-4.5 3.68-8.17 8.2-8.17 2.19 0 4.24.86 5.79 2.4a8.11 8.11 0 0 1 2.4 5.78c0 4.51-3.68 8.18-8.2 8.18zm4.5-6.12c-.25-.13-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.13-1.04-.39-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.09-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.16 0-.43.06-.65.3-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.13.17 1.73 2.64 4.2 3.7.58.26 1.04.41 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.15-1.18-.06-.1-.23-.17-.47-.29z"/></g>
+    <!-- mail -->
+    <g id="i-mail" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 6.5L21 6"/></g>
+    <!-- arrow up-right -->
+    <g id="i-arrow" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></g>
+    <!-- menu / close -->
+    <g id="i-menu" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></g>
+    <g id="i-close" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></g>
+  </defs>
+</svg>
+
+<div class="shell">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="nav" id="nav">
+    <div class="corner tl"></div><div class="corner tr"></div>
+    <a class="brand" href="#top">
+      <span>
+        <span class="brand-name">Matheus Costa</span>
+        <span class="brand-sub">Product Designer</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#experiencia">Experiência</a>
+    </div>
+    <a class="btn" href="#contato">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg>
+      Vamos conversar?
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
+  </nav>
+
+  <div class="drawer" id="drawer">
+    <button class="nav-toggle close" id="drawerClose" aria-label="Fechar menu"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#contato" style="color:var(--accent)">Vamos conversar?</a>
+  </div>
+
+  <main style="width:100%;display:flex;flex-direction:column;align-items:center">
+
+    <!-- ================= 1. HERO ================= -->
+    <section class="hero" id="top">
+      <div class="corner bl"></div><div class="corner br"></div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="badge reveal d1">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg>
+            Product Designer &amp; IA Specialist
+          </div>
+          <h1 class="mask">Matheus Costa</h1>
+          <p class="tagline reveal d4">Crio produtos digitais funcionais que realmente vendem, do design de interface à implementação inteligente.</p>
+        </div>
+
+        <div class="hero-photo reveal d3">
+          <div class="corner tl"></div><div class="corner tr"></div>
+          <div class="corner bl"></div><div class="corner br"></div>
+          <div class="photo-frame">
+            <img src="assets/matheus.jpg" alt="Retrato de Matheus Costa" width="1040" height="1300"/>
+          </div>
+          <div class="app-icon a1" title="Figma" role="img" aria-label="Figma"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#b-figma"/></svg></div>
+          <div class="app-icon a2" title="Claude" role="img" aria-label="Claude"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#b-claude"/></svg></div>
+          <div class="app-icon a3" title="ChatGPT" role="img" aria-label="ChatGPT"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#b-openai"/></svg></div>
+          <div class="app-icon a4" title="Trello" role="img" aria-label="Trello"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#b-trello"/></svg></div>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <span class="hint"><span class="arrow">↓</span> Role</span>
+        <span>São Paulo / BR</span>
+      </div>
+    </section>
+
+    <!-- ================= 2. SOBRE ================= -->
+    <section id="sobre">
+      <div class="corner bl"></div><div class="corner br"></div>
+      <div class="about-grid">
+        <div>
+          <div class="eyebrow reveal"><span>01</span><i class="rule"></i><span>Sobre</span></div>
+          <h2 class="about-title reveal d1" id="aboutTitle">Product Designer com sólida base em Design Gráfico e foco em <span class="grad">inovação com IA</span></h2>
+        </div>
+        <div class="about-body">
+          <p class="reveal d2">Há mais de <strong>6 anos</strong> atuando no mercado de design digital, conecto estética de alto nível a soluções funcionais de produto. Atualmente, curso um <strong>MBA em Inteligência Artificial</strong> para integrar tecnologias de ponta ao desenvolvimento de experiências digitais (UX/UI).</p>
+          <p class="reveal d3">Minha atuação cobre o ciclo completo de entrega: não apenas desenho telas bonitas, mas trabalho ativamente desde a <strong>concepção da copy estratégica</strong> até a <strong>implementação final utilizando Claude Code</strong>.</p>
+          <p class="reveal d4">Tenho experiência consolidada na estruturação de <strong>Design Systems robustos</strong>, criação de <strong>Landing Pages de alta conversão</strong> e desenvolvimento de <strong>Identidades Visuais</strong> memoráveis que posicionam marcas no digital.</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat reveal d2"><div class="num">2020<em>.</em></div><div class="lbl">Designer desde</div></div>
+        <div class="stat reveal d3"><div class="num">MBA<em>.</em></div><div class="lbl">Inteligência Artificial</div></div>
+        <div class="stat reveal d4"><div class="num">360<em>°</em></div><div class="lbl">Copy · Design · Código</div></div>
+      </div>
+    </section>
+
+    <!-- ================= 3. PROJETOS ================= -->
+    <section id="projetos">
+      <div class="corner bl"></div><div class="corner br"></div>
+      <div class="section-head">
+        <div class="eyebrow center reveal"><span>02</span><i class="rule"></i><span>Projetos</span></div>
+        <h2 class="mask" id="projTitle">Meus projetos</h2>
+        <p class="sub reveal d3">Soluções ponta a ponta: do conceito ao código</p>
+      </div>
+
+      <div class="projects">
+        <a class="project reveal d1" href="projeto-muricy-rents.html">
+          <div class="project-cover">
+            <img src="assets/projetos/muricy-rents.jpg" alt="Capa do projeto Muricy Rents" width="810" height="634" loading="lazy"/>
+          </div>
+          <div class="project-meta">
+            <h3>Muricy Rents</h3>
+            <span class="project-go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            <span class="project-tag">Identidade Visual</span>
+          </div>
+        </a>
+
+        <a class="project reveal d2" href="projeto-erika-muricy.html">
+          <div class="project-cover">
+            <img src="assets/projetos/erika-muricy.jpg" alt="Capa do projeto Erika Muricy" width="810" height="634" loading="lazy"/>
+          </div>
+          <div class="project-meta">
+            <h3>Erika Muricy</h3>
+            <span class="project-go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            <span class="project-tag">Website</span>
+          </div>
+        </a>
+
+        <a class="project reveal d3" href="projeto-muricy-motors.html">
+          <div class="project-cover">
+            <img src="assets/projetos/muricy-motors.jpg" alt="Capa do projeto Muricy Motors" width="810" height="634" loading="lazy"/>
+          </div>
+          <div class="project-meta">
+            <h3>Muricy Motors</h3>
+            <span class="project-go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            <span class="project-tag">Website</span>
+          </div>
+        </a>
+
+        <a class="project reveal d4" href="projeto-web-automacao.html">
+          <div class="project-cover">
+            <img src="assets/projetos/web-drive.jpg" alt="Capa do projeto WEB Automação Industrial" width="810" height="634" loading="lazy"/>
+          </div>
+          <div class="project-meta">
+            <h3>WEB Automação Industrial</h3>
+            <span class="project-go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            <span class="project-tag">Landing Page</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= 4. EXPERIÊNCIA ================= -->
+    <section id="experiencia">
+      <div class="corner bl"></div><div class="corner br"></div>
+      <div class="section-head">
+        <div class="eyebrow center reveal"><span>03</span><i class="rule"></i><span>Trajetória</span></div>
+        <h2 class="mask" id="expTitle">Experiência na área</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="job reveal d1">
+          <div class="job-top">
+            <h3>WEB Automação Industrial <span style="color:var(--t4)">· SP</span></h3>
+            <span class="period">2024 / 2026</span>
+          </div>
+          <div class="role">Designer Gráfico &amp; Product Designer</div>
+          <ul>
+            <li>Construção de identidades visuais corporativas completas.</li>
+            <li>Desenvolvimento de landing pages de alta conversão (copy + design + implementação).</li>
+            <li>Participação ativa no desenvolvimento de produtos digitais com IA, incluindo a estruturação e design de CRMs inteligentes.</li>
+          </ul>
+        </a>
+
+        <article class="job reveal d2">
+          <div class="job-top">
+            <h3>Happmobi <span style="color:var(--t4)">· SP</span></h3>
+            <span class="period">2021 / 2023</span>
+          </div>
+          <div class="role">Designer Gráfico</div>
+          <ul>
+            <li>Design de telas focadas em produtos e plataformas de educação corporativa.</li>
+            <li>Apoio estratégico à construção de marcas digitais e presença visual.</li>
+            <li>Criação de apresentações corporativas de alto impacto para grandes marcas.</li>
+          </ul>
+        </a>
+
+        <article class="job reveal d3">
+          <div class="job-top">
+            <h3>Designer Freelancer</h3>
+            <span class="period">2020 / Momento</span>
+          </div>
+          <div class="role">Designer Gráfico &amp; UI Developer</div>
+          <ul>
+            <li>Desenvolvimento de identidades visuais estratégicas e personalizadas para empreendedores.</li>
+            <li>Criação de landing pages de alta performance voltadas para infoprodutores.</li>
+          </ul>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= 5. CONTATO ================= -->
+    <section class="contact" id="contato">
+      <div class="corner tl"></div><div class="corner tr"></div>
+      <div class="eyebrow center reveal"><span>04</span><i class="rule"></i><span>Contato</span></div>
+      <h2 class="mask" id="contactTitle">Vamos conversar?</h2>
+
+      <div class="links reveal d2">
+        <a class="link" href="https://www.linkedin.com/in/mathhcosta/" target="_blank" rel="noopener noreferrer">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linkedin"/></svg></span>
+          <span class="txt"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/mathhcosta</span></span>
+          <span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="link" href="https://wa.me/5511917692288" target="_blank" rel="noopener noreferrer">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+          <span class="txt"><span class="k">WhatsApp</span><span class="v">(11) 91769-2288</span></span>
+          <span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="link" href="mailto:costamatheustech@gmail.com">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></span>
+          <span class="txt"><span class="k">E-mail</span><span class="v">costamatheustech@gmail.com</span></span>
+          <span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-in">
+      <span>© 2026 Matheus Costa</span>
+      <span>Design System · NovaChain</span>
+      <a class="up" href="#top">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+</div>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
