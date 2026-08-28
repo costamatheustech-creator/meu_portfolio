@@ -57,17 +57,41 @@
   var drawer = document.getElementById('drawer');
   var toggle = document.getElementById('navToggle');
   var closeBtn = document.getElementById('drawerClose');
-  function setDrawer(open) {
+  if (!drawer || !toggle || !closeBtn) return;
+
+  // devolverFoco: ao fechar pelo X ou Esc o foco volta para o botao que
+  // abriu. Ao seguir um link do menu, nao: o destino da ancora e que deve
+  // receber o foco, e mexer nele cancelaria o salto.
+  function setDrawer(open, devolverFoco) {
     drawer.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
+    if (open) { closeBtn.focus(); }
+    else if (devolverFoco) { toggle.focus(); }
   }
   toggle.addEventListener('click', function () { setDrawer(true); });
-  closeBtn.addEventListener('click', function () { setDrawer(false); });
+  closeBtn.addEventListener('click', function () { setDrawer(false, true); });
   drawer.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () { setDrawer(false); });
+    a.addEventListener('click', function () { setDrawer(false, false); });
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') setDrawer(false);
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      setDrawer(false, true);
+      return;
+    }
+    // com o drawer aberto o Tab circula dentro dele, sem passear pelo
+    // conteudo atras (que segue na arvore, apenas coberto)
+    if (e.key !== 'Tab' || !drawer.classList.contains('open')) return;
+    var focaveis = drawer.querySelectorAll('a[href], button');
+    if (!focaveis.length) return;
+    var primeiro = focaveis[0];
+    var ultimo = focaveis[focaveis.length - 1];
+    if (e.shiftKey && document.activeElement === primeiro) {
+      e.preventDefault();
+      ultimo.focus();
+    } else if (!e.shiftKey && document.activeElement === ultimo) {
+      e.preventDefault();
+      primeiro.focus();
+    }
   });
 })();

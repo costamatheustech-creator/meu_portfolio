@@ -3,10 +3,13 @@
    Camada de APLICACAO do design system "Sage Dark".
    --------------------------------------------------------------------------
    Ordem de carregamento nas paginas:
-     1) assets/css/fonts.css          @font-face locais
-     2) assets/css/tokens.css         variaveis do sistema
-     3) assets/css/design-system.css  base + biblioteca .ds-
-     4) assets/css/site.css           este arquivo (composicao das paginas)
+     1) assets/css/fonts.css   @font-face locais
+     2) assets/css/tokens.css  variaveis do sistema
+     3) assets/css/base.css    reset, elementos e camada de grao
+     4) assets/css/site.css    este arquivo (composicao das paginas)
+
+   design-system.css e alternativo a este arquivo e so carrega em
+   design-system.html; os dois nunca coexistem na mesma pagina.
 
    Regra do arquivo: nenhuma cor, fonte, tamanho ou espacamento literal.
    Tudo vem de token. Trocar um token em tokens.css propaga para o site todo.
@@ -26,6 +29,23 @@
   position:fixed;top:0;left:0;height:2px;width:0;
   background:var(--sage-100);z-index:var(--z-overlay);
 }
+
+/* pular navegacao: so aparece ao receber foco por teclado */
+.skip{
+  position:fixed;top:var(--space-3);left:var(--space-3);
+  z-index:var(--z-toast);
+  padding:var(--space-3) var(--space-4);
+  border-radius:var(--radius-md);
+  background:var(--action);color:var(--action-fg);
+  font-family:var(--f-label-font-family);
+  font-size:var(--f-label-font-size);
+  font-weight:var(--f-label-font-weight);
+  letter-spacing:var(--f-label-letter-spacing);
+  text-decoration:none;
+  transform:translateY(-200%);
+  transition:transform var(--duration-fast) var(--ease);
+}
+.skip:focus{transform:translateY(0)}
 
 /* ==========================================================================
    NAVBAR
