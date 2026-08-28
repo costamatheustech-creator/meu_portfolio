@@ -52,15 +52,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---- grid parallax on pointer ---- */
-  var grid = document.getElementById('grid');
-  if (grid && !reduced && window.matchMedia('(pointer:fine)').matches) {
-    window.addEventListener('mousemove', function (e) {
-      var x = (e.clientX / window.innerWidth - 0.5) * 22;
-      var y = (e.clientY / window.innerHeight - 0.5) * 22;
-      grid.style.backgroundPosition = 'calc(50% + ' + x + 'px) calc(50% + ' + y + 'px)';
-    }, { passive: true });
-  }
 
   /* ---- mobile drawer ---- */
   var drawer = document.getElementById('drawer');

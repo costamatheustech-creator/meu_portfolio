@@ -1,0 +1,55 @@
+/* ==========================================================================
+   MATHEUS COSTA — DESIGN SYSTEM / TIPOGRAFIA LOCAL
+   --------------------------------------------------------------------------
+   100% das fontes sao servidas a partir de /assets/fonts.
+   Nenhum Google Fonts, @import externo, CDN ou link de terceiros.
+
+   Fira Sans .............. 300 / 400 / 500 / 600 (estaticas, subset latin)
+   Bricolage Grotesque .... variavel 200-800 (eixos wght + opsz)
+
+   Licencas: SIL Open Font License 1.1 — ver assets/fonts/OFL-*.txt
+   ========================================================================== */
+
+/* ---------- Fira Sans — corpo, paragrafos, botoes e UI ---------- */
+@font-face{
+  font-family:"Fira Sans";
+  src:url("../fonts/fira-sans-300.woff2") format("woff2");
+  font-weight:300;               /* Light — peso de leitura padrao */
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Fira Sans";
+  src:url("../fonts/fira-sans-400.woff2") format("woff2");
+  font-weight:400;               /* Regular */
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Fira Sans";
+  src:url("../fonts/fira-sans-500.woff2") format("woff2");
+  font-weight:500;               /* Medium — labels, botoes, eyebrows */
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Fira Sans";
+  src:url("../fonts/fira-sans-600.woff2") format("woff2");
+  font-weight:600;               /* SemiBold — enfase forte */
+  font-style:normal;
+  font-display:swap;
+}
+
+/* ---------- Bricolage Grotesque — titulos e display ----------
+   Arquivo variavel unico: cobre 200-800 em um so request (90 KB).
+   O eixo opsz responde automaticamente ao font-size via
+   font-optical-sizing:auto (valor inicial do navegador).            */
+@font-face{
+  font-family:"Bricolage Grotesque";
+  src:url("../fonts/bricolage-grotesque-var.woff2") format("woff2") tech(variations),
+      url("../fonts/bricolage-grotesque-var.woff2") format("woff2-variations"),
+      url("../fonts/bricolage-grotesque-var.woff2") format("woff2");
+  font-weight:200 800;
+  font-style:normal;
+  font-display:swap;
+}

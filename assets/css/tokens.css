@@ -1,0 +1,241 @@
+/* ==========================================================================
+   MATHEUS COSTA - DESIGN SYSTEM "SAGE DARK"
+   Camada 1 de 2: FOUNDATIONS (tokens)
+   --------------------------------------------------------------------------
+   Arquitetura inspirada no front-end da ElevenLabs:
+     - rampas de cor numeradas 50 -> 950 derivadas da paleta base
+     - tokens tipograficos semanticos (--f-<papel>-font-size, -weight, ...)
+     - escala de espacamento por PAPEL (gutter, section, content), nao por px
+     - curva de easing expo-out cubic-bezier(.16,1,.3,1) como assinatura
+
+   Paleta base do projeto:
+     #C7DFCD  sage    - texto primario e acao principal
+     #2B5748  brand   - superficies de marca, bordas, preenchimentos
+     #0C231E  ink     - fundo da pagina
+     #202F2B  slate   - superficie elevada (cards, inputs)
+
+   Requer: fonts.css carregado antes deste arquivo.
+   ========================================================================== */
+
+:root{
+
+  /* ======================================================================
+     1. CORES - rampa primitiva
+     Interpolada entre as 4 cores base. Nenhum matiz externo foi introduzido:
+     todos os degraus sao mistura das cores fornecidas (e branco no 50).
+     ====================================================================== */
+  --sage-50:#E0EDE4;
+  --sage-100:#C7DFCD;   /* base fornecida */
+  --sage-200:#ABC7B5;
+  --sage-300:#92B1A0;
+  --sage-400:#769888;
+  --sage-500:#577D6D;
+  --sage-600:#2B5748;   /* base fornecida - brand */
+  --sage-700:#27483D;
+  --sage-800:#233B34;
+  --sage-850:#202F2B;   /* base fornecida - slate */
+  --sage-900:#172A25;
+  --sage-950:#0C231E;   /* base fornecida - ink */
+
+  /* ======================================================================
+     2. CORES - tokens semanticos
+     Contraste medido (WCAG 2.1) contra o fundo --bg #0C231E.
+     ====================================================================== */
+
+  /* superficies - cor solida, sem gradiente nem pattern; a unica
+     textura e o grao sutil de --noise (ver body::after) */
+  --bg:var(--sage-950);                   /* fundo da pagina                */
+  --bg-raised:var(--sage-900);            /* faixas alternadas de secao     */
+  --surface:var(--sage-850);              /* cards, inputs, dropdowns       */
+  --surface-hover:var(--sage-800);        /* estado hover das superficies   */
+  --surface-brand:var(--sage-600);        /* bloco de marca preenchido      */
+  --surface-invert:var(--sage-100);       /* bloco claro sobre o dark       */
+
+  /* texto */
+  --fg:var(--sage-100);                   /* 11.66:1  AAA  primario         */
+  --fg-muted:var(--sage-300);             /*  7.07:1  AAA  secundario       */
+  --fg-subtle:var(--sage-400);            /*  5.19:1  AA   terciario        */
+  --fg-accent:var(--sage-500);            /*  3.58:1  AA so >=24px e icones  */
+  --fg-accent-sm:var(--sage-400);         /*  5.19:1  AA acento em texto pequeno */
+  --fg-invert:var(--sage-950);            /* sobre --surface-invert         */
+
+  /* bordas e divisores */
+  --border:rgba(199,223,205,.10);         /* divisor discreto               */
+  --border-strong:rgba(199,223,205,.20);  /* contorno de card               */
+  --border-brand:var(--sage-600);         /* contorno de marca              */
+  --border-focus:var(--sage-200);         /* anel de foco - 9.07:1          */
+
+  /* acao */
+  --action:var(--sage-100);               /* botao primario (fill claro)    */
+  --action-fg:var(--sage-950);            /* texto do botao primario        */
+  --action-hover:var(--sage-50);
+  --action-ghost:rgba(199,223,205,.07);   /* fill de hover fantasma         */
+
+  /* apoio */
+  --overlay:rgba(12,35,30,.72);
+
+  /* grao de fundo - SVG feTurbulence embutido, sem arquivo externo.
+     Sobe --noise-opacity para mais textura, zera para voltar ao fundo liso. */
+  --noise-opacity:.05;
+  --noise-size:170px;
+  --noise:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='170'%20height='170'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.82'%20numOctaves='4'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='170'%20height='170'%20filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* elevacao - sombras sempre no ink, nunca em preto puro */
+  --shadow-sm:0 1px 2px rgba(12,35,30,.6),0 8px 20px -14px rgba(12,35,30,.9);
+  --shadow-md:0 2px 4px rgba(12,35,30,.5),0 20px 44px -24px rgba(12,35,30,.95);
+  --shadow-lg:0 4px 8px rgba(12,35,30,.5),0 40px 80px -32px rgba(12,35,30,1);
+
+  /* ======================================================================
+     3. TIPOGRAFIA - familias e pesos
+     ====================================================================== */
+  --font-body:"Fira Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-display:"Bricolage Grotesque","Fira Sans",ui-sans-serif,system-ui,sans-serif;
+
+  --fw-light:300;      /* corpo - peso de leitura padrao (Fira Sans Light) */
+  --fw-regular:400;
+  --fw-medium:500;     /* labels, botoes, rotulos de UI                    */
+  --fw-semibold:600;   /* enfase                                           */
+  --fw-display:600;    /* display / H1                                     */
+  --fw-heading:500;    /* H2 / H3                                          */
+
+  /* ----------------------------------------------------------------------
+     3.1 ESCALA TIPOGRAFICA
+     Amplitude do sistema:  mobile 16 -> 24px  ·  desktop 24 -> 60px
+     Cada degrau interpola sozinho via clamp(); nao ha media query de fonte.
+     ---------------------------------------------------------------------- */
+
+  /* display-01 - hero. 24px (360px de viewport) -> 60px (>=1440px) */
+  --f-display-01-font-family:var(--font-display);
+  --f-display-01-font-size:clamp(1.5rem,.9rem + 3.2vw,3.75rem);
+  --f-display-01-font-weight:var(--fw-display);
+  --f-display-01-line-height:1.04;
+  --f-display-01-letter-spacing:-.035em;
+
+  /* display-02 - aberturas de secao. 22 -> 44px */
+  --f-display-02-font-family:var(--font-display);
+  --f-display-02-font-size:clamp(1.375rem,.95rem + 2.1vw,2.75rem);
+  --f-display-02-font-weight:var(--fw-display);
+  --f-display-02-line-height:1.08;
+  --f-display-02-letter-spacing:-.03em;
+
+  /* heading-01 - H2. 20 -> 32px */
+  --f-heading-01-font-family:var(--font-display);
+  --f-heading-01-font-size:clamp(1.25rem,1rem + 1.15vw,2rem);
+  --f-heading-01-font-weight:var(--fw-heading);
+  --f-heading-01-line-height:1.15;
+  --f-heading-01-letter-spacing:-.025em;
+
+  /* heading-02 - H3 / titulo de card. 18 -> 24px */
+  --f-heading-02-font-family:var(--font-display);
+  --f-heading-02-font-size:clamp(1.125rem,1rem + .55vw,1.5rem);
+  --f-heading-02-font-weight:var(--fw-heading);
+  --f-heading-02-line-height:1.25;
+  --f-heading-02-letter-spacing:-.015em;
+
+  /* heading-03 - H4 / subtitulo. 17 -> 20px */
+  --f-heading-03-font-family:var(--font-display);
+  --f-heading-03-font-size:clamp(1.0625rem,.99rem + .3vw,1.25rem);
+  --f-heading-03-font-weight:var(--fw-heading);
+  --f-heading-03-line-height:1.35;
+  --f-heading-03-letter-spacing:-.005em;
+
+  /* lead - paragrafo de abertura. 17 -> 24px (topo da faixa desktop) */
+  --f-lead-font-family:var(--font-body);
+  --f-lead-font-size:clamp(1.0625rem,.86rem + .87vw,1.5rem);
+  --f-lead-font-weight:var(--fw-light);
+  --f-lead-line-height:1.5;
+  --f-lead-letter-spacing:-.01em;
+
+  /* body-01 - corpo padrao. 16 -> 17px (piso da faixa mobile) */
+  --f-body-01-font-family:var(--font-body);
+  --f-body-01-font-size:clamp(1rem,.98rem + .09vw,1.0625rem);
+  --f-body-01-font-weight:var(--fw-light);
+  --f-body-01-line-height:1.7;
+  --f-body-01-letter-spacing:0;
+
+  /* body-02 - corpo compacto. 15px */
+  --f-body-02-font-family:var(--font-body);
+  --f-body-02-font-size:.9375rem;
+  --f-body-02-font-weight:var(--fw-light);
+  --f-body-02-line-height:1.6;
+  --f-body-02-letter-spacing:.005em;
+
+  /* label - botoes, navegacao, eyebrows. 13px caixa alta */
+  --f-label-font-family:var(--font-body);
+  --f-label-font-size:.8125rem;
+  --f-label-font-weight:var(--fw-medium);
+  --f-label-line-height:1.2;
+  --f-label-letter-spacing:.14em;
+
+  /* caption - legendas, metadados, rodape. 12px */
+  --f-caption-font-family:var(--font-body);
+  --f-caption-font-size:.75rem;
+  --f-caption-font-weight:var(--fw-medium);
+  --f-caption-line-height:1.45;
+  --f-caption-letter-spacing:.16em;
+
+  /* ======================================================================
+     4. LAYOUT & ESPACAMENTO
+     ====================================================================== */
+  --container:1200px;          /* max-width padrao widescreen              */
+  --container-narrow:760px;    /* coluna de leitura                        */
+  --container-wide:1440px;     /* faixas contidas mais largas              */
+
+  --gutter:20px;               /* padding horizontal - mobile              */
+  --section:60px;              /* espaco entre secoes - mobile             */
+  --section-tight:40px;
+  --section-loose:80px;
+
+  /* escala interna (gaps e paddings de componente) */
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:24px;
+  --space-6:32px;
+  --space-7:48px;
+  --space-8:64px;
+  --space-9:96px;
+
+  /* ======================================================================
+     5. FORMA
+     ====================================================================== */
+  --radius-xs:4px;
+  --radius-sm:8px;
+  --radius-md:12px;
+  --radius-lg:16px;
+  --radius-xl:24px;            /* radius de card - assinatura do sistema   */
+  --radius-pill:999px;
+  --border-width:1px;
+
+  /* ======================================================================
+     6. MOVIMENTO
+     ====================================================================== */
+  --ease:cubic-bezier(.16,1,.3,1);          /* expo-out - curva assinatura */
+  --ease-standard:cubic-bezier(.4,0,.2,1);
+  --ease-in-out:cubic-bezier(.65,0,.35,1);
+
+  --duration-fast:150ms;
+  --duration-base:300ms;
+  --duration-slow:600ms;
+  --duration-reveal:900ms;
+
+  /* ======================================================================
+     7. PROFUNDIDADE
+     ====================================================================== */
+  --z-base:1;
+  --z-sticky:60;
+  --z-drawer:70;
+  --z-overlay:80;
+  --z-toast:90;
+}
+
+/* ---------- unicos breakpoints do sistema ---------- */
+@media (min-width:768px){
+  :root{
+    --gutter:32px;             /* padding horizontal - desktop  */
+    --section:120px;           /* espaco entre secoes - desktop */
+    --section-tight:80px;
+    --section-loose:160px;
+  }
+}

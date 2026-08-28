@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; frame-src 'none'"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<title>Design System Sage Dark | Matheus Costa</title>
+<meta name="description" content="Design system dark do portfolio de Matheus Costa: paleta, tipografia local, escala, layout e componentes."/>
+<meta name="theme-color" content="#0C231E"/>
+<meta name="color-scheme" content="dark"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230C231E'/%3E%3Ctext%20x='16'%20y='23'%20font-family='sans-serif'%20font-size='18'%20font-weight='700'%20fill='%23C7DFCD'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+<!-- Tipografia 100% local: nenhum Google Fonts, CDN ou @import externo -->
+<link rel="preload" href="assets/fonts/fira-sans-300.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="assets/fonts/bricolage-grotesque-var.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="assets/css/fonts.css"/>
+<link rel="stylesheet" href="assets/css/tokens.css"/>
+<link rel="stylesheet" href="assets/css/base.css"/>
+<link rel="stylesheet" href="assets/css/design-system.css"/>
+<style>
+  /* ---- estilos exclusivos desta pagina de documentacao ---- */
+  .doc-swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-3)}
+  .doc-swatch{
+    display:flex;flex-direction:column;gap:var(--space-3);
+    padding:var(--space-4);border:var(--border-width) solid var(--border);
+    border-radius:var(--radius-md);background:var(--surface);cursor:copy;
+    transition:border-color var(--duration-base) var(--ease);
+  }
+  .doc-swatch:hover{border-color:var(--border-strong)}
+  .doc-swatch[data-copied]{border-color:var(--sage-200)}
+  .doc-chipcolor{height:56px;border-radius:var(--radius-sm);border:1px solid rgba(199,223,205,.12)}
+  .doc-meta{display:flex;justify-content:space-between;gap:var(--space-2);font-size:var(--f-caption-font-size);letter-spacing:.06em;text-transform:none}
+  .doc-meta b{font-weight:var(--fw-medium);color:var(--fg)}
+  .doc-meta span{color:var(--fg-subtle);font-variant-numeric:tabular-nums}
+  @media (max-width:900px){.doc-swatches{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+  .doc-spec{
+    display:grid;grid-template-columns:150px 1fr;gap:var(--space-4);
+    padding-block:var(--space-5);border-top:var(--border-width) solid var(--border);
+    align-items:baseline;
+  }
+  .doc-spec:first-of-type{border-top:0}
+  .doc-spec > code{
+    font-size:var(--f-caption-font-size);color:var(--fg-accent);
+    letter-spacing:.02em;word-break:break-word;
+  }
+  @media (max-width:720px){.doc-spec{grid-template-columns:1fr;gap:var(--space-2)}}
+
+  .doc-scaleinfo{margin-top:var(--space-2);font-size:var(--f-caption-font-size);color:var(--fg-subtle);letter-spacing:.06em}
+
+  .doc-boxrow{display:flex;flex-wrap:wrap;gap:var(--space-5);align-items:flex-end}
+  .doc-box{
+    display:grid;place-items:center;width:88px;height:88px;
+    background:var(--surface);border:var(--border-width) solid var(--border-strong);
+    color:var(--fg-subtle);font-size:var(--f-caption-font-size);
+  }
+  .doc-bar{height:32px;background:var(--sage-600);border-radius:var(--radius-xs)}
+  .doc-spacerow{display:flex;align-items:center;gap:var(--space-4)}
+  .doc-spacerow code{min-width:92px;font-size:var(--f-caption-font-size);color:var(--fg-accent)}
+
+  .doc-anchors{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+  .doc-preview{
+    padding:var(--space-6);border:var(--border-width) dashed var(--border-strong);
+    border-radius:var(--radius-lg);
+  }
+  .doc-note{
+    padding:var(--space-4) var(--space-5);border-left:2px solid var(--sage-500);
+    background:var(--action-ghost);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  }
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+</style>
+</head>
+<body>
+<a class="ds-skip" href="#conteudo">Pular para o conteudo</a>
+<!-- ====================== HEADER ====================== -->
+<header class="ds-header">
+  <div class="ds-container ds-header-inner">
+    <a href="#top" class="ds-h3" style="letter-spacing:-.02em">Sage Dark</a>
+    <nav class="ds-nav" aria-label="Secoes do design system">
+      <a href="#cores">Cores</a>
+      <a href="#tipografia">Tipografia</a>
+      <a href="#layout">Layout</a>
+      <a href="#componentes">Componentes</a>
+    </nav>
+    <a class="ds-btn ds-btn--primary ds-btn--sm" href="index.html">Ver o portfolio</a>
+  </div>
+</header>
+<main id="conteudo">
+  <!-- ====================== HERO ====================== -->
+  <section class="ds-section" id="top">
+    <div class="ds-container">
+      <div class="ds-stack ds-stack--lg ds-reveal">
+        <span class="ds-chip"><span class="ds-dot"></span> Design System v1.0</span>
+        <h1 class="ds-display-01 ds-measure-tight">Um sistema visual dark, construido sobre quatro cores e duas fontes.</h1>
+        <p class="ds-lead ds-measure">Arquitetura de tokens inspirada no front-end da ElevenLabs: rampas de cor numeradas, tokens tipograficos semanticos, espacamento definido por papel e uma unica curva de easing como assinatura de movimento.</p>
+        <div class="ds-row">
+          <a class="ds-btn ds-btn--primary ds-btn--lg" href="#cores">Explorar os tokens</a>
+          <a class="ds-btn ds-btn--secondary ds-btn--lg" href="#componentes">Ver componentes</a>
+        </div>
+      </div>
+      <div class="ds-stats ds-reveal ds-delay-2" style="margin-top:var(--space-8)">
+        <div class="ds-stat">
+          <div class="ds-stat-value">4<em>.</em></div>
+          <div class="ds-stat-label">Cores base &middot; 12 degraus</div>
+        </div>
+        <div class="ds-stat">
+          <div class="ds-stat-value">177<em>kb</em></div>
+          <div class="ds-stat-label">Tipografia local completa</div>
+        </div>
+        <div class="ds-stat">
+          <div class="ds-stat-value">0<em>.</em></div>
+          <div class="ds-stat-label">Requisicoes externas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ====================== 1. CORES ====================== -->
+  <section class="ds-section" id="cores">
+    <div class="ds-container">
+      <div class="ds-section-head ds-reveal">
+        <h2 class="ds-display-02">Paleta dark derivada de quatro cores</h2>
+        <p class="ds-body ds-measure">A rampa de 12 degraus e inteiramente interpolada entre as cores fornecidas. Nenhum matiz novo foi introduzido &mdash; apenas o degrau 50 recebe branco para servir de estado hover da acao primaria.</p>
+      </div>
+      <h3 class="ds-h2 ds-reveal" style="margin-bottom:var(--space-4)">Cores base</h3>
+      <div class="doc-swatches ds-reveal">
+        <div class="doc-swatch" data-copy="#C7DFCD">
+          <div class="doc-chipcolor" style="background:#C7DFCD"></div>
+          <div class="doc-meta"><b>sage-100</b><span>#C7DFCD</span></div>
+          <p class="ds-body-sm">Texto primario e acao principal. 11.66:1 sobre o fundo &mdash; AAA.</p>
+        </div>
+        <div class="doc-swatch" data-copy="#2B5748">
+          <div class="doc-chipcolor" style="background:#2B5748"></div>
+          <div class="doc-meta"><b>sage-600</b><span>#2B5748</span></div>
+          <p class="ds-body-sm">Marca. Superficies, bordas e fills &mdash; 2.01:1, nunca como texto.</p>
+        </div>
+        <div class="doc-swatch" data-copy="#0C231E">
+          <div class="doc-chipcolor" style="background:#0C231E"></div>
+          <div class="doc-meta"><b>sage-950</b><span>#0C231E</span></div>
+          <p class="ds-body-sm">Fundo da pagina, em cor solida. A unica textura e o grao sutil de <code>--noise</code>.</p>
+        </div>
+        <div class="doc-swatch" data-copy="#202F2B">
+          <div class="doc-chipcolor" style="background:#202F2B"></div>
+          <div class="doc-meta"><b>sage-850</b><span>#202F2B</span></div>
+          <p class="ds-body-sm">Superficie elevada: cards, inputs e dropdowns.</p>
+        </div>
+      </div>
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Rampa completa</h3>
+      <div class="ds-rows ds-reveal">
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#E0EDE4;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-50</span><span class="ds-row-key">#E0EDE4</span><span class="ds-row-go ds-body-sm">13.65:1 &middot; hover da acao</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#C7DFCD;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-100</span><span class="ds-row-key">#C7DFCD</span><span class="ds-row-go ds-body-sm">11.66:1 &middot; texto primario</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#ABC7B5;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-200</span><span class="ds-row-key">#ABC7B5</span><span class="ds-row-go ds-body-sm">9.07:1 &middot; anel de foco</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#92B1A0;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-300</span><span class="ds-row-key">#92B1A0</span><span class="ds-row-go ds-body-sm">7.07:1 &middot; texto secundario</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#769888;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-400</span><span class="ds-row-key">#769888</span><span class="ds-row-go ds-body-sm">5.19:1 &middot; terciario e acento pequeno</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#577D6D;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-500</span><span class="ds-row-key">#577D6D</span><span class="ds-row-go ds-body-sm">3.58:1 &middot; acento &ge;24px e icones</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#2B5748;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-600</span><span class="ds-row-key">#2B5748</span><span class="ds-row-go ds-body-sm">2.01:1 &middot; fill de marca</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#27483D;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-700</span><span class="ds-row-key">#27483D</span><span class="ds-row-go ds-body-sm">borda forte</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#233B34;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-800</span><span class="ds-row-key">#233B34</span><span class="ds-row-go ds-body-sm">hover de superficie</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#202F2B;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-850</span><span class="ds-row-key">#202F2B</span><span class="ds-row-go ds-body-sm">superficie</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#172A25;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-900</span><span class="ds-row-key">#172A25</span><span class="ds-row-go ds-body-sm">faixa alternada</span></div>
+        <div class="ds-row-item"><span class="doc-chipcolor" style="background:#0C231E;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-950</span><span class="ds-row-key">#0C231E</span><span class="ds-row-go ds-body-sm">fundo da pagina</span></div>
+      </div>
+      <div class="doc-note ds-reveal" style="margin-top:var(--space-6)">
+        <p class="ds-body"><strong>Regra de uso:</strong> #2B5748 e uma cor de <em>superficie</em>, nao de texto &mdash; 2.01:1 nao passa em nenhum criterio WCAG.</p>
+        <p class="ds-body" style="margin-top:var(--space-3)">Para a marca em texto o token depende do tamanho: <code>--fg-accent</code> (sage-500, 3.58:1) so a partir de 24px ou em icones; abaixo disso use <code>--fg-accent-sm</code> (sage-400, 5.19:1), que e o token dos cargos, rotulos e numeracoes. Em texto corrido, <code>--fg-muted</code> (sage-300, 7.07:1).</p>
+      </div>
+    </div>
+  </section>
+  <!-- ====================== 2. TIPOGRAFIA ====================== -->
+  <section class="ds-section ds-section--raised" id="tipografia">
+    <div class="ds-container">
+      <div class="ds-section-head ds-reveal">
+        <h2 class="ds-display-02">Duas familias, carregadas do proprio servidor</h2>
+        <p class="ds-body ds-measure"><strong>Bricolage Grotesque</strong> (variavel, 200&ndash;800) nos titulos e <strong>Fira Sans Light</strong> no corpo, botoes e UI. Ambas em <code>assets/fonts</code>, em WOFF2 com subset latin. Zero requisicoes a Google Fonts, CDNs ou qualquer host externo.</p>
+      </div>
+      <div class="ds-grid ds-grid--2 ds-reveal" style="margin-bottom:var(--space-8)">
+        <div class="ds-card">
+          <span class="ds-caption">Titulos</span>
+          <p style="font-family:var(--font-display);font-size:3rem;font-weight:600;letter-spacing:-.035em;line-height:1.05;margin:0">Bricolage<br/>Grotesque</p>
+          <p class="ds-body-sm">Arquivo variavel unico &mdash; 90 KB cobrindo todo o intervalo 200&ndash;800. O eixo <code>opsz</code> ajusta o desenho automaticamente conforme o tamanho.</p>
+          <p class="ds-caption" style="letter-spacing:.06em;text-transform:none">bricolage-grotesque-var.woff2</p>
+        </div>
+        <div class="ds-card">
+          <span class="ds-caption">Corpo</span>
+          <p style="font-family:var(--font-body);font-size:3rem;font-weight:300;letter-spacing:-.02em;line-height:1.05;margin:0">Fira Sans<br/>Light</p>
+          <p class="ds-body-sm">Quatro pesos estaticos: 300 para leitura, 400 e 500 para UI e 600 para enfase. 21 KB cada.</p>
+          <p class="ds-caption" style="letter-spacing:.06em;text-transform:none">fira-sans-300/400/500/600.woff2</p>
+        </div>
+      </div>
+      <h3 class="ds-h2 ds-reveal" style="margin-bottom:var(--space-5)">Escala &mdash; 16&ndash;24px no mobile, 24&ndash;60px no desktop</h3>
+      <div class="ds-reveal">
+        <div class="doc-spec">
+          <code>--f-display-01</code>
+          <div>
+            <p class="ds-display-01">Display 01</p>
+            <p class="doc-scaleinfo">Bricolage 600 &middot; 24 &rarr; 60px &middot; line-height 1.04 &middot; tracking -0.035em &middot; hero</p>
+          </div>
+        </div>
+        <div class="doc-spec">
+          <code>--f-display-02</code>
+          <div>
+            <p class="ds-display-02">Display 02</p>
+            <p class="doc-scaleinfo">Bricolage 600 &middot; 22 &rarr; 44px &middot; line-height 1.08 &middot; tracking -0.03em &middot; abertura de secao</p>
+          </div>
+        </div>
+        <div class="doc-spec">
+          <code>--f-heading-01</code>
+          <div>
+            <p class="ds-h1">Heading 01</p>
+            <p class="doc-scaleinfo">Bricolage 500 &middot; 20 &rarr; 32px &middot; line-height 1.15 &middot; H2</p>
+          </div>
+        </div>
+        <div class="doc-spec">
+          <code>--f-heading-02</code>
+          <div>
+            <p class="ds-h2">Heading 02</p>
+            <p class="doc-scaleinfo">Bricolage 500 &middot; 18 &rarr; 24px &middot; line-height 1.25 &middot; H3 e titulo de card</p>
+          </div>
+        </div>
+        <div class="doc-spec">
+          <code>--f-heading-03</code>
+          <div>
+            <p class="ds-h3">Heading 03</p>
+            <p class="doc-scaleinfo">Bricolage 500 &middot; 17 &rarr; 20px &middot; line-height 1.35 &middot; H4 e subtitulo</p>
+          </div>
+        </div>
+        <div class="doc-spec">
+          <code>--f-lead</code>
+          <div>
+            <p class="ds-lead">Lead &mdash; o paragrafo de abertura que sustenta o titulo e leva o leitor ate o corpo do texto.</p>
+            <p class="doc-scaleinfo">Fira Sans 300 &middot; 17 &rarr; 24px &middot; line-height 1.5 &middot; topo da faixa desktop</p>
+          </div>
+        </div>
+        <div class="doc-spec">
+          <code>--f-body-01</code>
+          <div>
+            <p class="ds-body ds-measure">Body 01 &mdash; o peso de leitura padrao do sistema. Fira Sans Light em 1.7 de entrelinha mantem o texto respiravel sobre fundo escuro, onde pesos baixos tendem a parecer mais finos do que sao.</p>
+            <p class="doc-scaleinfo">Fira Sans 300 &middot; 16 &rarr; 17px &middot; line-height 1.7 &middot; piso da faixa mobile</p>
+          </div>
+        </div>
+        <div class="doc-spec">
+          <code>--f-body-02</code>
+          <div>
+            <p class="ds-body-sm ds-measure">Body 02 &mdash; corpo compacto para legendas longas, textos de apoio dentro de cards e descricoes secundarias.</p>
+            <p class="doc-scaleinfo">Fira Sans 300 &middot; 15px &middot; line-height 1.6</p>
+          </div>
+        </div>
+        <div class="doc-spec">
+          <code>--f-label</code>
+          <div>
+            <p class="ds-label">Label &middot; botoes e navegacao</p>
+            <p class="doc-scaleinfo">Fira Sans 500 &middot; 13px &middot; tracking 0.14em &middot; caixa alta</p>
+          </div>
+        </div>
+        <div class="doc-spec">
+          <code>--f-caption</code>
+          <div>
+            <p class="ds-caption">Caption &middot; metadados e rodape</p>
+            <p class="doc-scaleinfo">Fira Sans 500 &middot; 12px &middot; tracking 0.16em &middot; caixa alta</p>
+          </div>
+        </div>
+      </div>
+      <div class="doc-note ds-reveal" style="margin-top:var(--space-6)">
+        <p class="ds-body" style="margin-bottom:var(--space-3)"><strong>Enfase no dark e sempre mais clara:</strong> num fundo escuro, destacar uma palavra escurecendo-a inverte a leitura. Quando um trecho precisa saltar dentro de um titulo, o entorno vai para <code>--fg-muted</code> e o trecho fica em <code>--fg</code>.</p>
+        <p class="ds-body"><strong>Por que 500 em botoes e labels:</strong> a familia do corpo e a mesma (Fira Sans), como especificado. O peso sobe de 300 para 500 apenas em textos curtos em caixa alta, onde o Light perde legibilidade no dark. Paragrafos permanecem sempre em 300.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ====================== 3. LAYOUT ====================== -->
+  <section class="ds-section" id="layout">
+    <div class="ds-container">
+      <div class="ds-section-head ds-reveal">
+        <h2 class="ds-display-02">Espacamento por papel, nao por numero</h2>
+        <p class="ds-body ds-measure">O container, o gutter e o respiro entre secoes sao tokens semanticos que trocam sozinhos no breakpoint de 768px. Componentes usam a escala interna <code>--space-1</code> a <code>--space-9</code>.</p>
+      </div>
+      <div class="ds-grid ds-grid--2 ds-reveal">
+        <div class="ds-card">
+          <h3 class="ds-h2">Container e gutter</h3>
+          <div class="ds-stack">
+            <div class="doc-spacerow"><code>--container</code><span class="ds-body-sm">1200px &middot; padrao widescreen</span></div>
+            <div class="doc-spacerow"><code>--container-narrow</code><span class="ds-body-sm">760px &middot; coluna de leitura</span></div>
+            <div class="doc-spacerow"><code>--container-wide</code><span class="ds-body-sm">1440px &middot; faixas largas</span></div>
+            <hr class="ds-divider"/>
+            <div class="doc-spacerow"><code>--gutter</code><span class="ds-body-sm">20px mobile &rarr; 32px desktop</span></div>
+          </div>
+        </div>
+        <div class="ds-card">
+          <h3 class="ds-h2">Ritmo vertical</h3>
+          <div class="ds-stack">
+            <div class="doc-spacerow"><code>--section</code><span class="ds-body-sm">60px mobile &rarr; 120px desktop</span></div>
+            <div class="doc-spacerow"><code>--section-tight</code><span class="ds-body-sm">40px &rarr; 80px</span></div>
+            <div class="doc-spacerow"><code>--section-loose</code><span class="ds-body-sm">80px &rarr; 160px</span></div>
+            <hr class="ds-divider"/>
+            <p class="ds-body-sm">Todo o resto do respiro vem da escala interna, nunca de valores soltos.</p>
+          </div>
+        </div>
+      </div>
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-5)">Escala interna</h3>
+      <div class="ds-stack ds-reveal">
+        <div class="doc-spacerow"><code>--space-1</code><div class="doc-bar" style="width:4px"></div><span class="ds-body-sm">4px</span></div>
+        <div class="doc-spacerow"><code>--space-2</code><div class="doc-bar" style="width:8px"></div><span class="ds-body-sm">8px</span></div>
+        <div class="doc-spacerow"><code>--space-3</code><div class="doc-bar" style="width:12px"></div><span class="ds-body-sm">12px</span></div>
+        <div class="doc-spacerow"><code>--space-4</code><div class="doc-bar" style="width:16px"></div><span class="ds-body-sm">16px</span></div>
+        <div class="doc-spacerow"><code>--space-5</code><div class="doc-bar" style="width:24px"></div><span class="ds-body-sm">24px</span></div>
+        <div class="doc-spacerow"><code>--space-6</code><div class="doc-bar" style="width:32px"></div><span class="ds-body-sm">32px</span></div>
+        <div class="doc-spacerow"><code>--space-7</code><div class="doc-bar" style="width:48px"></div><span class="ds-body-sm">48px</span></div>
+        <div class="doc-spacerow"><code>--space-8</code><div class="doc-bar" style="width:64px"></div><span class="ds-body-sm">64px</span></div>
+        <div class="doc-spacerow"><code>--space-9</code><div class="doc-bar" style="width:96px"></div><span class="ds-body-sm">96px</span></div>
+      </div>
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-5)">Raio e movimento</h3>
+      <div class="ds-grid ds-grid--2 ds-reveal">
+        <div class="ds-card">
+          <h4 class="ds-h3">Raio</h4>
+          <div class="doc-boxrow">
+            <div class="doc-box" style="border-radius:var(--radius-xs)">4</div>
+            <div class="doc-box" style="border-radius:var(--radius-sm)">8</div>
+            <div class="doc-box" style="border-radius:var(--radius-md)">12</div>
+            <div class="doc-box" style="border-radius:var(--radius-lg)">16</div>
+            <div class="doc-box" style="border-radius:var(--radius-xl)">24</div>
+            <div class="doc-box" style="border-radius:var(--radius-pill)">pill</div>
+          </div>
+          <p class="ds-body-sm"><code>--radius-xl</code> (24px) e o raio assinatura: todo card do sistema usa ele. Botoes e chips usam <code>--radius-pill</code>.</p>
+        </div>
+        <div class="ds-card">
+          <h4 class="ds-h3">Movimento</h4>
+          <div class="ds-stack">
+            <div class="doc-spacerow"><code>--ease</code><span class="ds-body-sm">cubic-bezier(.16,1,.3,1) &mdash; expo-out, curva assinatura</span></div>
+            <div class="doc-spacerow"><code>--ease-standard</code><span class="ds-body-sm">cubic-bezier(.4,0,.2,1) &mdash; microinteracoes</span></div>
+            <hr class="ds-divider"/>
+            <div class="doc-spacerow"><code>--duration-fast</code><span class="ds-body-sm">150ms</span></div>
+            <div class="doc-spacerow"><code>--duration-base</code><span class="ds-body-sm">300ms &mdash; hover e estado</span></div>
+            <div class="doc-spacerow"><code>--duration-reveal</code><span class="ds-body-sm">900ms &mdash; entrada em scroll</span></div>
+          </div>
+          <p class="ds-body-sm">Todo o movimento e desligado sob <code>prefers-reduced-motion</code>.</p>
+        </div>
+      </div>
+
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-5)">Grao de fundo</h3>
+      <div class="ds-card ds-reveal">
+        <p class="ds-body ds-measure">O fundo continua sendo uma cor solida &mdash; sem gradiente nem pattern. Por cima dela, uma camada fixa de ruido em <code>body::after</code> quebra a chapa de cor sem virar textura. O grao e um SVG <code>feTurbulence</code> embutido como data URI: nenhum arquivo de imagem, nenhuma requisicao.</p>
+        <div class="ds-stack" style="margin-top:var(--space-2)">
+          <div class="doc-spacerow"><code>--noise-opacity</code><span class="ds-body-sm">0.05 &middot; amplitude medida de 8 niveis sobre o fundo. Zere para voltar ao fundo liso.</span></div>
+          <div class="doc-spacerow"><code>--noise-size</code><span class="ds-body-sm">170px &middot; lado do ladrilho, costurado com <code>stitchTiles</code> para nao repetir visivelmente.</span></div>
+          <div class="doc-spacerow"><code>--noise</code><span class="ds-body-sm">o proprio SVG, ~330 bytes inline.</span></div>
+        </div>
+        <p class="ds-body-sm">A camada e <code>pointer-events:none</code> e vive em <code>z-index:-1</code>, entre a cor solida (que mora no <code>html</code>) e o conteudo &mdash; nunca cobre texto nem intercepta clique.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ====================== 4. COMPONENTES ====================== -->
+  <section class="ds-section ds-section--raised" id="componentes">
+    <div class="ds-container">
+      <div class="ds-section-head ds-reveal">
+        <h2 class="ds-display-02">A biblioteca construida sobre os tokens</h2>
+        <p class="ds-body ds-measure">Nenhum componente escreve cor, fonte ou espacamento direto: todos consomem variaveis. Trocar um token propaga por todo o sistema.</p>
+      </div>
+      <!-- botoes -->
+      <h3 class="ds-h2 ds-reveal" style="margin-bottom:var(--space-4)">Botoes</h3>
+      <div class="doc-preview ds-stack ds-stack--lg ds-reveal">
+        <div class="ds-row">
+          <button class="ds-btn ds-btn--primary">Primario</button>
+          <button class="ds-btn ds-btn--secondary">Secundario</button>
+          <button class="ds-btn ds-btn--brand">Marca</button>
+          <button class="ds-btn ds-btn--ghost">Fantasma</button>
+          <button class="ds-btn ds-btn--primary" disabled>Desabilitado</button>
+        </div>
+        <div class="ds-row">
+          <button class="ds-btn ds-btn--primary ds-btn--sm">Pequeno</button>
+          <button class="ds-btn ds-btn--primary">Padrao</button>
+          <button class="ds-btn ds-btn--primary ds-btn--lg">Grande</button>
+          <button class="ds-btn-icon" aria-label="Acao de icone">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <a class="ds-link" href="#componentes">Link com seta
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- chips -->
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Chips e status</h3>
+      <div class="doc-preview ds-row ds-reveal">
+        <span class="ds-chip"><span class="ds-dot"></span> Disponivel para projetos</span>
+        <span class="ds-chip ds-chip--brand">Identidade Visual</span>
+        <span class="ds-chip ds-chip--plain">Landing Page</span>
+        <span class="ds-chip">Design System</span>
+      </div>
+      <!-- cards -->
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Cards</h3>
+      <div class="ds-grid ds-grid--3 ds-reveal">
+        <article class="ds-card ds-card--interactive">
+          <div class="ds-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h4 class="ds-h2">Card interativo</h4>
+          <p class="ds-body-sm">Sobe 4px, troca a superficie e ganha sombra no hover. Usa a curva expo-out em 300ms.</p>
+        </article>
+        <article class="ds-card ds-card--brand">
+          <h4 class="ds-h2">Card de marca</h4>
+          <p class="ds-body-sm" style="color:var(--sage-200)">Preenchido em #2B5748. Reservado para um destaque por secao &mdash; a marca perde forca se repetida.</p>
+          <a class="ds-link" href="#componentes">Saber mais</a>
+        </article>
+        <article class="ds-card ds-card--invert">
+          <h4 class="ds-h2">Card invertido</h4>
+          <p class="ds-body-sm">Bloco claro sobre o dark, para a chamada mais importante da pagina.</p>
+          <button class="ds-btn ds-btn--brand ds-btn--sm">Acao</button>
+        </article>
+      </div>
+      <!-- metricas -->
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Metricas</h3>
+      <div class="ds-grid ds-grid--2 ds-reveal">
+        <div class="ds-stats">
+          <div class="ds-stat"><div class="ds-stat-value">2020<em>.</em></div><div class="ds-stat-label">Designer desde</div></div>
+          <div class="ds-stat"><div class="ds-stat-value">MBA<em>.</em></div><div class="ds-stat-label">Inteligencia Artificial</div></div>
+          <div class="ds-stat"><div class="ds-stat-value">360<em>&deg;</em></div><div class="ds-stat-label">Copy &middot; Design &middot; Codigo</div></div>
+        </div>
+        <div class="ds-card">
+          <h4 class="ds-h3">Barras de progresso</h4>
+          <div class="ds-stack">
+            <div>
+              <div class="doc-meta" style="margin-bottom:var(--space-2)"><b>Design de produto</b><span>92%</span></div>
+              <div class="ds-meter"><span style="width:92%"></span></div>
+            </div>
+            <div>
+              <div class="doc-meta" style="margin-bottom:var(--space-2)"><b>Design system</b><span>85%</span></div>
+              <div class="ds-meter"><span style="width:85%"></span></div>
+            </div>
+            <div>
+              <div class="doc-meta" style="margin-bottom:var(--space-2)"><b>Implementacao</b><span>74%</span></div>
+              <div class="ds-meter"><span style="width:74%"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- abas -->
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Abas</h3>
+      <div class="doc-preview ds-stack ds-reveal">
+        <div class="ds-tabs" role="tablist" data-ds-tabs aria-label="Exemplo de abas">
+          <button class="ds-tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Processo</button>
+          <button class="ds-tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">Entrega</button>
+          <button class="ds-tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">Resultado</button>
+        </div>
+        <div id="panel-1" role="tabpanel" aria-labelledby="tab-1" data-ds-panel>
+          <p class="ds-body ds-measure">Descoberta, arquitetura de informacao e definicao da copy estrategica antes de qualquer tela.</p>
+        </div>
+        <div id="panel-2" role="tabpanel" aria-labelledby="tab-2" data-ds-panel hidden>
+          <p class="ds-body ds-measure">Design system, prototipo navegavel e implementacao final em codigo.</p>
+        </div>
+        <div id="panel-3" role="tabpanel" aria-labelledby="tab-3" data-ds-panel hidden>
+          <p class="ds-body ds-measure">Produto no ar, medido e iterado a partir do comportamento real dos usuarios.</p>
+        </div>
+      </div>
+      <!-- lista de linhas -->
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Lista de linhas</h3>
+      <div class="ds-rows ds-reveal">
+        <a class="ds-row-item" href="#componentes">
+          <span class="ds-row-key">E-mail</span>
+          <span class="ds-row-value">matheuscostadesigner.contato@gmail.com</span>
+          <span class="ds-row-go"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="ds-row-item" href="#componentes">
+          <span class="ds-row-key">LinkedIn</span>
+          <span class="ds-row-value">Perfil profissional</span>
+          <span class="ds-row-go"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="ds-row-item" href="#componentes">
+          <span class="ds-row-key">Behance</span>
+          <span class="ds-row-value">Portfolio completo</span>
+          <span class="ds-row-go"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+      <!-- formulario -->
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Formulario</h3>
+      <div class="doc-preview ds-grid ds-grid--2 ds-reveal">
+        <div class="ds-field">
+          <label for="f-nome">Nome</label>
+          <input class="ds-input" id="f-nome" type="text" placeholder="Como voce se chama"/>
+        </div>
+        <div class="ds-field">
+          <label for="f-email">E-mail</label>
+          <input class="ds-input" id="f-email" type="email" placeholder="voce@empresa.com"/>
+          <span class="ds-help">Resposta em ate um dia util.</span>
+        </div>
+        <div class="ds-field" style="grid-column:1/-1">
+          <label for="f-msg">Projeto</label>
+          <textarea class="ds-textarea" id="f-msg" placeholder="Conte o que voce precisa construir"></textarea>
+        </div>
+      </div>
+      <!-- citacao -->
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Citacao</h3>
+      <figure class="ds-quote ds-reveal">
+        <blockquote>O sistema nao existe para padronizar telas. Existe para que cada decisao nova custe menos do que a anterior.</blockquote>
+        <figcaption>
+          <b>Matheus Costa</b>
+          <span>Product Designer &middot; MBA em Inteligencia Artificial</span>
+        </figcaption>
+      </figure>
+      <!-- marquee -->
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Faixa de logos</h3>
+      <div class="ds-marquee ds-reveal">
+        <div class="ds-marquee-track">
+          <span class="ds-marquee-item">Muricy Rents</span>
+          <span class="ds-marquee-item">Erika Muricy</span>
+          <span class="ds-marquee-item">Muricy Motors</span>
+          <span class="ds-marquee-item">Web Drive</span>
+          <span class="ds-marquee-item">Muricy Rents</span>
+          <span class="ds-marquee-item">Erika Muricy</span>
+          <span class="ds-marquee-item">Muricy Motors</span>
+          <span class="ds-marquee-item">Web Drive</span>
+        </div>
+      </div>
+      <!-- cta -->
+      <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Chamada final</h3>
+      <div class="ds-cta ds-reveal">
+        <h4 class="ds-display-02 ds-measure-tight">Do design de interface a implementacao inteligente.</h4>
+        <p class="ds-body ds-measure">Produtos digitais funcionais, desenhados e implementados ponta a ponta.</p>
+        <div class="ds-row">
+          <a class="ds-btn ds-btn--primary ds-btn--lg" href="index.html">Ver o portfolio</a>
+          <a class="ds-btn ds-btn--secondary ds-btn--lg" href="index.html#contato">Falar comigo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="ds-footer">
+  <div class="ds-container ds-footer-inner">
+    <span>Sage Dark &middot; Design System v1.0</span>
+    <span>Fira Sans &amp; Bricolage Grotesque &middot; SIL OFL 1.1 &middot; servidas localmente</span>
+    <a href="#top">Voltar ao topo</a>
+  </div>
+</footer>
+<script src="assets/js/design-system.js"></script>
+</body>
+</html>

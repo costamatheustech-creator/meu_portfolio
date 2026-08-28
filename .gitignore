@@ -1,10 +1,11 @@
 # ── Arquivos-fonte / material de trabalho (nao fazem parte do site publicado) ──
 /Projetos/
-/novachain-crypto-trading-protocol-1.aura.build/
-/exemplo_portfolio.pdf
 /matheus_foto.jpeg
+/matheus_foto2.jpeg
+/matheus_foto3.jpeg
 /copy-portfolio.md
 /DOCUMENTACAO-PROCESSO.md
+/CLAUDE.md
 
 # ── Segredos e credenciais (nunca versionar) ──
 .env
@@ -39,3 +40,6 @@ build/
 .cache/
 *.log
 npm-debug.log*
+
+# ── Config local de ferramentas (nao faz parte do site publicado) ──
+/.mcp.json

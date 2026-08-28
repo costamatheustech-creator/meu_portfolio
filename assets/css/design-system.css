@@ -1,0 +1,553 @@
+/* ==========================================================================
+   MATHEUS COSTA - DESIGN SYSTEM "SAGE DARK"
+   Camada 3 de 3: BIBLIOTECA DE COMPONENTES .ds-
+   --------------------------------------------------------------------------
+   Requer fonts.css + tokens.css + base.css carregados antes.
+
+   Nao e carregado pelas paginas do portfolio: elas compoem com as classes
+   semanticas de site.css. Este arquivo serve a design-system.html e a
+   qualquer pagina nova que queira montar telas direto com .ds-.
+
+   Todos os componentes consomem apenas tokens - nenhum valor literal.
+   ========================================================================== */
+
+
+/* utilitario de acessibilidade */
+.ds-visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+.ds-skip{
+  position:absolute;top:var(--space-2);left:var(--space-2);z-index:var(--z-toast);
+  padding:var(--space-3) var(--space-4);border-radius:var(--radius-sm);
+  background:var(--action);color:var(--action-fg);
+  transform:translateY(-200%);transition:transform var(--duration-fast) var(--ease-standard);
+}
+.ds-skip:focus{transform:none}
+
+/* ==========================================================================
+   TIPOGRAFIA - classes espelhando os tokens semanticos
+   ========================================================================== */
+.ds-display-01,.ds-display-02,
+.ds-h1,.ds-h2,.ds-h3,
+.ds-lead,.ds-body,.ds-body-sm,.ds-label,.ds-caption{
+  margin:0;
+}
+
+.ds-display-01{
+  font-family:var(--f-display-01-font-family);
+  font-size:var(--f-display-01-font-size);
+  font-weight:var(--f-display-01-font-weight);
+  line-height:var(--f-display-01-line-height);
+  letter-spacing:var(--f-display-01-letter-spacing);
+}
+.ds-display-02{
+  font-family:var(--f-display-02-font-family);
+  font-size:var(--f-display-02-font-size);
+  font-weight:var(--f-display-02-font-weight);
+  line-height:var(--f-display-02-line-height);
+  letter-spacing:var(--f-display-02-letter-spacing);
+}
+.ds-h1{
+  font-family:var(--f-heading-01-font-family);
+  font-size:var(--f-heading-01-font-size);
+  font-weight:var(--f-heading-01-font-weight);
+  line-height:var(--f-heading-01-line-height);
+  letter-spacing:var(--f-heading-01-letter-spacing);
+}
+.ds-h2{
+  font-family:var(--f-heading-02-font-family);
+  font-size:var(--f-heading-02-font-size);
+  font-weight:var(--f-heading-02-font-weight);
+  line-height:var(--f-heading-02-line-height);
+  letter-spacing:var(--f-heading-02-letter-spacing);
+}
+.ds-h3{
+  font-family:var(--f-heading-03-font-family);
+  font-size:var(--f-heading-03-font-size);
+  font-weight:var(--f-heading-03-font-weight);
+  line-height:var(--f-heading-03-line-height);
+  letter-spacing:var(--f-heading-03-letter-spacing);
+}
+.ds-lead{
+  font-family:var(--f-lead-font-family);
+  font-size:var(--f-lead-font-size);
+  font-weight:var(--f-lead-font-weight);
+  line-height:var(--f-lead-line-height);
+  letter-spacing:var(--f-lead-letter-spacing);
+  color:var(--fg-muted);
+}
+.ds-body{
+  font-family:var(--f-body-01-font-family);
+  font-size:var(--f-body-01-font-size);
+  font-weight:var(--f-body-01-font-weight);
+  line-height:var(--f-body-01-line-height);
+  color:var(--fg-muted);
+}
+.ds-body-sm{
+  font-family:var(--f-body-02-font-family);
+  font-size:var(--f-body-02-font-size);
+  font-weight:var(--f-body-02-font-weight);
+  line-height:var(--f-body-02-line-height);
+  letter-spacing:var(--f-body-02-letter-spacing);
+  color:var(--fg-muted);
+}
+.ds-label{
+  font-family:var(--f-label-font-family);
+  font-size:var(--f-label-font-size);
+  font-weight:var(--f-label-font-weight);
+  line-height:var(--f-label-line-height);
+  letter-spacing:var(--f-label-letter-spacing);
+  text-transform:uppercase;
+}
+.ds-caption{
+  font-family:var(--f-caption-font-family);
+  font-size:var(--f-caption-font-size);
+  font-weight:var(--f-caption-font-weight);
+  line-height:var(--f-caption-line-height);
+  letter-spacing:var(--f-caption-letter-spacing);
+  text-transform:uppercase;
+  color:var(--fg-subtle);
+}
+
+/* modificadores de cor de texto */
+.ds-fg{color:var(--fg)}
+.ds-fg-muted{color:var(--fg-muted)}
+.ds-fg-subtle{color:var(--fg-subtle)}
+.ds-fg-accent{color:var(--fg-accent)}
+
+/* medida de leitura */
+.ds-measure{max-width:62ch}
+.ds-measure-tight{max-width:46ch}
+
+/* enfase dentro de paragrafos: sobe o peso e a cor, sem trocar de familia */
+.ds-body strong,.ds-lead strong,.ds-body-sm strong{
+  font-weight:var(--fw-semibold);color:var(--fg);
+}
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+.ds-container{
+  width:100%;max-width:var(--container);
+  margin-inline:auto;padding-inline:var(--gutter);
+}
+.ds-container--narrow{max-width:var(--container-narrow)}
+.ds-container--wide{max-width:var(--container-wide)}
+
+.ds-section{padding-block:var(--section)}
+.ds-section--tight{padding-block:var(--section-tight)}
+.ds-section--loose{padding-block:var(--section-loose)}
+.ds-section--raised{background:var(--bg-raised)}
+
+/* cabecalho de secao */
+.ds-section-head{
+  display:flex;flex-direction:column;gap:var(--space-4);
+  margin-bottom:var(--space-7);max-width:64ch;
+}
+.ds-section-head--center{align-items:center;text-align:center;margin-inline:auto}
+
+/* grids */
+.ds-grid{display:grid;gap:var(--space-5)}
+.ds-grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ds-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ds-grid--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ds-grid--split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-7)}
+
+.ds-stack{display:flex;flex-direction:column;gap:var(--space-4)}
+.ds-stack--lg{gap:var(--space-6)}
+/* pilulas nunca esticam para a largura da coluna */
+.ds-stack > .ds-chip,.ds-section-head > .ds-chip{align-self:flex-start}
+.ds-section-head--center > .ds-chip{align-self:center}
+.ds-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3)}
+
+@media (max-width:1024px){
+  .ds-grid--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ds-grid--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ds-grid--split{grid-template-columns:minmax(0,1fr);gap:var(--space-6)}
+}
+@media (max-width:640px){
+  .ds-grid--2,.ds-grid--3,.ds-grid--4{grid-template-columns:minmax(0,1fr)}
+}
+
+/* ==========================================================================
+   BOTOES
+   ========================================================================== */
+.ds-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);
+  padding:var(--space-3) var(--space-5);
+  border:var(--border-width) solid transparent;
+  border-radius:var(--radius-pill);
+  font-family:var(--f-label-font-family);
+  font-size:var(--f-label-font-size);
+  font-weight:var(--f-label-font-weight);
+  letter-spacing:.06em;
+  line-height:1.2;
+  white-space:nowrap;cursor:pointer;
+  background:transparent;
+  transition:background var(--duration-base) var(--ease),
+             color var(--duration-base) var(--ease),
+             border-color var(--duration-base) var(--ease),
+             transform var(--duration-fast) var(--ease-standard);
+}
+.ds-btn:active{transform:translateY(1px)}
+.ds-btn svg{width:16px;height:16px;flex:0 0 16px}
+
+/* primario: fill claro sobre o dark - 11.66:1 */
+.ds-btn--primary{background:var(--action);color:var(--action-fg);border-color:var(--action)}
+.ds-btn--primary:hover{background:var(--action-hover);border-color:var(--action-hover)}
+
+/* secundario: contorno */
+.ds-btn--secondary{color:var(--fg);border-color:var(--border-strong)}
+.ds-btn--secondary:hover{background:var(--action-ghost);border-color:var(--sage-500)}
+
+/* marca: fill na cor de marca */
+.ds-btn--brand{background:var(--surface-brand);color:var(--fg);border-color:var(--surface-brand)}
+.ds-btn--brand:hover{background:var(--sage-500);border-color:var(--sage-500)}
+
+/* fantasma: sem contorno */
+.ds-btn--ghost{color:var(--fg-muted)}
+.ds-btn--ghost:hover{background:var(--action-ghost);color:var(--fg)}
+
+/* tamanhos */
+.ds-btn--sm{padding:var(--space-2) var(--space-4);font-size:var(--f-caption-font-size)}
+.ds-btn--lg{padding:var(--space-4) var(--space-6);font-size:var(--f-body-02-font-size);letter-spacing:.04em}
+
+.ds-btn[disabled],.ds-btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
+
+/* botao so de icone */
+.ds-btn-icon{
+  display:inline-grid;place-items:center;width:40px;height:40px;
+  border:var(--border-width) solid var(--border-strong);
+  border-radius:var(--radius-sm);
+  background:transparent;color:var(--fg-muted);cursor:pointer;
+  transition:border-color var(--duration-base) var(--ease),
+             color var(--duration-base) var(--ease),
+             background var(--duration-base) var(--ease);
+}
+.ds-btn-icon:hover{border-color:var(--sage-500);color:var(--fg);background:var(--action-ghost)}
+.ds-btn-icon svg{width:18px;height:18px}
+
+/* link com seta */
+.ds-link{
+  display:inline-flex;align-items:center;gap:var(--space-2);
+  color:var(--fg);border-bottom:1px solid var(--border-strong);
+  padding-bottom:2px;
+  transition:color var(--duration-base) var(--ease),border-color var(--duration-base) var(--ease);
+}
+.ds-link:hover{color:var(--sage-200);border-color:var(--sage-400)}
+.ds-link svg{width:14px;height:14px;transition:transform var(--duration-base) var(--ease)}
+.ds-link:hover svg{transform:translate(3px,-3px)}
+
+/* ==========================================================================
+   CHIPS, BADGES E TAGS
+   ========================================================================== */
+.ds-chip{
+  display:inline-flex;align-items:center;gap:var(--space-2);
+  padding:var(--space-2) var(--space-4);
+  border:var(--border-width) solid var(--border-strong);
+  border-radius:var(--radius-pill);
+  background:var(--action-ghost);
+  font-family:var(--f-caption-font-family);
+  font-size:var(--f-caption-font-size);
+  font-weight:var(--fw-medium);
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--fg-muted);
+}
+.ds-chip svg{width:13px;height:13px;color:var(--fg-accent)}
+.ds-chip--brand{background:var(--surface-brand);border-color:var(--surface-brand);color:var(--fg)}
+.ds-chip--plain{background:transparent}
+
+/* ponto de status pulsante */
+.ds-dot{
+  width:7px;height:7px;border-radius:var(--radius-pill);
+  background:var(--sage-200);flex:0 0 7px;
+  animation:ds-pulse 2.4s var(--ease-in-out) infinite;
+}
+@keyframes ds-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+
+/* ==========================================================================
+   CARDS
+   ========================================================================== */
+.ds-card{
+  position:relative;
+  display:flex;flex-direction:column;gap:var(--space-4);
+  padding:var(--space-6);
+  background:var(--surface);
+  border:var(--border-width) solid var(--border);
+  border-radius:var(--radius-xl);
+  transition:background var(--duration-base) var(--ease),
+             border-color var(--duration-base) var(--ease),
+             transform var(--duration-base) var(--ease),
+             box-shadow var(--duration-base) var(--ease);
+}
+.ds-card--interactive{cursor:pointer}
+.ds-card--interactive:hover{
+  background:var(--surface-hover);
+  border-color:var(--border-strong);
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-md);
+}
+.ds-card--flat{background:transparent;border-color:var(--border)}
+.ds-card--brand{background:var(--surface-brand);border-color:var(--sage-500)}
+.ds-card--invert{background:var(--surface-invert);border-color:var(--surface-invert);color:var(--fg-invert)}
+.ds-card--invert .ds-body,.ds-card--invert .ds-lead{color:var(--sage-700)}
+.ds-card--pad-sm{padding:var(--space-5)}
+.ds-card--pad-lg{padding:var(--space-7)}
+
+/* midia dentro de card */
+.ds-card-media{
+  margin:calc(var(--space-6) * -1) calc(var(--space-6) * -1) 0;
+  border-radius:var(--radius-xl) var(--radius-xl) 0 0;
+  overflow:hidden;background:var(--bg);
+}
+.ds-card-media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform var(--duration-slow) var(--ease);
+}
+.ds-card--interactive:hover .ds-card-media img{transform:scale(1.04)}
+
+/* icone de card */
+.ds-card-icon{
+  display:grid;place-items:center;width:44px;height:44px;
+  border:var(--border-width) solid var(--border-strong);
+  border-radius:var(--radius-md);
+  color:var(--fg-accent);
+}
+.ds-card-icon svg{width:20px;height:20px}
+
+/* ==========================================================================
+   METRICAS / STATS
+   ========================================================================== */
+.ds-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--border-width);
+  background:var(--border);
+  border:var(--border-width) solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+}
+.ds-stat{background:var(--bg);padding:var(--space-5)}
+.ds-stat-value{
+  font-family:var(--font-display);
+  font-size:clamp(1.75rem,1.4rem + 1.6vw,2.75rem);
+  font-weight:var(--fw-display);
+  letter-spacing:-.03em;line-height:1;
+  color:var(--fg);
+}
+.ds-stat-value em{font-style:normal;color:var(--fg-accent)}
+.ds-stat-label{
+  margin-top:var(--space-3);
+  font-size:var(--f-caption-font-size);
+  font-weight:var(--fw-medium);
+  letter-spacing:var(--f-caption-letter-spacing);
+  text-transform:uppercase;
+  color:var(--fg-subtle);
+}
+@media (max-width:640px){.ds-stats{grid-template-columns:minmax(0,1fr)}}
+
+/* barra de progresso (usada em metricas) */
+.ds-meter{height:6px;border-radius:var(--radius-pill);background:var(--sage-800);overflow:hidden}
+.ds-meter > span{display:block;height:100%;border-radius:inherit;background:var(--sage-200)}
+
+/* ==========================================================================
+   LISTA DE LINHAS (contatos, links, navegacao de casos)
+   ========================================================================== */
+.ds-rows{
+  border:var(--border-width) solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+}
+.ds-row-item{
+  display:flex;align-items:center;gap:var(--space-4);
+  padding:var(--space-4) var(--space-5);
+  border-bottom:var(--border-width) solid var(--border);
+  transition:background var(--duration-base) var(--ease),
+             padding-left var(--duration-base) var(--ease);
+}
+.ds-row-item:last-child{border-bottom:0}
+.ds-row-item:hover{background:var(--surface);padding-left:var(--space-6)}
+.ds-row-item .ds-row-key{
+  font-size:var(--f-caption-font-size);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--fg-subtle);
+}
+.ds-row-item .ds-row-value{color:var(--fg);overflow:hidden;text-overflow:ellipsis}
+.ds-row-item .ds-row-go{margin-left:auto;color:var(--fg-subtle);transition:color var(--duration-base) var(--ease),transform var(--duration-base) var(--ease)}
+.ds-row-item:hover .ds-row-go{color:var(--fg);transform:translate(3px,-3px)}
+
+/* ==========================================================================
+   NAVEGACAO EM PILULA (header e abas)
+   ========================================================================== */
+.ds-header{
+  position:sticky;top:0;z-index:var(--z-sticky);
+  background:var(--bg);
+  border-bottom:var(--border-width) solid var(--border);
+  transition:background var(--duration-base) var(--ease);
+}
+.ds-header--blur{
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+}
+.ds-header-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);
+  min-height:64px;
+}
+.ds-nav{display:flex;align-items:center;gap:var(--space-1)}
+.ds-nav a{
+  padding:var(--space-2) var(--space-4);
+  border-radius:var(--radius-pill);
+  font-size:var(--f-body-02-font-size);
+  font-weight:var(--fw-regular);
+  color:var(--fg-muted);
+  transition:background var(--duration-fast) var(--ease-standard),color var(--duration-fast) var(--ease-standard);
+}
+.ds-nav a:hover,.ds-nav a[aria-current]{background:var(--action-ghost);color:var(--fg)}
+
+/* abas */
+.ds-tabs{
+  display:inline-flex;gap:var(--space-1);padding:var(--space-1);
+  background:var(--surface);border:var(--border-width) solid var(--border);
+  border-radius:var(--radius-pill);
+}
+.ds-tab{
+  padding:var(--space-2) var(--space-5);border:0;border-radius:var(--radius-pill);
+  background:transparent;color:var(--fg-muted);cursor:pointer;
+  font-size:var(--f-body-02-font-size);
+  transition:background var(--duration-base) var(--ease),color var(--duration-base) var(--ease);
+}
+.ds-tab:hover{color:var(--fg)}
+.ds-tab[aria-selected="true"]{background:var(--action);color:var(--action-fg)}
+
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+.ds-field{display:flex;flex-direction:column;gap:var(--space-2)}
+.ds-field > label{
+  font-size:var(--f-caption-font-size);font-weight:var(--fw-medium);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--fg-subtle);
+}
+.ds-input,.ds-textarea,.ds-select{
+  width:100%;padding:var(--space-3) var(--space-4);
+  background:var(--surface);
+  border:var(--border-width) solid var(--border-strong);
+  border-radius:var(--radius-sm);
+  color:var(--fg);
+  font-size:var(--f-body-01-font-size);
+  font-weight:var(--fw-light);
+  transition:border-color var(--duration-base) var(--ease),background var(--duration-base) var(--ease);
+}
+.ds-input::placeholder,.ds-textarea::placeholder{color:var(--fg-subtle);opacity:1}
+.ds-input:hover,.ds-textarea:hover,.ds-select:hover{border-color:var(--sage-500)}
+.ds-input:focus,.ds-textarea:focus,.ds-select:focus{
+  outline:none;border-color:var(--border-focus);background:var(--surface-hover);
+}
+.ds-textarea{min-height:120px;resize:vertical;line-height:1.6}
+.ds-help{font-size:var(--f-body-02-font-size);color:var(--fg-subtle)}
+
+/* ==========================================================================
+   CITACAO / DEPOIMENTO
+   ========================================================================== */
+.ds-quote{
+  display:flex;flex-direction:column;gap:var(--space-5);
+  padding:var(--space-7);
+  border-left:2px solid var(--sage-500);
+  background:var(--action-ghost);
+  border-radius:0 var(--radius-lg) var(--radius-lg) 0;
+}
+.ds-quote blockquote{
+  margin:0;
+  font-family:var(--f-heading-02-font-family);
+  font-size:var(--f-heading-02-font-size);
+  font-weight:var(--fw-regular);
+  line-height:1.4;letter-spacing:-.015em;
+  color:var(--fg);
+}
+.ds-quote figcaption{display:flex;flex-direction:column;gap:2px}
+.ds-quote figcaption b{font-weight:var(--fw-medium);color:var(--fg)}
+.ds-quote figcaption span{font-size:var(--f-body-02-font-size);color:var(--fg-subtle)}
+
+/* ==========================================================================
+   FAIXA DE LOGOS (marquee) - padrao "Trusted by" da referencia
+   ========================================================================== */
+.ds-marquee{
+  position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+}
+.ds-marquee-track{
+  display:flex;align-items:center;gap:var(--space-8);width:max-content;
+  animation:ds-marquee 32s linear infinite;
+}
+.ds-marquee:hover .ds-marquee-track{animation-play-state:paused}
+.ds-marquee-item{
+  color:var(--fg-subtle);
+  font-family:var(--font-display);
+  font-size:var(--f-heading-03-font-size);
+  font-weight:var(--fw-medium);
+  letter-spacing:-.01em;white-space:nowrap;
+  transition:color var(--duration-base) var(--ease);
+}
+.ds-marquee-item:hover{color:var(--fg)}
+@keyframes ds-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ==========================================================================
+   BLOCO DE CHAMADA FINAL
+   ========================================================================== */
+.ds-cta{
+  display:flex;flex-direction:column;align-items:center;gap:var(--space-5);
+  padding:var(--space-9) var(--space-6);
+  text-align:center;
+  background:var(--surface);
+  border:var(--border-width) solid var(--border);
+  border-radius:var(--radius-xl);
+}
+.ds-cta .ds-row{justify-content:center}
+
+/* ==========================================================================
+   RODAPE
+   ========================================================================== */
+.ds-footer{
+  border-top:var(--border-width) solid var(--border);
+  padding-block:var(--space-7);
+}
+.ds-footer-inner{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:var(--space-4);
+  font-size:var(--f-caption-font-size);
+  letter-spacing:var(--f-caption-letter-spacing);
+  text-transform:uppercase;
+  color:var(--fg-subtle);
+}
+.ds-footer-inner a:hover{color:var(--fg)}
+
+/* ==========================================================================
+   DIVISORES
+   ========================================================================== */
+.ds-divider{height:1px;background:var(--border);border:0}
+.ds-divider--strong{background:var(--border-strong)}
+
+/* ==========================================================================
+   REVEAL - entrada em scroll (a classe .is-visible e aplicada por JS)
+   ========================================================================== */
+.ds-reveal{
+  opacity:0;transform:translateY(24px);
+  transition:opacity var(--duration-reveal) var(--ease),
+             transform var(--duration-reveal) var(--ease);
+}
+.ds-reveal.is-visible,.is-visible > .ds-reveal{opacity:1;transform:none}
+.ds-delay-1{transition-delay:80ms}
+.ds-delay-2{transition-delay:160ms}
+.ds-delay-3{transition-delay:240ms}
+.ds-delay-4{transition-delay:320ms}
+.ds-delay-5{transition-delay:400ms}
+
+/* ==========================================================================
+
+/* ==========================================================================
+   MOVIMENTO REDUZIDO - parte especifica dos componentes .ds-
+   (a regra global vive em base.css)
+   ========================================================================== */
+@media (prefers-reduced-motion:reduce){
+  .ds-reveal{opacity:1;transform:none}
+  .ds-marquee-track{animation:none}
+}
