@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/projeto-muricy-rents.html",
+      "destination": "/",
+      "statusCode": 307
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
