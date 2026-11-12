@@ -88,10 +88,10 @@
   /* ======================================================================
      3. TIPOGRAFIA - familias e pesos
      ====================================================================== */
-  --font-body:"Fira Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --font-display:"Bricolage Grotesque","Fira Sans",ui-sans-serif,system-ui,sans-serif;
+  --font-body:"Sora",sans-serif;
+  --font-display:"Sora",sans-serif;
 
-  --fw-light:300;      /* corpo - peso de leitura padrao (Fira Sans Light) */
+  --fw-light:300;      /* corpo - peso leve de leitura em Sora */
   --fw-regular:400;
   --fw-medium:500;     /* labels, botoes, rotulos de UI                    */
   --fw-semibold:600;   /* enfase                                           */
@@ -104,65 +104,65 @@
      Cada degrau interpola sozinho via clamp(); nao ha media query de fonte.
      ---------------------------------------------------------------------- */
 
-  /* display-01 - hero. 24px (360px de viewport) -> 60px (>=1440px) */
+  /* Escala acordada: H1 56pt (74.67px); subtítulos 30pt (40px). */
   --f-display-01-font-family:var(--font-display);
-  --f-display-01-font-size:clamp(1.5rem,.9rem + 3.2vw,3.75rem);
+  --f-display-01-font-size:4.6666667rem;
   --f-display-01-font-weight:var(--fw-display);
-  --f-display-01-line-height:1.04;
+  --f-display-01-line-height:1.08;
   --f-display-01-letter-spacing:-.035em;
 
-  /* display-02 - aberturas de secao. 22 -> 44px */
+  /* Subtítulos e headings secundários: 30pt (40px). */
   --f-display-02-font-family:var(--font-display);
-  --f-display-02-font-size:clamp(1.375rem,.95rem + 2.1vw,2.75rem);
+  --f-display-02-font-size:2.5rem;
   --f-display-02-font-weight:var(--fw-display);
-  --f-display-02-line-height:1.08;
+  --f-display-02-line-height:1.2;
   --f-display-02-letter-spacing:-.03em;
 
-  /* heading-01 - H2. 20 -> 32px */
+  /* H2/H3 e subtítulos: 30pt (40px). */
   --f-heading-01-font-family:var(--font-display);
-  --f-heading-01-font-size:clamp(1.25rem,1rem + 1.15vw,2rem);
+  --f-heading-01-font-size:2.5rem;
   --f-heading-01-font-weight:var(--fw-heading);
   --f-heading-01-line-height:1.15;
   --f-heading-01-letter-spacing:-.025em;
 
-  /* heading-02 - H3 / titulo de card. 18 -> 24px */
+  /* Títulos de card: 30pt (40px). */
   --f-heading-02-font-family:var(--font-display);
-  --f-heading-02-font-size:clamp(1.125rem,1rem + .55vw,1.5rem);
+  --f-heading-02-font-size:2.5rem;
   --f-heading-02-font-weight:var(--fw-heading);
   --f-heading-02-line-height:1.25;
   --f-heading-02-letter-spacing:-.015em;
 
-  /* heading-03 - H4 / subtitulo. 17 -> 20px */
+  /* Outros subtítulos: 30pt (40px). */
   --f-heading-03-font-family:var(--font-display);
-  --f-heading-03-font-size:clamp(1.0625rem,.99rem + .3vw,1.25rem);
+  --f-heading-03-font-size:2.5rem;
   --f-heading-03-font-weight:var(--fw-heading);
   --f-heading-03-line-height:1.35;
   --f-heading-03-letter-spacing:-.005em;
 
-  /* lead - paragrafo de abertura. 17 -> 24px (topo da faixa desktop) */
+  /* Taglines: 18pt (24px). */
   --f-lead-font-family:var(--font-body);
-  --f-lead-font-size:clamp(1.0625rem,.86rem + .87vw,1.5rem);
+  --f-lead-font-size:1.5rem;
   --f-lead-font-weight:var(--fw-light);
   --f-lead-line-height:1.5;
   --f-lead-letter-spacing:-.01em;
 
-  /* body-01 - corpo padrao. 16 -> 17px (piso da faixa mobile) */
+  /* Textos corridos, botões e menus: 24pt (32px). */
   --f-body-01-font-family:var(--font-body);
-  --f-body-01-font-size:clamp(1rem,.98rem + .09vw,1.0625rem);
+  --f-body-01-font-size:2rem;
   --f-body-01-font-weight:var(--fw-light);
   --f-body-01-line-height:1.7;
   --f-body-01-letter-spacing:0;
 
-  /* body-02 - corpo compacto. 15px */
+  /* Texto compacto não usado para reduzir corpo, botões ou navegação. */
   --f-body-02-font-family:var(--font-body);
-  --f-body-02-font-size:.9375rem;
+  --f-body-02-font-size:2rem;
   --f-body-02-font-weight:var(--fw-light);
   --f-body-02-line-height:1.6;
   --f-body-02-letter-spacing:.005em;
 
-  /* label - botoes, navegacao, eyebrows. 13px caixa alta */
+  /* Botões e labels de navegação: 24pt (32px). */
   --f-label-font-family:var(--font-body);
-  --f-label-font-size:.8125rem;
+  --f-label-font-size:2rem;
   --f-label-font-weight:var(--fw-medium);
   --f-label-line-height:1.2;
   --f-label-letter-spacing:.14em;

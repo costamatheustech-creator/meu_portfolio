@@ -862,3 +862,84 @@ footer{
 @media (prefers-reduced-motion:reduce){
   .home-page .hero-stamp,.home-page .hero-note span{animation:none}
 }
+
+
+/* ==========================================================================
+   AJUSTES DE TIPOGRAFIA E COMPOSIÇÃO — SORA / ESCALA EM PONTOS
+   H1 56pt, subtítulos 30pt, textos/botões/menus 24pt, tagline 18pt.
+   ========================================================================== */
+.brand-avatar{
+  display:block;width:56px;height:56px;flex:0 0 56px;object-fit:cover;
+  object-position:center 28%;border:1px solid var(--border-strong);border-radius:50%;
+  filter:grayscale(1);transition:transform var(--duration-base) var(--ease),border-color var(--duration-base) var(--ease);
+}
+.brand:hover .brand-avatar{transform:scale(1.04);border-color:var(--sage-300)}
+.nav-links a,.drawer a{font-family:var(--font-body);font-size:var(--f-body-02-font-size);font-weight:var(--fw-regular)}
+.btn,.btn-ghost{font-size:var(--f-label-font-size);letter-spacing:0;white-space:normal}
+.home-page .nav{justify-content:space-between}
+.home-page .nav-links{gap:var(--space-1)}
+.home-page .nav-links a{font-size:var(--f-body-02-font-size);padding-inline:var(--space-2)}
+.home-page .hero h1,.home-page .contact-section h2{font-size:var(--f-display-01-font-size);line-height:1.08;letter-spacing:-.04em}
+.home-page .hero h1{text-transform:none}
+.home-page .hero-era{margin:0 0 var(--space-5);font-family:var(--font-body);font-size:var(--f-lead-font-size);font-weight:var(--fw-medium);line-height:1.4;letter-spacing:0;color:var(--fg-muted)}
+.home-page .hero .tagline{font-size:var(--f-lead-font-size);line-height:1.5}
+.home-page .hero-actions{margin-top:var(--space-6)}
+.home-page .hero-actions .btn{min-height:64px;padding-inline:var(--space-6)}
+.home-page .hero-note{font-size:var(--f-caption-font-size)}
+.home-page .eyebrow{font-size:var(--f-lead-font-size);font-weight:var(--fw-medium);letter-spacing:0;text-transform:none}
+.home-page .intro-section h2,.home-page .section-heading h2,.home-page .audience-title h2,
+.home-page .process-copy h2,.home-page .about-title,.home-page #faq .section-heading h2,
+.home-page .contact-section h2,.home-page .service-row h3,.home-page .audience-item h3,
+.home-page .home-projects .project-meta h3,.home-page .process-steps h3,
+.home-page .faq-item summary{font-size:var(--f-heading-01-font-size);line-height:1.2;letter-spacing:-.025em}
+.home-page .intro-copy{font-size:var(--f-body-01-font-size);line-height:1.55}
+.home-page .section-lead{font-size:var(--f-lead-font-size);line-height:1.5}
+.home-page .service-row p,.home-page .audience-item p,.home-page .process-steps p,
+.home-page .process-intro,.home-page .about-body p,.home-page .faq-item p{font-size:var(--f-body-01-font-size);line-height:1.55}
+.home-page .project-tag{font-size:var(--f-caption-font-size)}
+.home-page .work-section .section-heading-split{grid-template-columns:1fr}
+.home-page .work-section .section-heading h2{max-width:none}
+.home-page .statement-section{
+  z-index:0;isolation:isolate;max-width:none;margin:var(--space-6) 0;padding:clamp(5rem,11vw,9rem) var(--gutter);
+  border:0;text-align:center;
+}
+.home-page .statement-section::before{
+  content:"";position:absolute;z-index:-1;inset:0 auto 0 50%;width:100vw;transform:translateX(-50%);background:var(--bg-raised);
+}
+.home-page .statement-text{max-width:25ch;margin:0 auto;font-family:var(--font-display);font-size:var(--f-heading-01-font-size);font-weight:var(--fw-medium);line-height:1.25;letter-spacing:-.02em}
+.home-page .process-section{display:block;padding-block:var(--section)}
+.home-page .process-copy{max-width:980px;margin-inline:auto;text-align:center}
+.home-page .process-copy h2{max-width:unset;margin-top:var(--space-3)}
+.home-page .process-intro{max-width:68ch;margin:var(--space-5) auto 0}
+.home-page .process-steps{max-width:820px;margin:var(--space-6) auto 0;text-align:left}
+.home-page .contact-section h2{font-size:var(--f-heading-01-font-size);line-height:1.2}
+.home-page .contact-actions{flex-direction:row;align-items:center}
+.home-page .contact-actions .btn{min-width:280px;min-height:64px}
+@media (max-width:960px){
+  .home-page .hero h1{font-size:var(--f-display-01-font-size)}
+}
+@media (max-width:760px){
+  .brand-avatar{width:48px;height:48px;flex-basis:48px}
+  .home-page .nav-links{display:none}
+  .home-page .hero h1{font-size:var(--f-display-01-font-size);max-width:11ch}
+  .home-page .hero-era{font-size:var(--f-lead-font-size)}
+  .home-page .hero-actions .btn{width:100%}
+  .home-page .section-heading h2{max-width:none}
+  .home-page .service-row h3,.home-page .audience-item h3,.home-page .home-projects .project-meta h3,
+  .home-page .process-steps h3,.home-page .faq-item summary{font-size:var(--f-heading-01-font-size)}
+  .home-page .statement-text{font-size:var(--f-heading-01-font-size)}
+  .home-page .contact-section h2{font-size:var(--f-heading-01-font-size)}
+  .home-page .contact-actions{flex-direction:column;align-items:stretch}
+  .home-page .contact-actions .btn{width:100%;min-width:0}
+}
+
+.contact h2{font-size:var(--f-display-02-font-size);line-height:var(--f-display-02-line-height);letter-spacing:var(--f-display-02-letter-spacing)}
+
+@media (max-width:960px){
+  .nav-links,.nav .btn{display:none}
+  .nav-toggle{display:flex}
+}
+@media (max-width:760px){
+  .home-page .hero-actions .btn{padding-inline:var(--space-4)}
+  .home-page .hero-actions .btn svg{display:none}
+}

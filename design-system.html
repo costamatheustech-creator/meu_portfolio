@@ -10,15 +10,15 @@
 <meta name="theme-color" content="#0C231E"/>
 <meta name="color-scheme" content="dark"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230C231E'/%3E%3Ctext%20x='16'%20y='23'%20font-family='sans-serif'%20font-size='18'%20font-weight='700'%20fill='%23C7DFCD'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
-<!-- Tipografia 100% local: nenhum Google Fonts, CDN ou @import externo -->
-<link rel="preload" href="assets/fonts/fira-sans-300.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="assets/fonts/bricolage-grotesque-var.woff2" as="font" type="font/woff2" crossorigin/>
+<!-- Sora variável, local: sem CDN ou @import externo -->
+<link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="assets/css/fonts.css"/>
 <link rel="stylesheet" href="assets/css/tokens.css"/>
 <link rel="stylesheet" href="assets/css/base.css"/>
 <link rel="stylesheet" href="assets/css/design-system.css"/>
 <style>
   /* ---- estilos exclusivos desta pagina de documentacao ---- */
+  .ds-logo{display:inline-flex;align-items:center;justify-content:center}
   .doc-swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-3)}
   .doc-swatch{
     display:flex;flex-direction:column;gap:var(--space-3);
@@ -67,7 +67,7 @@
     padding:var(--space-4) var(--space-5);border-left:2px solid var(--sage-500);
     background:var(--action-ghost);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
   }
-  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  code{font-family:var(--font-body)}
 </style>
 <link rel="canonical" href="https://www.costamatheustech.com/design-system.html"/>
 <noscript>
@@ -82,7 +82,7 @@
 <!-- ====================== HEADER ====================== -->
 <header class="ds-header">
   <div class="ds-container ds-header-inner">
-    <a href="#top" class="ds-h3" style="letter-spacing:-.02em">Sage Dark</a>
+    <a href="#top" class="ds-logo" aria-label="Matheus Costa, início"><img src="assets/matheus.jpg" alt="" width="56" height="56" style="display:block;width:56px;height:56px;object-fit:cover;object-position:center 28%;border:1px solid var(--border-strong);border-radius:50%;filter:grayscale(1)"/></a>
     <nav class="ds-nav" aria-label="Secoes do design system">
       <a href="#cores">Cores</a>
       <a href="#tipografia">Tipografia</a>
@@ -98,7 +98,7 @@
     <div class="ds-container">
       <div class="ds-stack ds-stack--lg ds-reveal">
         <span class="ds-chip"><span class="ds-dot"></span> Design System v1.0</span>
-        <h1 class="ds-display-01 ds-measure-tight">Um sistema visual dark, construido sobre quatro cores e duas fontes.</h1>
+        <h1 class="ds-display-01 ds-measure-tight">Um sistema visual dark, construido sobre quatro cores e uma fonte.</h1>
         <p class="ds-lead ds-measure">Arquitetura de tokens inspirada no front-end da ElevenLabs: rampas de cor numeradas, tokens tipograficos semanticos, espacamento definido por papel e uma unica curva de easing como assinatura de movimento.</p>
         <div class="ds-row">
           <a class="ds-btn ds-btn--primary ds-btn--lg" href="#cores">Explorar os tokens</a>
@@ -176,99 +176,99 @@
   <section class="ds-section ds-section--raised" id="tipografia">
     <div class="ds-container">
       <div class="ds-section-head ds-reveal">
-        <h2 class="ds-display-02">Duas familias, carregadas do proprio servidor</h2>
-        <p class="ds-body ds-measure"><strong>Bricolage Grotesque</strong> (variavel, 200&ndash;800) nos titulos e <strong>Fira Sans Light</strong> no corpo, botoes e UI. Ambas em <code>assets/fonts</code>, em WOFF2 com subset latin. Zero requisicoes a Google Fonts, CDNs ou qualquer host externo.</p>
+        <h2 class="ds-display-02">Sora como família única do projeto</h2>
+        <p class="ds-body ds-measure"><strong>Sora</strong> variável (300&ndash;700) em títulos, textos, botões e navegação. Os arquivos WOFF2 são servidos localmente com suporte a caracteres latinos e acentuados, sem requisições a fontes externas.</p>
       </div>
       <div class="ds-grid ds-grid--2 ds-reveal" style="margin-bottom:var(--space-8)">
         <div class="ds-card">
-          <span class="ds-caption">Titulos</span>
-          <p style="font-family:var(--font-display);font-size:3rem;font-weight:600;letter-spacing:-.035em;line-height:1.05;margin:0">Bricolage<br/>Grotesque</p>
-          <p class="ds-body-sm">Arquivo variavel unico &mdash; 90 KB cobrindo todo o intervalo 200&ndash;800. O eixo <code>opsz</code> ajusta o desenho automaticamente conforme o tamanho.</p>
-          <p class="ds-caption" style="letter-spacing:.06em;text-transform:none">bricolage-grotesque-var.woff2</p>
+          <span class="ds-caption">Títulos</span>
+          <p style="font-family:var(--font-display);font-size:3rem;font-weight:600;letter-spacing:-.035em;line-height:1.05;margin:0">Sora<br/>Semibold</p>
+          <p class="ds-body-sm">Uma única família variável para títulos, subtítulos e destaques.</p>
+          <p class="ds-caption" style="letter-spacing:.06em;text-transform:none">sora-latin.woff2</p>
         </div>
         <div class="ds-card">
-          <span class="ds-caption">Corpo</span>
-          <p style="font-family:var(--font-body);font-size:3rem;font-weight:300;letter-spacing:-.02em;line-height:1.05;margin:0">Fira Sans<br/>Light</p>
-          <p class="ds-body-sm">Quatro pesos estaticos: 300 para leitura, 400 e 500 para UI e 600 para enfase. 21 KB cada.</p>
-          <p class="ds-caption" style="letter-spacing:.06em;text-transform:none">fira-sans-300/400/500/600.woff2</p>
+          <span class="ds-caption">Textos e UI</span>
+          <p style="font-family:var(--font-body);font-size:3rem;font-weight:400;letter-spacing:-.02em;line-height:1.05;margin:0">Sora<br/>Regular</p>
+          <p class="ds-body-sm">A mesma família cobre corpo, navegação e botões, com variação de peso.</p>
+          <p class="ds-caption" style="letter-spacing:.06em;text-transform:none">sora-latin.woff2</p>
         </div>
       </div>
-      <h3 class="ds-h2 ds-reveal" style="margin-bottom:var(--space-5)">Escala &mdash; 16&ndash;24px no mobile, 24&ndash;60px no desktop</h3>
+      <h3 class="ds-h2 ds-reveal" style="margin-bottom:var(--space-5)">Escala do site &mdash; H1 56pt, subtítulos 30pt, corpo/UI 24pt e tagline 18pt</h3>
       <div class="ds-reveal">
         <div class="doc-spec">
           <code>--f-display-01</code>
           <div>
             <p class="ds-display-01">Display 01</p>
-            <p class="doc-scaleinfo">Bricolage 600 &middot; 24 &rarr; 60px &middot; line-height 1.04 &middot; tracking -0.035em &middot; hero</p>
+            <p class="doc-scaleinfo">Sora 600 &middot; 56pt / 74.67px &middot; H1</p>
           </div>
         </div>
         <div class="doc-spec">
           <code>--f-display-02</code>
           <div>
             <p class="ds-display-02">Display 02</p>
-            <p class="doc-scaleinfo">Bricolage 600 &middot; 22 &rarr; 44px &middot; line-height 1.08 &middot; tracking -0.03em &middot; abertura de secao</p>
+            <p class="doc-scaleinfo">Sora 600 &middot; 30pt / 40px &middot; subtítulos</p>
           </div>
         </div>
         <div class="doc-spec">
           <code>--f-heading-01</code>
           <div>
             <p class="ds-h1">Heading 01</p>
-            <p class="doc-scaleinfo">Bricolage 500 &middot; 20 &rarr; 32px &middot; line-height 1.15 &middot; H2</p>
+            <p class="doc-scaleinfo">Sora 500 &middot; 30pt / 40px &middot; H2</p>
           </div>
         </div>
         <div class="doc-spec">
           <code>--f-heading-02</code>
           <div>
             <p class="ds-h2">Heading 02</p>
-            <p class="doc-scaleinfo">Bricolage 500 &middot; 18 &rarr; 24px &middot; line-height 1.25 &middot; H3 e titulo de card</p>
+            <p class="doc-scaleinfo">Sora 500 &middot; 30pt / 40px &middot; H3 e título de card</p>
           </div>
         </div>
         <div class="doc-spec">
           <code>--f-heading-03</code>
           <div>
             <p class="ds-h3">Heading 03</p>
-            <p class="doc-scaleinfo">Bricolage 500 &middot; 17 &rarr; 20px &middot; line-height 1.35 &middot; H4 e subtitulo</p>
+            <p class="doc-scaleinfo">Sora 500 &middot; 30pt / 40px &middot; subtítulo</p>
           </div>
         </div>
         <div class="doc-spec">
           <code>--f-lead</code>
           <div>
             <p class="ds-lead">Lead &mdash; o paragrafo de abertura que sustenta o titulo e leva o leitor ate o corpo do texto.</p>
-            <p class="doc-scaleinfo">Fira Sans 300 &middot; 17 &rarr; 24px &middot; line-height 1.5 &middot; topo da faixa desktop</p>
+            <p class="doc-scaleinfo">Sora 400 &middot; 18pt / 24px &middot; tagline</p>
           </div>
         </div>
         <div class="doc-spec">
           <code>--f-body-01</code>
           <div>
-            <p class="ds-body ds-measure">Body 01 &mdash; o peso de leitura padrao do sistema. Fira Sans Light em 1.7 de entrelinha mantem o texto respiravel sobre fundo escuro, onde pesos baixos tendem a parecer mais finos do que sao.</p>
-            <p class="doc-scaleinfo">Fira Sans 300 &middot; 16 &rarr; 17px &middot; line-height 1.7 &middot; piso da faixa mobile</p>
+            <p class="ds-body ds-measure">Textos corridos em Sora com entrelinha generosa para preservar a leitura sobre fundo escuro.</p>
+            <p class="doc-scaleinfo">Sora 400 &middot; 24pt / 32px &middot; textos corridos</p>
           </div>
         </div>
         <div class="doc-spec">
           <code>--f-body-02</code>
           <div>
             <p class="ds-body-sm ds-measure">Body 02 &mdash; corpo compacto para legendas longas, textos de apoio dentro de cards e descricoes secundarias.</p>
-            <p class="doc-scaleinfo">Fira Sans 300 &middot; 15px &middot; line-height 1.6</p>
+            <p class="doc-scaleinfo">Sora 400 &middot; 24pt / 32px &middot; apoio e descrições</p>
           </div>
         </div>
         <div class="doc-spec">
           <code>--f-label</code>
           <div>
             <p class="ds-label">Label &middot; botoes e navegacao</p>
-            <p class="doc-scaleinfo">Fira Sans 500 &middot; 13px &middot; tracking 0.14em &middot; caixa alta</p>
+            <p class="doc-scaleinfo">Sora 500 &middot; 24pt / 32px &middot; botões e navegação</p>
           </div>
         </div>
         <div class="doc-spec">
           <code>--f-caption</code>
           <div>
             <p class="ds-caption">Caption &middot; metadados e rodape</p>
-            <p class="doc-scaleinfo">Fira Sans 500 &middot; 12px &middot; tracking 0.16em &middot; caixa alta</p>
+            <p class="doc-scaleinfo">Sora 500 &middot; metadados compactos</p>
           </div>
         </div>
       </div>
       <div class="doc-note ds-reveal" style="margin-top:var(--space-6)">
         <p class="ds-body" style="margin-bottom:var(--space-3)"><strong>Enfase no dark e sempre mais clara:</strong> num fundo escuro, destacar uma palavra escurecendo-a inverte a leitura. Quando um trecho precisa saltar dentro de um titulo, o entorno vai para <code>--fg-muted</code> e o trecho fica em <code>--fg</code>.</p>
-        <p class="ds-body"><strong>Por que 500 em botoes e labels:</strong> a familia do corpo e a mesma (Fira Sans), como especificado. O peso sobe de 300 para 500 apenas em textos curtos em caixa alta, onde o Light perde legibilidade no dark. Paragrafos permanecem sempre em 300.</p>
+        <p class="ds-body"><strong>Sora é a única família usada:</strong> os pesos variáveis atendem títulos, textos, botões e menus, sem combinar fontes distintas.</p>
       </div>
     </div>
   </section>
@@ -504,11 +504,9 @@
       <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Faixa de logos</h3>
       <div class="ds-marquee ds-reveal">
         <div class="ds-marquee-track">
-          <span class="ds-marquee-item">Muricy Rents</span>
           <span class="ds-marquee-item">Erika Muricy</span>
           <span class="ds-marquee-item">Muricy Motors</span>
           <span class="ds-marquee-item">Web Drive</span>
-          <span class="ds-marquee-item">Muricy Rents</span>
           <span class="ds-marquee-item">Erika Muricy</span>
           <span class="ds-marquee-item">Muricy Motors</span>
           <span class="ds-marquee-item">Web Drive</span>
@@ -530,7 +528,7 @@
 <footer class="ds-footer">
   <div class="ds-container ds-footer-inner">
     <span>Sage Dark &middot; Design System v1.0</span>
-    <span>Fira Sans &amp; Bricolage Grotesque &middot; SIL OFL 1.1 &middot; servidas localmente</span>
+    <span>Sora &middot; SIL OFL 1.1 &middot; servida localmente</span>
     <a href="#top">Voltar ao topo</a>
   </div>
 </footer>
