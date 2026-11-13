@@ -66,6 +66,10 @@
     drawer.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
+    if (window.lenis) {
+      if (open && window.lenis.stop) window.lenis.stop();
+      else if (!open && window.lenis.start) window.lenis.start();
+    }
     if (open) { closeBtn.focus(); }
     else if (devolverFoco) { toggle.focus(); }
   }

@@ -25,6 +25,14 @@ html{
   background:var(--bg);
 }
 
+/* Lenis assume apenas o wheel em navegadores compatíveis; a rolagem de toque
+   continua nativa e o CSS permanece como fallback sem JavaScript. */
+html.lenis,html.lenis body{height:auto}
+html.lenis.lenis-smooth{scroll-behavior:auto!important}
+html.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+html.lenis.lenis-stopped{overflow:hidden}
+html.lenis.lenis-smooth iframe{pointer-events:none}
+
 body{
   margin:0;
   background:transparent;
@@ -81,4 +89,41 @@ hr{border:0;border-top:var(--border-width) solid var(--border);margin:0}
     animation-iteration-count:1 !important;
     transition-duration:.01ms !important;
   }
+}
+
+
+/* Scrollbar personalizada — aparece durante o uso e mantém drag/teclado. */
+#site-scrollbar{
+  position:fixed;z-index:var(--z-sticky);top:16px;right:2px;bottom:16px;width:20px;
+  opacity:0;pointer-events:none;touch-action:none;cursor:pointer;
+  transition:opacity var(--duration-base) var(--ease);
+}
+#site-scrollbar.is-scrollable{display:block}
+#site-scrollbar.is-empty{display:none}
+#site-scrollbar.is-visible,#site-scrollbar:focus-visible{opacity:1;pointer-events:auto}
+#site-scrollbar:focus-visible{outline:2px solid var(--border-focus);outline-offset:-2px;border-radius:var(--radius-pill)}
+.site-scrollbar__track{position:absolute;inset:0;display:block}
+.site-scrollbar__track::before{
+  content:"";position:absolute;top:0;bottom:0;left:9px;width:2px;border-radius:var(--radius-pill);
+  background:rgba(199,223,205,.16);transition:background var(--duration-fast) var(--ease);
+}
+.site-scrollbar__thumb{
+  position:absolute;top:0;right:7px;display:block;width:6px;min-height:42px;border-radius:var(--radius-pill);
+  background:var(--sage-300);box-shadow:0 0 12px rgba(12,35,30,.24);
+  transition:width var(--duration-fast) var(--ease),background var(--duration-fast) var(--ease);
+}
+#site-scrollbar:hover .site-scrollbar__thumb,#site-scrollbar:focus-visible .site-scrollbar__thumb{right:6px;width:8px;background:var(--sage-200)}
+#site-scrollbar.is-dragging .site-scrollbar__thumb{right:5px;width:10px;background:var(--sage-100)}
+#site-scrollbar.is-dragging .site-scrollbar__track::before{background:rgba(199,223,205,.24)}
+html.scrollbar-dragging{scroll-behavior:auto!important}
+@media (pointer:fine){
+  html.has-custom-scrollbar{scrollbar-width:none}
+  html.has-custom-scrollbar::-webkit-scrollbar{display:none;width:0;height:0}
+}
+@media (max-width:760px){
+  #site-scrollbar{right:0;width:16px}
+  .site-scrollbar__track::before{left:7px}
+  .site-scrollbar__thumb{right:5px;width:5px}
+  #site-scrollbar:hover .site-scrollbar__thumb,#site-scrollbar:focus-visible .site-scrollbar__thumb{right:4px;width:7px}
+  #site-scrollbar.is-dragging .site-scrollbar__thumb{right:3px;width:9px}
 }

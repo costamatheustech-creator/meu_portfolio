@@ -551,3 +551,12 @@
   .ds-reveal{opacity:1;transform:none}
   .ds-marquee-track{animation:none}
 }
+@media (max-width:1024px){
+  .ds-btn,.ds-btn-icon,.ds-link,.ds-tab,.ds-row-item{min-height:44px}
+  .ds-btn{padding-block:var(--space-3)}
+  .ds-btn--sm{padding-block:var(--space-3)}
+  .ds-link{align-items:center;padding-block:var(--space-2)}
+  .ds-tab{padding-inline:var(--space-4)}
+  .ds-tabs{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;white-space:nowrap}
+  .ds-tabs::-webkit-scrollbar{display:none}
+}
