@@ -475,8 +475,27 @@ footer{
   text-transform:uppercase;
   color:var(--fg-subtle);
 }
-.foot-in .up{transition:color var(--duration-base) var(--ease)}
-.foot-in .up:hover{color:var(--fg)}
+.footer-contact{
+  display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-1);
+  max-width:100%;margin-left:auto;
+  font-weight:var(--fw-regular);letter-spacing:normal;text-transform:none;
+}
+.footer-contact__primary{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--fg);font-size:clamp(1.125rem,1.8vw,1.5rem);
+  font-weight:var(--fw-medium);line-height:1.35;letter-spacing:-.025em;
+  overflow-wrap:anywhere;
+}
+.footer-social{
+  display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-5);
+  margin-top:var(--space-1);font-size:var(--f-body-02-font-size);
+  font-weight:var(--fw-regular);letter-spacing:0;text-transform:none;
+}
+.footer-social a{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--fg-muted);font-size:inherit;font-weight:inherit;
+}
+.footer-contact a:hover,.footer-social a:hover{color:var(--fg-accent)}
 
 /* ==========================================================================
    BOTOES DO SITE (mapeiam .ds-btn sobre o markup existente)
@@ -939,9 +958,10 @@ footer{
   .nav-toggle{width:44px;height:44px;min-width:44px;min-height:44px}
   .home-page .text-link{min-height:44px;padding-block:9px}
   .back{min-height:44px;padding-block:9px}
-  .foot-in .up{display:inline-flex;align-items:center;min-height:44px;padding-block:9px}
 }
 @media (max-width:760px){
+  .foot-in{flex-direction:column;align-items:flex-start}
+  .footer-contact{width:100%;margin-left:0}
   .home-page .hero-actions .btn{padding-inline:var(--space-4)}
   .home-page .hero-actions .btn svg{display:none}
 }
