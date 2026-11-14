@@ -24,12 +24,6 @@
   display:flex;flex-direction:column;align-items:center;width:100%;
 }
 
-/* barra de progresso de leitura */
-.progress{
-  position:fixed;top:0;left:0;height:2px;width:0;
-  background:var(--sage-100);z-index:var(--z-overlay);
-}
-
 /* pular navegacao: so aparece ao receber foco por teclado */
 .skip{
   position:fixed;top:var(--space-3);left:var(--space-3);
@@ -51,18 +45,10 @@
    NAVBAR
    ========================================================================== */
 .nav{
-  position:sticky;top:0;z-index:var(--z-sticky);
+  position:relative;z-index:var(--z-sticky);
   width:100%;max-width:var(--container);
   display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);
-  /* respiro generoso acima do menu; encolhe quando a barra gruda no topo */
   padding:var(--space-7) var(--gutter) var(--space-4);
-  transition:background var(--duration-base) var(--ease),
-             padding var(--duration-base) var(--ease);
-}
-.nav.scrolled{
-  background:color-mix(in srgb,var(--bg) 85%,transparent);
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  padding-block:var(--space-3);
 }
 
 .brand{display:flex;align-items:center}
@@ -85,7 +71,10 @@
   color:var(--fg-subtle);
 }
 
-.nav-links{display:flex;align-items:center;gap:var(--space-1)}
+.nav-links{
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:var(--space-1);
+}
 .nav-links a{
   padding:var(--space-2) var(--space-4);
   border-radius:var(--radius-pill);
@@ -121,7 +110,8 @@
 .drawer{
   display:flex;position:fixed;inset:0;z-index:var(--z-drawer);
   background:var(--bg);
-  flex-direction:column;align-items:center;justify-content:center;gap:var(--space-6);
+  flex-direction:column;align-items:center;justify-content:center;
+  padding:var(--space-8) var(--gutter) calc(var(--space-8) + 72px);
   opacity:0;visibility:hidden;pointer-events:none;
   transition:opacity .4s ease,visibility 0s linear .4s;
 }
@@ -129,7 +119,8 @@
   opacity:1;visibility:visible;pointer-events:auto;
   transition:opacity .4s ease,visibility 0s;
 }
-.drawer a{
+.drawer-links{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-6)}
+.drawer-links a{
   font-family:var(--font-display);
   font-size:var(--f-heading-01-font-size);
   font-weight:var(--fw-heading);
@@ -137,7 +128,14 @@
   color:var(--fg-muted);
   transition:color var(--duration-base) var(--ease);
 }
-.drawer a:hover{color:var(--fg)}
+.drawer-links a:hover{color:var(--fg)}
+.drawer .drawer-contact{
+  position:absolute;right:var(--gutter);bottom:var(--space-7);
+  min-width:150px;min-height:48px;
+  font-family:var(--f-label-font-family);font-size:var(--f-label-font-size);
+  font-weight:var(--f-label-font-weight);letter-spacing:var(--f-label-letter-spacing);
+  color:var(--action-fg);
+}
 
 /* ==========================================================================
    SECOES
@@ -953,11 +951,14 @@ footer{
 .contact h2{font-size:var(--f-heading-01-font-size);line-height:var(--f-heading-01-line-height);letter-spacing:var(--f-heading-01-letter-spacing)}
 
 @media (max-width:960px){
-  .nav-links,.nav .btn{display:none}
+  .nav-links,.nav .nav-contact{display:none}
   .nav-toggle{display:flex}
   .nav-toggle{width:44px;height:44px;min-width:44px;min-height:44px}
   .home-page .text-link{min-height:44px;padding-block:9px}
   .back{min-height:44px;padding-block:9px}
+}
+@media (min-width:961px){
+  .drawer{display:none}
 }
 @media (max-width:760px){
   .foot-in{flex-direction:column;align-items:flex-start}

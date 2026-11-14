@@ -3,16 +3,6 @@
 (function () {
   'use strict';
 
-  /* ---- header ganha blur ao rolar ---- */
-  var header = document.querySelector('.ds-header');
-  if (header) {
-    var onScroll = function () {
-      header.classList.toggle('ds-header--blur', window.scrollY > 8);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
   /* ---- abas ---- */
   Array.prototype.forEach.call(document.querySelectorAll('[data-ds-tabs]'), function (group) {
     var tabs = group.querySelectorAll('.ds-tab');

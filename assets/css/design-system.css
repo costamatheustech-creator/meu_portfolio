@@ -379,14 +379,9 @@
    NAVEGACAO EM PILULA (header e abas)
    ========================================================================== */
 .ds-header{
-  position:sticky;top:0;z-index:var(--z-sticky);
+  position:relative;z-index:var(--z-sticky);
   background:var(--bg);
   border-bottom:var(--border-width) solid var(--border);
-  transition:background var(--duration-base) var(--ease);
-}
-.ds-header--blur{
-  background:color-mix(in srgb,var(--bg) 82%,transparent);
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
 }
 .ds-header-inner{
   display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);

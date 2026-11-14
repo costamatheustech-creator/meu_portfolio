@@ -1,26 +1,13 @@
 (function () {
   'use strict';
 
-  /* ---- estado da navegacao + progresso de leitura ---- */
-  var nav = document.getElementById('nav');
-  var bar = document.getElementById('progress');
-  function onScroll() {
-    var y = window.scrollY || document.documentElement.scrollTop;
-    if (nav) nav.classList.toggle('scrolled', y > 24);
-    if (bar) {
-      var h = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
   /* ---- menu do header ---- */
+  var nav = document.getElementById('nav');
   var drawer = document.getElementById('drawer');
   var toggle = document.getElementById('navToggle');
   if (!drawer || !toggle) return;
 
-  var firstLink = drawer.querySelector('a[href]');
+  var firstLink = drawer.querySelector('.drawer-links a[href]');
 
   function setDrawer(open, returnFocus) {
     drawer.classList.toggle('open', open);
