@@ -798,9 +798,10 @@ footer{
 .home-page .about-stats{margin-top:var(--space-7);border-radius:var(--radius-md)}
 .home-page .about-stats .stat{background:var(--bg-raised);padding:var(--space-4) var(--space-5)}
 .home-page .about-stats .num{font-size:clamp(1.6rem,2.5vw,2.3rem)}
-.home-page #faq{z-index:0;isolation:isolate;--fg:var(--sage-950);--fg-muted:var(--sage-800);--fg-subtle:var(--sage-700);--fg-accent:var(--sage-600);--fg-accent-sm:var(--sage-600);--border:rgba(12,35,30,.16);--border-strong:rgba(12,35,30,.28);padding-block:clamp(4rem,8vw,7rem)}
+.home-page #faq{z-index:0;isolation:isolate;--fg:var(--sage-950);--fg-muted:var(--sage-800);--fg-subtle:var(--sage-700);--fg-accent:var(--sage-600);--fg-accent-sm:var(--sage-600);--border:rgba(12,35,30,.16);--border-strong:rgba(12,35,30,.28);padding-block:var(--section-tight)}
 .home-page #faq::before{content:"";position:absolute;z-index:-1;inset:0 auto 0 50%;width:100vw;transform:translateX(-50%);background:var(--sage-100)}
-.home-page #faq .eyebrow{color:var(--sage-600)}
+.home-page .faq-heading{margin:0 0 var(--space-5)}
+.home-page .faq-heading h2{margin:0;color:var(--sage-950);font-family:var(--f-heading-01-font-family);font-size:var(--f-heading-01-font-size);font-weight:var(--f-heading-01-font-weight);line-height:var(--f-heading-01-line-height);letter-spacing:var(--f-heading-01-letter-spacing)}
 .home-page .faq-list{border-top:1px solid var(--border-strong)}
 .home-page .faq-item{border-bottom:1px solid var(--border-strong)}
 .home-page .faq-item summary{position:relative;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 42px var(--space-4) 0;cursor:pointer;list-style:none;font-family:var(--font-display);font-size:var(--f-heading-03-font-size);font-weight:var(--fw-heading);color:var(--fg)}
@@ -900,7 +901,7 @@ footer{
 .home-page .hero-note{font-size:var(--f-caption-font-size)}
 .home-page .eyebrow{font-size:var(--f-lead-font-size);font-weight:var(--fw-medium);letter-spacing:0;text-transform:none}
 .home-page .intro-section h2,.home-page .section-heading h2,.home-page .audience-title h2,
-.home-page .process-copy h2,.home-page .about-title,.home-page #faq .section-heading h2,
+.home-page .process-copy h2,.home-page .about-title,
 .home-page .contact-section h2{font-size:var(--f-heading-01-font-size);line-height:1.2;letter-spacing:-.025em}
 .home-page .service-row h3,.home-page .audience-item h3,.home-page .home-projects .project-meta h3,
 .home-page .process-steps h3,.home-page .faq-item summary{font-size:var(--f-heading-02-font-size);line-height:1.3;letter-spacing:-.015em}
