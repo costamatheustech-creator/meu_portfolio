@@ -51,6 +51,14 @@
   padding:var(--space-5) var(--gutter) var(--space-4);
 }
 .nav-contact{min-height:48px}
+.nav-actions{display:flex;align-items:center;gap:var(--space-3);margin-left:auto}
+.nav-blog-link{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  padding-inline:var(--space-3);border-radius:var(--radius-pill);
+  font-family:var(--font-body);font-size:var(--f-label-font-size);font-weight:var(--fw-regular);
+  color:var(--fg-muted);transition:background var(--duration-fast) var(--ease-standard),color var(--duration-fast) var(--ease-standard);
+}
+.nav-blog-link:hover{background:var(--action-ghost);color:var(--fg)}
 
 .brand{display:flex;align-items:center}
 .brand-name{
@@ -832,7 +840,7 @@ footer{
 }
 @media (max-width:760px){
   .nav{padding-top:var(--space-4)}
-  .home-page .nav-links,.home-page .nav>.btn{display:none}
+  .home-page .nav-links,.home-page .nav-actions{display:none}
   .home-page .hero{min-height:0;padding-block:var(--space-6) var(--space-7)}
   .home-page .hero-grid{grid-template-columns:1fr;gap:var(--space-7)}
   .home-page .hero-copy{align-items:flex-start;text-align:left}
@@ -953,7 +961,7 @@ footer{
 .contact h2{font-size:var(--f-heading-01-font-size);line-height:var(--f-heading-01-line-height);letter-spacing:var(--f-heading-01-letter-spacing)}
 
 @media (max-width:960px){
-  .nav-links,.nav .nav-contact{display:none}
+  .nav-links,.nav-actions{display:none}
   .nav-toggle{display:flex}
   .nav-toggle{width:44px;height:44px;min-width:44px;min-height:44px}
   .home-page .text-link{min-height:44px;padding-block:9px}
