@@ -91,6 +91,9 @@ hr{border:0;border-top:var(--border-width) solid var(--border);margin:0}
   }
 }
 
+/* Conteudo estatico; o movimento de interface fica restrito ao header/menu. */
+main,main::before,main::after,main *,main *::before,main *::after,
+footer,footer::before,footer::after,footer *,footer *::before,footer *::after{animation:none!important;transition:none!important}
 
 /* Scrollbar personalizada — aparece durante o uso e mantém drag/teclado. */
 #site-scrollbar{

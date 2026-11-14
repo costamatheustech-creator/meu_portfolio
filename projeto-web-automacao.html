@@ -53,12 +53,11 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg>
       Vamos conversar
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+      <span class="nav-toggle-line" aria-hidden="true"></span><span class="nav-toggle-line" aria-hidden="true"></span>
     </button>
   </nav>
-  <div class="drawer" id="drawer">
-    <button class="nav-toggle close" id="drawerClose" aria-label="Fechar menu"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-close"/></svg></button>
+  <div class="drawer" id="drawer" role="navigation" aria-label="Navegação móvel" aria-hidden="true">
     <a href="index.html#servicos">Serviços</a>
     <a href="index.html#projetos">Cases</a>
     <a href="index.html#processo">Processo</a>

@@ -99,7 +99,7 @@
 .nav-links a:hover{background:var(--action-ghost);color:var(--fg)}
 
 .nav-toggle{
-  display:none;width:40px;height:40px;
+  display:none;position:relative;width:40px;height:40px;
   border:var(--border-width) solid var(--border-strong);
   border-radius:var(--radius-sm);
   background:transparent;color:var(--fg-muted);cursor:pointer;
@@ -107,14 +107,28 @@
   transition:border-color var(--duration-base) var(--ease),color var(--duration-base) var(--ease);
 }
 .nav-toggle:hover{border-color:var(--sage-500);color:var(--fg)}
-.nav-toggle svg{width:18px;height:18px}
+.nav-toggle-line{
+  position:absolute;left:6px;display:block;width:26px;height:2px;
+  border-radius:var(--radius-pill);background:currentColor;
+  transition:transform .3s ease,opacity .3s ease;
+}
+.nav-toggle-line:first-child{transform:translateY(-4.5px)}
+.nav-toggle-line:last-child{transform:translateY(4.5px)}
+.nav.menu-open{z-index:calc(var(--z-drawer) + 1)}
+.nav.menu-open .nav-toggle-line:first-child{transform:translateY(4.5px) rotate(20deg)}
+.nav.menu-open .nav-toggle-line:last-child{transform:translateY(-4.5px) rotate(-20deg)}
 
 .drawer{
-  display:none;position:fixed;inset:0;z-index:var(--z-drawer);
+  display:flex;position:fixed;inset:0;z-index:var(--z-drawer);
   background:var(--bg);
   flex-direction:column;align-items:center;justify-content:center;gap:var(--space-6);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .4s ease,visibility 0s linear .4s;
 }
-.drawer.open{display:flex}
+.drawer.open{
+  opacity:1;visibility:visible;pointer-events:auto;
+  transition:opacity .4s ease,visibility 0s;
+}
 .drawer a{
   font-family:var(--font-display);
   font-size:var(--f-heading-01-font-size);
@@ -124,7 +138,6 @@
   transition:color var(--duration-base) var(--ease);
 }
 .drawer a:hover{color:var(--fg)}
-.drawer .close{position:absolute;top:var(--space-4);right:var(--gutter);display:flex}
 
 /* ==========================================================================
    SECOES
@@ -242,18 +255,16 @@ h3{
   border-radius:var(--radius-md);
   background:var(--surface-invert);
   box-shadow:var(--shadow-md);
-  animation:float 7s ease-in-out infinite;
   transition:transform var(--duration-base) var(--ease),
              box-shadow var(--duration-base) var(--ease);
 }
 .app-icon:hover{transform:translateY(-5px) scale(1.06);box-shadow:var(--shadow-lg)}
 .app-icon svg{width:58%;height:58%}
-.app-icon.a1{top:-3.5%;left:-9%;animation-delay:0s}
-.app-icon.a2{top:27%;right:-9%;animation-delay:-1.7s}
-.app-icon.a3{bottom:25%;left:-9%;animation-delay:-3.5s}
-.app-icon.a4{bottom:-3.5%;right:9%;animation-delay:-5.2s}
+.app-icon.a1{top:-3.5%;left:-9%}
+.app-icon.a2{top:27%;right:-9%}
+.app-icon.a3{bottom:25%;left:-9%}
+.app-icon.a4{bottom:-3.5%;right:9%}
 
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 /* ==========================================================================
    2. SOBRE
    ========================================================================== */
@@ -491,32 +502,7 @@ footer{
 .btn-ghost{background:transparent;color:var(--fg);border-color:var(--border-strong)}
 .btn-ghost:hover{background:var(--action-ghost);border-color:var(--sage-500)}
 
-/* ==========================================================================
-   REVEAL / MASK (a classe .is-visible vem de site.js)
-   ========================================================================== */
-.reveal{
-  opacity:0;filter:blur(8px);
-  transform:translateY(32px) scale(.98);
-  clip-path:inset(100% 0 0 0);
-  transition:opacity var(--duration-reveal) var(--ease),
-             filter var(--duration-reveal) var(--ease),
-             transform var(--duration-reveal) var(--ease),
-             clip-path var(--duration-reveal) var(--ease);
-}
-.is-visible.reveal,.is-visible .reveal{
-  opacity:1;filter:blur(0);transform:none;
-  clip-path:inset(-50% -50% -50% -50%);
-}
-.d1{transition-delay:100ms}.d2{transition-delay:200ms}.d3{transition-delay:300ms}
-.d4{transition-delay:400ms}.d5{transition-delay:500ms}.d6{transition-delay:600ms}
-
-.word{display:inline-block;overflow:hidden;vertical-align:bottom;line-height:1.08;margin-right:.28em}
-.word:last-child{margin-right:0}
-.word > i{
-  display:inline-block;font-style:inherit;transform:translateY(110%);
-  transition:transform var(--duration-slow) var(--ease);
-}
-.is-visible .word > i{transform:translateY(0)}
+/* O conteudo das secoes permanece estatico; o movimento fica no header/menu. */
 
 /* ==========================================================================
    RESPONSIVO
@@ -541,11 +527,6 @@ footer{
   .timeline{padding-left:var(--space-5)}
   .job::before{left:calc(var(--space-5) * -1)}
   .link{padding:var(--space-4);gap:var(--space-3)}
-}
-
-@media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1;filter:none;transform:none;clip-path:none}
-  .word > i{transform:none}
 }
 
 /* ==========================================================================

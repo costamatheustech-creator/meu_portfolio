@@ -524,31 +524,13 @@
    DIVISORES
    ========================================================================== */
 .ds-divider{height:1px;background:var(--border);border:0}
-.ds-divider--strong{background:var(--border-strong)}
-
-/* ==========================================================================
-   REVEAL - entrada em scroll (a classe .is-visible e aplicada por JS)
-   ========================================================================== */
-.ds-reveal{
-  opacity:0;transform:translateY(24px);
-  transition:opacity var(--duration-reveal) var(--ease),
-             transform var(--duration-reveal) var(--ease);
-}
-.ds-reveal.is-visible,.is-visible > .ds-reveal{opacity:1;transform:none}
-.ds-delay-1{transition-delay:80ms}
-.ds-delay-2{transition-delay:160ms}
-.ds-delay-3{transition-delay:240ms}
-.ds-delay-4{transition-delay:320ms}
-.ds-delay-5{transition-delay:400ms}
-
-/* ==========================================================================
+.ds-divider--strong{height:1px;background:var(--border-strong)}
 
 /* ==========================================================================
    MOVIMENTO REDUZIDO - parte especifica dos componentes .ds-
    (a regra global vive em base.css)
    ========================================================================== */
 @media (prefers-reduced-motion:reduce){
-  .ds-reveal{opacity:1;transform:none}
   .ds-marquee-track{animation:none}
 }
 @media (max-width:1024px){
