@@ -46,10 +46,11 @@
    ========================================================================== */
 .nav{
   position:relative;z-index:var(--z-sticky);
-  width:100%;max-width:var(--container);
+  width:100%;max-width:var(--container-wide);
   display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);
-  padding:var(--space-7) var(--gutter) var(--space-4);
+  padding:var(--space-5) var(--gutter) var(--space-4);
 }
+.nav-contact{min-height:48px}
 
 .brand{display:flex;align-items:center}
 .brand-name{
@@ -76,7 +77,7 @@
   display:flex;align-items:center;gap:var(--space-1);
 }
 .nav-links a{
-  padding:var(--space-2) var(--space-4);
+  padding:var(--space-2) var(--space-2);
   border-radius:var(--radius-pill);
   font-family:var(--font-body);
   font-size:var(--f-body-02-font-size);
@@ -678,7 +679,6 @@ footer{
 /* ==========================================================================
    HOME DE SERVICOS — SAGE DARK / estrutura editorial da nova pagina
    ========================================================================== */
-.home-page .nav{max-width:var(--container-wide);padding-top:var(--space-5)}
 .home-page .brand{gap:var(--space-3)}
 .home-page .brand-mark{
   width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;
@@ -690,7 +690,6 @@ footer{
 .home-page .brand-sub{font-size:.625rem;letter-spacing:.11em}
 .home-page .nav-links{gap:0}
 .home-page .nav-links a{font-size:var(--f-caption-font-size);padding-inline:var(--space-3)}
-.home-page .nav>.btn{font-size:var(--f-caption-font-size);padding:var(--space-3) var(--space-4)}
 .home-page .home-content{width:100%;display:flex;flex-direction:column;align-items:center}
 .home-page section{scroll-margin-top:88px}
 .home-page .hero{
@@ -738,7 +737,7 @@ footer{
 .home-page .intro-section .text-link{grid-column:2;justify-self:start;margin:var(--space-4) 0 0}
 .home-page .text-link span{color:var(--sage-300);transition:transform var(--duration-base) var(--ease)}
 .home-page .text-link:hover span{transform:translate(3px,-2px)}
-.home-page .section-heading{margin-bottom:var(--space-7)}
+.home-page .section-heading h2{margin-top:var(--space-3)}
 .home-page .section-heading-split{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:var(--space-7);text-align:left}
 .home-page .section-heading h2{max-width:15ch;margin-top:var(--space-3)}
 .home-page #servicos .section-heading h2,.home-page .work-section .section-heading h2{margin-top:0}
@@ -830,7 +829,7 @@ footer{
   .home-page .process-section{grid-template-columns:.8fr 1.2fr;gap:var(--space-6)}
 }
 @media (max-width:760px){
-  .home-page .nav{padding-top:var(--space-4)}
+  .nav{padding-top:var(--space-4)}
   .home-page .nav-links,.home-page .nav>.btn{display:none}
   .home-page .hero{min-height:0;padding-block:var(--space-6) var(--space-7)}
   .home-page .hero-grid{grid-template-columns:1fr;gap:var(--space-7)}
