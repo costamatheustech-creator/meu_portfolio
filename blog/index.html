@@ -3,31 +3,75 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="robots" content="noindex, nofollow"/>
-  <title>Blog | Matheus Costa</title>
-  <meta name="description" content="Matérias sobre sites, landing pages, experiência do usuário e presença digital."/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#0C231E"/>
+  <meta name="color-scheme" content="dark"/>
+  <title>Blog de sites e landing pages | Matheus Costa</title>
+  <meta name="description" content="Artigos de Matheus Costa sobre sites, landing pages, experiência do usuário e presença digital, com foco na clareza do valor da sua marca."/>
+  <link rel="canonical" href="https://www.costamatheustech.com/blog/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Blog | Matheus Costa"/>
+  <meta property="og:description" content="Artigos sobre sites, landing pages, experiência do usuário e presença digital."/>
+  <meta property="og:url" content="https://www.costamatheustech.com/blog/"/>
+  <meta property="og:site_name" content="Matheus Costa"/>
+  <meta property="og:image" content="https://www.costamatheustech.com/assets/matheus.jpg"/>
+  <meta property="og:image:alt" content="Retrato de Matheus Costa, autor do blog"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Blog | Matheus Costa"/>
+  <meta name="twitter:description" content="Artigos sobre sites, landing pages, experiência do usuário e presença digital."/>
+  <meta name="twitter:image" content="https://www.costamatheustech.com/assets/matheus.jpg"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230C231E'/%3E%3Ctext%20x='16'%20y='23'%20font-family='sans-serif'%20font-size='18'%20font-weight='700'%20fill='%23C7DFCD'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+  <link rel="preload" href="../assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="stylesheet" href="../assets/css/fonts.css"/>
   <link rel="stylesheet" href="../assets/css/tokens.css"/>
   <link rel="stylesheet" href="../assets/css/base.css"/>
   <link rel="stylesheet" href="../assets/css/site.css"/>
   <link rel="stylesheet" href="../assets/css/blog-index.css"/>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Blog",
+        "name":"Blog | Matheus Costa",
+        "url":"https://www.costamatheustech.com/blog/",
+        "inLanguage":"pt-BR",
+        "publisher":{"@type":"Person","name":"Matheus Costa","url":"https://www.costamatheustech.com/"},
+        "blogPost":[{
+          "@type":"BlogPosting",
+          "headline":"Seu cliente sabe que precisa de você, mas não te conhece",
+          "url":"https://www.costamatheustech.com/blog/site-claro-clientes-qualificados/",
+          "datePublished":"2026-11-14",
+          "author":{"@type":"Person","name":"Matheus Costa"}
+        }]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Início","item":"https://www.costamatheustech.com/"},
+          {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.costamatheustech.com/blog/"}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="blog-index-page">
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <div class="shell">
     <nav class="nav" id="nav" aria-label="Navegação principal">
-      <a class="brand" href="../index.html#top" aria-label="Matheus Costa, início">
+      <a class="brand" href="/#top" aria-label="Matheus Costa, início">
         <img class="brand-avatar" src="../assets/matheus.jpg" alt="" width="56" height="56"/>
       </a>
       <div class="nav-links">
-        <a href="../index.html#servicos">Serviços</a>
-        <a href="../index.html#projetos">Cases</a>
-        <a href="../index.html#feedbacks">Feedbacks</a>
-        <a href="../index.html#processo">Processo</a>
-        <a href="../index.html#sobre">Sobre</a>
+        <a href="/#servicos">Serviços</a>
+        <a href="/#projetos">Cases</a>
+        <a href="/#feedbacks">Feedbacks</a>
+        <a href="/#processo">Processo</a>
+        <a href="/#sobre">Sobre</a>
       </div>
       <div class="nav-actions">
-        <a class="nav-blog-link" href="./" aria-current="page">Blog</a>
+        <a class="nav-blog-link" href="/blog/" aria-current="page">Blog</a>
         <a class="btn nav-contact" href="https://wa.me/5511917692288?text=Ol%C3%A1%2C%20Matheus!%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Contato</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
@@ -37,25 +81,40 @@
     </nav>
     <div class="drawer" id="drawer" role="navigation" aria-label="Navegação móvel" aria-hidden="true">
       <div class="drawer-links">
-        <a href="../index.html#servicos">Serviços</a>
-        <a href="../index.html#projetos">Cases</a>
-        <a href="../index.html#feedbacks">Feedbacks</a>
-        <a href="../index.html#processo">Processo</a>
-        <a href="../index.html#sobre">Sobre</a>
-        <a href="./" aria-current="page">Blog</a>
+        <a href="/#servicos">Serviços</a>
+        <a href="/#projetos">Cases</a>
+        <a href="/#feedbacks">Feedbacks</a>
+        <a href="/#processo">Processo</a>
+        <a href="/#sobre">Sobre</a>
+        <a href="/blog/" aria-current="page">Blog</a>
       </div>
       <a class="btn drawer-contact" href="https://wa.me/5511917692288?text=Ol%C3%A1%2C%20Matheus!%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Contato</a>
     </div>
 
     <main id="conteudo" class="blog-index-main">
+      <nav class="blog-breadcrumb" aria-label="Navegação estrutural">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li aria-current="page">Blog</li>
+        </ol>
+      </nav>
       <header class="blog-index-intro">
-        <p class="blog-index-eyebrow">Blog</p>
-        <h1 class="blog-index-title">Ideias para uma presença digital mais clara.</h1>
-        <p class="blog-index-copy">Matérias sobre sites, experiência do usuário e comunicação digital — para ajudar seu cliente a entender o valor do seu trabalho e saber como avançar.</p>
+        <h1 class="blog-index-title">Blog</h1>
+        <p class="blog-index-copy">Aqui compartilho ideias sobre sites, landing pages e experiência do usuário, com foco na clareza que ajuda seu cliente a entender o valor do seu trabalho.</p>
       </header>
-      <section class="blog-index-status" aria-label="Estado do blog">
-        <h2>Primeira matéria em preparação</h2>
-        <p>Estou preparando os primeiros conteúdos do blog. Em breve, vou compartilhar por aqui ideias práticas sobre sites e landing pages.</p>
+      <section class="blog-article-list" aria-labelledby="blog-article-list-title">
+        <h2 class="blog-article-list-title" id="blog-article-list-title">Matérias</h2>
+        <article class="blog-article-card" aria-labelledby="blog-post-title">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Sites e experiência do usuário</span>
+            <time datetime="2026-11-14">14 nov. 2026</time>
+          </div>
+          <div class="blog-card-content">
+            <h3 class="blog-card-title" id="blog-post-title"><a href="/blog/site-claro-clientes-qualificados/">Seu cliente sabe que precisa de você, mas não te conhece</a></h3>
+            <p>Seu cliente pode precisar do que você faz sem ainda entender como você pode ajudar. Veja como um site claro apresenta a oferta, constrói confiança e orienta a próxima etapa.</p>
+            <a class="blog-card-link" href="/blog/site-claro-clientes-qualificados/">Ler a matéria <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </section>
     </main>
 

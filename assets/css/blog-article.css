@@ -1,92 +1,68 @@
-/*
-   TEMPLATE DE MATÉRIA — editorial do site Matheus Costa.
-   Reutiliza tokens Sora / Sage Dark e não adiciona fontes ou serviços externos.
-*/
-.blog-article-page .article-main{
-  display:block;
-  width:100%;
-  max-width:none;
-  padding:0 0 var(--section);
-}
+/* Template editorial do site Matheus Costa; Sora e tokens Sage Dark são servidos localmente. */
+.blog-article-page .article-main{display:block;width:100%;max-width:none;padding:0 0 var(--section)}
 .blog-article-page .article-header{
-  width:100%;
-  max-width:var(--container-wide);
-  margin-inline:auto;
-  padding:var(--space-7) var(--gutter) 0;
+  width:100%;max-width:var(--container-wide);margin-inline:auto;padding:var(--space-7) var(--gutter) 0;
 }
+.blog-article-page .article-header .blog-breadcrumb{margin-bottom:var(--space-6)}
+.blog-article-page .blog-breadcrumb{
+  font-family:var(--font-body);font-size:var(--f-caption-font-size);line-height:1.5;color:var(--fg-subtle);
+}
+.blog-article-page .blog-breadcrumb ol{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);margin:0;padding:0;list-style:none}
+.blog-article-page .blog-breadcrumb li{min-width:0;overflow-wrap:anywhere}
+.blog-article-page .blog-breadcrumb li+li::before{content:"/";margin-right:var(--space-2);color:var(--fg-subtle)}
+.blog-article-page .blog-breadcrumb a{color:var(--fg-muted);text-decoration:none}
+.blog-article-page .blog-breadcrumb a:hover{color:var(--fg)}
+.blog-article-page .blog-breadcrumb [aria-current="page"]{color:var(--fg)}
 .blog-article-page .article-title{
-  max-width:22ch;
-  font-family:var(--f-display-01-font-family);
-  font-size:var(--f-display-01-font-size);
-  font-weight:var(--f-display-01-font-weight);
-  line-height:var(--f-display-01-line-height);
-  letter-spacing:var(--f-display-01-letter-spacing);
-  color:var(--fg);
+  max-width:22ch;margin:0;font-family:var(--f-display-01-font-family);
+  font-size:var(--f-display-01-font-size);font-weight:var(--f-display-01-font-weight);
+  line-height:var(--f-display-01-line-height);letter-spacing:var(--f-display-01-letter-spacing);color:var(--fg);
 }
 .blog-article-page .article-deck{
-  max-width:68ch;
-  margin-top:var(--space-5);
-  color:var(--fg-muted);
-  font-size:var(--f-lead-font-size);
-  line-height:1.6;
+  max-width:68ch;margin:var(--space-4) 0 0;color:var(--fg-muted);
+  font-size:var(--f-lead-font-size);line-height:1.6;
 }
-.blog-article-page .article-cover{
-  width:100%;
-  max-width:var(--container-narrow);
-  margin:var(--space-7) auto 0;
+.blog-article-page .article-meta{
+  display:flex;align-items:center;gap:var(--space-2);margin-top:var(--space-5);
+  color:var(--fg-subtle);font-family:var(--font-body);font-size:var(--f-caption-font-size);line-height:1.4;
 }
-.blog-article-page .article-cover img,
-.blog-article-page .article-figure img{
-  width:100%;
-  height:auto;
-  border-radius:var(--radius-lg);
-  background:var(--bg-raised);
+.blog-article-page .article-meta img{
+  width:40px;height:40px;margin-right:var(--space-1);border:1px solid var(--border-strong);
+  border-radius:50%;object-fit:cover;object-position:center 28%;filter:grayscale(1);
 }
-.blog-article-page .article-cover figcaption,
-.blog-article-page .article-figure figcaption{
-  margin-top:var(--space-2);
-  color:var(--fg-subtle);
-  font-size:var(--f-body-02-font-size);
-  line-height:1.5;
-}
+.blog-article-page .article-meta span:first-of-type{color:var(--fg);font-weight:var(--fw-medium)}
 .blog-article-page .article-content{
-  width:100%;
-  max-width:var(--container-narrow);
-  margin:var(--space-7) auto 0;
-  padding-inline:var(--gutter);
-  color:var(--fg-muted);
+  width:100%;max-width:var(--container-narrow);margin:var(--space-7) auto 0;
+  padding-inline:var(--gutter);color:var(--fg-muted);
 }
 .blog-article-page .article-content p{
-  margin:0 0 var(--space-5);
-  font-family:var(--f-body-01-font-family);
-  font-size:var(--f-body-01-font-size);
-  line-height:1.75;
+  margin:0 0 var(--space-5);font-family:var(--f-body-01-font-family);
+  font-size:var(--f-body-01-font-size);line-height:1.75;
 }
-.blog-article-page .article-content .article-lead{
-  color:var(--fg);
-  font-size:var(--f-lead-font-size);
-  line-height:1.7;
-}
+.blog-article-page .article-content .article-lead{color:var(--fg);font-size:var(--f-lead-font-size);line-height:1.7}
 .blog-article-page .article-content h2{
-  margin:var(--space-8) 0 var(--space-4);
-  color:var(--fg);
-  font-family:var(--f-heading-01-font-family);
-  font-size:var(--f-heading-01-font-size);
-  font-weight:var(--f-heading-01-font-weight);
-  line-height:var(--f-heading-01-line-height);
+  margin:var(--space-8) 0 var(--space-4);color:var(--fg);
+  font-family:var(--f-heading-01-font-family);font-size:var(--f-heading-01-font-size);
+  font-weight:var(--f-heading-01-font-weight);line-height:var(--f-heading-01-line-height);
   letter-spacing:var(--f-heading-01-letter-spacing);
 }
-.blog-article-page .article-figure{
-  width:100%;
-  margin:var(--space-7) 0;
+.blog-article-page .article-content ul{margin:0 0 var(--space-5);padding-left:1.35em}
+.blog-article-page .article-content li{margin:0 0 var(--space-2);padding-left:.25em;font-size:var(--f-body-01-font-size);line-height:1.7}
+.blog-article-page .article-content strong{color:var(--fg);font-weight:var(--fw-semibold)}
+.blog-article-page .article-content a{color:var(--fg-accent-sm);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+.blog-article-page .article-content a:hover{color:var(--fg)}
+.blog-article-page .article-content .article-citation{
+  margin-left:.15em;font-size:.8em;vertical-align:super;text-decoration:none;
 }
+.blog-article-page .article-references{margin-top:var(--space-8);padding-top:var(--space-4);border-top:var(--border-width) solid var(--border)}
+.blog-article-page .article-references h2{margin-top:0;font-size:var(--f-heading-03-font-size)}
+.blog-article-page .article-references ol{padding-left:1.4em}
+.blog-article-page .article-references li{margin-bottom:var(--space-3);overflow-wrap:anywhere}
 .blog-article-page footer{width:100%;max-width:var(--container-wide)}
-
 @media (max-width:760px){
   .blog-article-page .article-header{padding-top:var(--space-6)}
+  .blog-article-page .article-header .blog-breadcrumb{margin-bottom:var(--space-5)}
   .blog-article-page .article-title{max-width:18ch}
-  .blog-article-page .article-cover{margin-top:var(--space-6)}
   .blog-article-page .article-content{margin-top:var(--space-6)}
   .blog-article-page .article-content h2{margin-top:var(--space-7)}
-  .blog-article-page .article-figure{margin-block:var(--space-6)}
 }
