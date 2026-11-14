@@ -729,7 +729,7 @@ footer{
   border-top:1px solid var(--border);
 }
 .home-page .eyebrow{font-size:var(--f-caption-font-size);font-weight:var(--fw-medium);letter-spacing:.16em;text-transform:uppercase;color:var(--fg-subtle)}
-.home-page .intro-section .eyebrow{grid-column:1;grid-row:1;margin:8px 0 0;font-size:.875rem;line-height:1.5;letter-spacing:0;text-transform:none;color:var(--fg-subtle)}
+.home-page .intro-section .eyebrow{grid-column:1;grid-row:1;margin:var(--space-2) 0 0;font-size:.875rem;line-height:1.5;letter-spacing:0;text-transform:none;color:var(--fg-subtle)}
 .home-page .intro-section h2{grid-column:2;grid-row:1;margin:0;font-size:clamp(1.75rem,3vw,2.375rem);line-height:1.18;letter-spacing:-.03em}
 .home-page .intro-section h2 span{color:var(--sage-300)}
 .home-page .intro-copy{grid-column:2;max-width:62ch;margin:var(--space-4) 0 0;font-size:var(--f-lead-font-size);line-height:1.6;color:var(--fg-muted)}
@@ -742,6 +742,7 @@ footer{
 .home-page .section-heading h2{max-width:15ch;margin-top:var(--space-3)}
 .home-page #servicos .section-heading h2,.home-page .work-section .section-heading h2{margin-top:0}
 .home-page .section-lead{max-width:42ch;margin-left:auto;color:var(--fg-muted);font-size:var(--f-lead-font-size)}
+.home-page #servicos .section-heading,.home-page .work-section .section-heading{margin-bottom:var(--space-5)}
 .home-page #servicos{z-index:0;isolation:isolate;--fg:var(--sage-950);--fg-muted:var(--sage-800);--fg-subtle:var(--sage-700);--fg-accent:var(--sage-600);--fg-accent-sm:var(--sage-600);--border:rgba(12,35,30,.16);--border-strong:rgba(12,35,30,.28);padding-block:clamp(4.5rem,9vw,8rem)}
 .home-page #servicos::before{content:"";position:absolute;z-index:-1;inset:0 auto 0 50%;width:100vw;transform:translateX(-50%);background:var(--sage-50)}
 .home-page #servicos .eyebrow,.home-page #servicos .service-index,.home-page #servicos .service-label{color:var(--sage-600)}
@@ -938,6 +939,7 @@ footer{
   .home-page .hero h1{font-size:var(--f-display-01-font-size);max-width:none}
   .home-page .hero-era{font-size:var(--f-lead-font-size)}
   .home-page .hero-actions .btn{width:100%}
+  .home-page #servicos .section-heading{margin-bottom:var(--space-4)}
   .home-page .section-heading h2{max-width:none}
   .home-page .service-row h3,.home-page .audience-item h3,.home-page .home-projects .project-meta h3,
   .home-page .process-steps h3,.home-page .faq-item summary{font-size:var(--f-heading-02-font-size)}
@@ -976,12 +978,7 @@ footer{
   padding:var(--section-tight) var(--gutter) var(--section);
   border-top:1px solid var(--border);
 }
-.home-page .feedback-heading{
-  display:grid;grid-template-columns:minmax(180px,.72fr) minmax(0,1.28fr);
-  column-gap:clamp(2rem,6vw,6rem);align-items:start;
-  margin-bottom:var(--space-6);
-}
-.home-page .feedback-heading .eyebrow{margin-top:6px}
+.home-page .feedback-heading{margin-bottom:var(--space-5)}
 .home-page .feedback-heading h2{
   max-width:20ch;font-size:var(--f-heading-01-font-size);
   line-height:1.2;letter-spacing:-.025em;color:var(--fg);
@@ -1030,9 +1027,6 @@ footer{
 
 @media (max-width:760px){
   .home-page #feedbacks{padding-block:var(--section-tight)}
-  .home-page .feedback-heading{grid-template-columns:1fr;row-gap:var(--space-3);margin-bottom:var(--space-5)}
-  .home-page .feedback-heading .eyebrow{margin-top:0}
-  .home-page .feedback-heading h2{max-width:24ch}
   .home-page .feedback-panel{padding:var(--space-5) var(--space-4)}
   .home-page .feedback-slide blockquote{text-align:left;line-height:1.65}
   .home-page .feedback-slide blockquote::before{text-align:center}
