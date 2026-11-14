@@ -966,3 +966,77 @@ footer{
   .home-page .hero-actions .btn{padding-inline:var(--space-4)}
   .home-page .hero-actions .btn svg{display:none}
 }
+
+
+/* ==========================================================================
+   FEEDBACKS — relatos estáticos com navegação manual
+   ========================================================================== */
+.home-page #feedbacks{
+  width:100%;max-width:var(--container-wide);
+  padding:var(--section-tight) var(--gutter) var(--section);
+  border-top:1px solid var(--border);
+}
+.home-page .feedback-heading{
+  display:grid;grid-template-columns:minmax(180px,.72fr) minmax(0,1.28fr);
+  column-gap:clamp(2rem,6vw,6rem);align-items:start;
+  margin-bottom:var(--space-6);
+}
+.home-page .feedback-heading .eyebrow{margin-top:6px}
+.home-page .feedback-heading h2{
+  max-width:20ch;font-size:var(--f-heading-01-font-size);
+  line-height:1.2;letter-spacing:-.025em;color:var(--fg);
+}
+.home-page .feedback-panel{
+  padding:clamp(1.5rem,4.5vw,4rem);
+  border:1px solid var(--border-strong);border-radius:var(--radius-lg);
+  background:var(--bg-raised);
+}
+.home-page .feedback-slide{width:100%;margin:0;text-align:center}
+.home-page .feedback-slide blockquote{
+  max-width:72ch;margin:0 auto;
+  color:var(--fg-muted);font-family:var(--font-body);
+  font-size:var(--f-body-01-font-size);line-height:1.7;
+}
+.home-page .feedback-slide blockquote::before{
+  content:"“";display:block;margin-bottom:var(--space-3);
+  color:var(--sage-300);font-family:var(--font-display);
+  font-size:4rem;line-height:.8;font-weight:var(--fw-light);
+}
+.home-page .feedback-slide blockquote p+p{margin-top:var(--space-3)}
+.home-page .feedback-slide figcaption{
+  display:flex;align-items:center;justify-content:center;gap:var(--space-3);
+  margin-top:var(--space-6);color:var(--fg);
+  font-size:var(--f-body-02-font-size);font-weight:var(--fw-medium);
+}
+.home-page .feedback-slide figcaption img{
+  width:48px;height:48px;flex:0 0 48px;object-fit:cover;
+  border:1px solid var(--border-strong);border-radius:50%;
+}
+.home-page .feedback-controls[hidden]{display:none}
+.home-page .feedback-controls:not([hidden]){
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);
+  margin-top:var(--space-6);padding-top:var(--space-4);
+  border-top:1px solid var(--border);
+}
+.home-page .feedback-count{font-size:var(--f-body-02-font-size);color:var(--fg-subtle)}
+.home-page .feedback-buttons{display:flex;gap:var(--space-2)}
+.home-page .feedback-buttons button{
+  display:grid;place-items:center;width:44px;height:44px;padding:0;
+  border:1px solid var(--border-strong);border-radius:50%;
+  background:transparent;color:var(--fg);cursor:pointer;
+}
+.home-page .feedback-buttons button:hover{border-color:var(--sage-400);background:var(--action-ghost)}
+.home-page .feedback-buttons button:focus-visible{outline:2px solid var(--border-focus);outline-offset:3px}
+.home-page .feedback-buttons svg{width:20px;height:20px}
+
+@media (max-width:760px){
+  .home-page #feedbacks{padding-block:var(--section-tight)}
+  .home-page .feedback-heading{grid-template-columns:1fr;row-gap:var(--space-3);margin-bottom:var(--space-5)}
+  .home-page .feedback-heading .eyebrow{margin-top:0}
+  .home-page .feedback-heading h2{max-width:24ch}
+  .home-page .feedback-panel{padding:var(--space-5) var(--space-4)}
+  .home-page .feedback-slide blockquote{text-align:left;line-height:1.65}
+  .home-page .feedback-slide blockquote::before{text-align:center}
+  .home-page .feedback-slide figcaption{justify-content:flex-start;margin-top:var(--space-5)}
+  .home-page .feedback-controls:not([hidden]){margin-top:var(--space-5)}
+}

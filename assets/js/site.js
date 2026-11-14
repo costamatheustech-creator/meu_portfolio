@@ -56,3 +56,33 @@
     }
   });
 })();
+
+
+/* ---- navegação manual dos feedbacks (sem animação de entrada) ---- */
+(function () {
+  'use strict';
+
+  var slider = document.querySelector('[data-feedback-slider]');
+  if (!slider) return;
+
+  var slides = Array.prototype.slice.call(slider.querySelectorAll('.feedback-slide'));
+  var controls = slider.querySelector('[data-feedback-controls]');
+  var count = slider.querySelector('[data-feedback-count]');
+  var previous = slider.querySelector('[data-feedback-prev]');
+  var next = slider.querySelector('[data-feedback-next]');
+  if (slides.length < 2 || !controls || !count || !previous || !next) return;
+
+  var current = 0;
+  function showSlide(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach(function (slide, slideIndex) {
+      slide.hidden = slideIndex !== current;
+    });
+    count.textContent = 'Depoimento ' + (current + 1) + ' de ' + slides.length;
+  }
+
+  previous.addEventListener('click', function () { showSlide(current - 1); });
+  next.addEventListener('click', function () { showSlide(current + 1); });
+  showSlide(current);
+  controls.hidden = false;
+})();
