@@ -1014,11 +1014,10 @@ footer{
 }
 .home-page .feedback-controls[hidden]{display:none}
 .home-page .feedback-controls:not([hidden]){
-  display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);
+  display:flex;align-items:center;justify-content:flex-end;gap:var(--space-4);
   margin-top:var(--space-6);padding-top:var(--space-4);
   border-top:1px solid var(--border);
 }
-.home-page .feedback-count{font-size:var(--f-body-02-font-size);color:var(--fg-subtle)}
 .home-page .feedback-buttons{display:flex;gap:var(--space-2)}
 .home-page .feedback-buttons button{
   display:grid;place-items:center;width:44px;height:44px;padding:0;

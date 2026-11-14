@@ -67,10 +67,9 @@
 
   var slides = Array.prototype.slice.call(slider.querySelectorAll('.feedback-slide'));
   var controls = slider.querySelector('[data-feedback-controls]');
-  var count = slider.querySelector('[data-feedback-count]');
   var previous = slider.querySelector('[data-feedback-prev]');
   var next = slider.querySelector('[data-feedback-next]');
-  if (slides.length < 2 || !controls || !count || !previous || !next) return;
+  if (slides.length < 2 || !controls || !previous || !next) return;
 
   var current = 0;
   function showSlide(index) {
@@ -78,7 +77,6 @@
     slides.forEach(function (slide, slideIndex) {
       slide.hidden = slideIndex !== current;
     });
-    count.textContent = 'Depoimento ' + (current + 1) + ' de ' + slides.length;
   }
 
   previous.addEventListener('click', function () { showSlide(current - 1); });
