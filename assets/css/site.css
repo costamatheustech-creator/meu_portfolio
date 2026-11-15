@@ -704,6 +704,14 @@ footer{
   max-width:var(--container-wide);min-height:min(820px,calc(100svh - 64px));
   padding-block:clamp(3rem,8vh,7rem) var(--space-8);
 }
+.home-page .hero h1{animation:hero-entry var(--duration-reveal) var(--ease) 80ms both}
+.home-page .hero .tagline{animation:hero-entry var(--duration-reveal) var(--ease) 220ms both}
+.home-page .hero .hero-actions{animation:hero-entry var(--duration-reveal) var(--ease) 360ms both}
+.home-page .hero .hero-photo{animation:hero-entry var(--duration-reveal) var(--ease) 280ms both}
+@keyframes hero-entry{
+  from{opacity:0;transform:translate3d(0,22px,0);filter:blur(6px)}
+  to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
 .home-page .hero-grid{grid-template-columns:1.05fr .95fr;gap:clamp(3rem,8vw,8rem)}
 .home-page .hero-copy{max-width:670px}
 .home-page .hero h1{
@@ -912,12 +920,15 @@ footer{
 .home-page .intro-section h2,.home-page .section-heading h2,.home-page .audience-title h2,
 .home-page .process-copy h2,.home-page .about-title,
 .home-page .contact-section h2{font-size:var(--f-heading-01-font-size);line-height:1.2;letter-spacing:-.025em}
+.home-page #faq .faq-heading h2{font-size:var(--f-display-02-font-size);font-weight:var(--fw-display);line-height:var(--f-display-02-line-height);letter-spacing:var(--f-display-02-letter-spacing)}
 .home-page .service-row h3,.home-page .audience-item h3,.home-page .home-projects .project-meta h3,
-.home-page .process-steps h3,.home-page .faq-item summary{font-size:var(--f-heading-02-font-size);line-height:1.3;letter-spacing:-.015em}
+.home-page .process-steps h3{font-size:var(--f-heading-02-font-size);line-height:1.3;letter-spacing:-.015em}
+.home-page #faq .faq-item summary{font-size:var(--f-heading-03-font-size);font-weight:var(--fw-medium);line-height:1.4;letter-spacing:0}
 .home-page .intro-copy{font-size:var(--f-body-01-font-size);line-height:1.55}
 .home-page .section-lead{font-size:var(--f-lead-font-size);line-height:1.5}
 .home-page .service-row p,.home-page .audience-item p,.home-page .process-steps p,
-.home-page .process-intro,.home-page .about-body p,.home-page .faq-item p{font-size:var(--f-body-01-font-size);line-height:1.55}
+.home-page .process-intro,.home-page .about-body p{font-size:var(--f-body-01-font-size);line-height:1.55}
+.home-page #faq .faq-item p{font-size:var(--f-body-02-font-size);line-height:1.6}
 .home-page .project-tag{font-size:var(--f-caption-font-size)}
 .home-page .work-section .section-heading-split{grid-template-columns:1fr}
 .home-page .work-section .section-heading h2{max-width:none}
@@ -950,7 +961,7 @@ footer{
   .home-page #servicos .section-heading{margin-bottom:var(--space-4)}
   .home-page .section-heading h2{max-width:none}
   .home-page .service-row h3,.home-page .audience-item h3,.home-page .home-projects .project-meta h3,
-  .home-page .process-steps h3,.home-page .faq-item summary{font-size:var(--f-heading-02-font-size)}
+  .home-page .process-steps h3{font-size:var(--f-heading-02-font-size)}
   .home-page .statement-text{font-size:var(--f-display-02-font-size)}
   .home-page .contact-section h2{font-size:var(--f-heading-01-font-size)}
   .home-page .contact-actions{flex-direction:column;align-items:stretch}
