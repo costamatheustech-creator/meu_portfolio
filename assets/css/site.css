@@ -922,7 +922,7 @@ footer{
 .home-page .work-section .section-heading-split{grid-template-columns:1fr}
 .home-page .work-section .section-heading h2{max-width:none}
 .home-page .statement-section{
-  z-index:0;isolation:isolate;max-width:none;margin:var(--space-6) 0;padding:clamp(5rem,11vw,9rem) var(--gutter);
+  z-index:0;isolation:isolate;max-width:none;margin:0;padding:clamp(5rem,11vw,9rem) var(--gutter);
   border:0;text-align:center;
 }
 .home-page .statement-section::before{
