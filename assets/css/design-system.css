@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MATHEUS COSTA - DESIGN SYSTEM "SAGE DARK"
+   MATHEUS COSTA - DESIGN SYSTEM "SAGE LIGHT"
    Camada 3 de 3: BIBLIOTECA DE COMPONENTES .ds-
    --------------------------------------------------------------------------
    Requer fonts.css + tokens.css + base.css carregados antes.
@@ -193,7 +193,7 @@
 .ds-btn:active{transform:translateY(1px)}
 .ds-btn svg{width:16px;height:16px;flex:0 0 16px}
 
-/* primario: fill claro sobre o dark - 11.66:1 */
+/* primario: fill verde de marca sobre a superfície clara */
 .ds-btn--primary{background:var(--action);color:var(--action-fg);border-color:var(--action)}
 .ds-btn--primary:hover{background:var(--action-hover);border-color:var(--action-hover)}
 
@@ -203,7 +203,7 @@
 
 /* marca: fill na cor de marca */
 .ds-btn--brand{background:var(--surface-brand);color:var(--fg);border-color:var(--surface-brand)}
-.ds-btn--brand:hover{background:var(--sage-500);border-color:var(--sage-500)}
+.ds-btn--brand:hover{background:var(--action);border-color:var(--action);color:var(--action-fg)}
 
 /* fantasma: sem contorno */
 .ds-btn--ghost{color:var(--fg-muted)}
@@ -235,7 +235,7 @@
   padding-bottom:2px;
   transition:color var(--duration-base) var(--ease),border-color var(--duration-base) var(--ease);
 }
-.ds-link:hover{color:var(--sage-200);border-color:var(--sage-400)}
+.ds-link:hover{color:var(--fg-accent);border-color:var(--fg-accent)}
 .ds-link svg{width:14px;height:14px;transition:transform var(--duration-base) var(--ease)}
 .ds-link:hover svg{transform:translate(3px,-3px)}
 
@@ -261,7 +261,7 @@
 /* ponto de status pulsante */
 .ds-dot{
   width:7px;height:7px;border-radius:var(--radius-pill);
-  background:var(--sage-200);flex:0 0 7px;
+  background:var(--color-primary);flex:0 0 7px;
   animation:ds-pulse 2.4s var(--ease-in-out) infinite;
 }
 @keyframes ds-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
@@ -291,7 +291,7 @@
 .ds-card--flat{background:transparent;border-color:var(--border)}
 .ds-card--brand{background:var(--surface-brand);border-color:var(--sage-500)}
 .ds-card--invert{background:var(--surface-invert);border-color:var(--surface-invert);color:var(--fg-invert)}
-.ds-card--invert .ds-body,.ds-card--invert .ds-lead{color:var(--sage-700)}
+.ds-card--invert .ds-body,.ds-card--invert .ds-lead{color:var(--sage-100)}
 .ds-card--pad-sm{padding:var(--space-5)}
 .ds-card--pad-lg{padding:var(--space-7)}
 

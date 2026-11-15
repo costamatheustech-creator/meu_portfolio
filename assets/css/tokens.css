@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MATHEUS COSTA - DESIGN SYSTEM "SAGE DARK"
+   MATHEUS COSTA - DESIGN SYSTEM "SAGE LIGHT"
    Camada 1 de 2: FOUNDATIONS (tokens)
    --------------------------------------------------------------------------
    Arquitetura inspirada no front-end da ElevenLabs:
@@ -9,10 +9,10 @@
      - curva de easing expo-out cubic-bezier(.16,1,.3,1) como assinatura
 
    Paleta base do projeto:
-     #C7DFCD  sage    - texto primario e acao principal
-     #2B5748  brand   - superficies de marca, bordas, preenchimentos
-     #0C231E  ink     - fundo da pagina
-     #202F2B  slate   - superficie elevada (cards, inputs)
+     #C7DFCD  sage    - apoio claro em faixas de cor primaria
+     #2B5748  brand   - primária em CTAs e faixas estratégicas da homepage
+     #0C231E  ink     - texto principal sobre fundos claros
+     #202F2B  slate   - degrau profundo da rampa de marca
 
    Requer: fonts.css carregado antes deste arquivo.
    ========================================================================== */
@@ -38,68 +38,67 @@
   --sage-950:#0C231E;   /* base fornecida - ink */
 
   /* ======================================================================
-     2. CORES - tokens semanticos
-     Contraste medido (WCAG 2.1) contra o fundo --bg #0C231E.
+     2. CORES - tokens semanticos do tema claro global
+     Contraste medido (WCAG 2.1) sobre o fundo terciario #F5F8F4.
      ====================================================================== */
 
-  /* Composição visual 50/30/20 — terciária no campo e no respiro (50%),
-     secundária nas superfícies de apoio (30%) e primária nos CTAs/conversão
-     (20%). Os papéis são remapeados no tema claro do Blog para preservar contraste. */
-  --color-tertiary:var(--sage-950);
-  --color-secondary:var(--sage-600);
-  --color-primary:var(--sage-100);
-  --color-primary-foreground:var(--sage-950);
+  /* Composição 50/30/20 em todo o site: terciária no campo e respiro (50%),
+     secundária nas superfícies de apoio (30%), primária nas ações e em três
+     blocos estratégicos da homepage (20%). */
+  --color-tertiary:#F5F8F4;
+  --color-secondary:var(--sage-50);
+  --color-primary:var(--sage-600);
+  --color-primary-foreground:var(--sage-50);
 
-  /* superficies - cor solida, sem gradiente nem pattern; a unica
-     textura e o grao de --noise (ver body::after) */
-  --bg:var(--color-tertiary);             /* terciaria: campo dominante     */
-  --bg-raised:var(--sage-900);            /* faixas alternadas de secao     */
-  --surface:var(--sage-850);              /* cards, inputs, dropdowns       */
-  --surface-hover:var(--sage-800);        /* estado hover das superficies   */
-  --surface-brand:var(--color-secondary); /* secundária: bloco de marca     */
-  --surface-invert:var(--sage-100);       /* bloco claro sobre o dark       */
+  /* superficies */
+  --bg:var(--color-tertiary);
+  --bg-raised:var(--color-secondary);
+  --surface:#FFFFFF;
+  --surface-hover:var(--sage-50);
+  --surface-brand:var(--color-secondary);
+  --surface-invert:var(--sage-950);
 
-  /* texto */
-  --fg:var(--sage-100);                   /* 11.66:1  AAA  primario         */
-  --fg-muted:var(--sage-300);             /*  7.07:1  AAA  secundario       */
-  --fg-subtle:var(--sage-400);            /*  5.19:1  AA   terciario        */
-  --fg-accent:var(--sage-500);            /*  3.58:1  AA so >=24px e icones  */
-  --fg-accent-sm:var(--sage-400);         /*  5.19:1  AA acento em texto pequeno */
-  --fg-invert:var(--sage-950);            /* sobre --surface-invert         */
+  /* texto: #0C231E 15.37:1; #27483D 9.43:1; #2B5748 7.66:1 sobre #F5F8F4 */
+  --fg:var(--sage-950);
+  --fg-muted:var(--sage-700);
+  --fg-subtle:var(--sage-600);
+  --fg-accent:var(--sage-600);
+  --fg-accent-sm:var(--sage-600);
+  --fg-invert:var(--sage-50);
 
   /* bordas e divisores */
-  --border:rgba(199,223,205,.10);         /* divisor discreto               */
-  --border-strong:rgba(199,223,205,.20);  /* contorno de card               */
-  --border-brand:var(--color-secondary);  /* contorno de marca              */
-  --border-on-light:rgba(12,35,30,.16);   /* linhas em faixas claras        */
-  --border-on-light-strong:rgba(12,35,30,.28);
-  --border-focus:var(--sage-200);         /* anel de foco - 9.07:1          */
+  --border:rgba(12,35,30,.12);
+  --border-strong:rgba(12,35,30,.22);
+  --border-brand:var(--color-primary);
+  --border-on-light:rgba(12,35,30,.14);
+  --border-on-light-strong:rgba(12,35,30,.24);
+  --border-focus:var(--color-primary);
 
   /* acao */
-  --action:var(--color-primary);          /* primária: CTA de conversão     */
+  --action:var(--color-primary);
   --action-fg:var(--color-primary-foreground);
-  --action-hover:var(--sage-50);
-  --action-ghost:rgba(199,223,205,.07);   /* fill de hover fantasma         */
+  --action-hover:var(--sage-700);
+  --action-ghost:rgba(43,87,72,.08);
 
   /* apoio */
-  --overlay:rgba(12,35,30,.72);
-  --scrollbar-track:rgba(199,223,205,.16);
-  --scrollbar-track-active:rgba(199,223,205,.24);
-  --scrollbar-thumb:var(--sage-300);
-  --scrollbar-thumb-hover:var(--sage-200);
-  --scrollbar-thumb-active:var(--sage-100);
-  --scrollbar-shadow:rgba(12,35,30,.24);
+  --overlay:rgba(245,248,244,.96);
+  --scrollbar-track:rgba(43,87,72,.14);
+  --scrollbar-track-active:rgba(43,87,72,.26);
+  --scrollbar-thumb:var(--sage-500);
+  --scrollbar-thumb-hover:var(--sage-600);
+  --scrollbar-thumb-active:var(--sage-700);
+  --scrollbar-shadow:rgba(12,35,30,.15);
 
   /* grao de fundo - SVG feTurbulence embutido, sem arquivo externo.
      Sobe --noise-opacity para mais textura, zera para voltar ao fundo liso. */
-  --noise-opacity:.05;
+  --noise-opacity:0;
   --noise-size:170px;
   --noise:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='170'%20height='170'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.82'%20numOctaves='4'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='170'%20height='170'%20filter='url(%23n)'/%3E%3C/svg%3E");
 
-  /* elevacao - sombras sempre no ink, nunca em preto puro */
-  --shadow-sm:0 1px 2px rgba(12,35,30,.6),0 8px 20px -14px rgba(12,35,30,.9);
-  --shadow-md:0 2px 4px rgba(12,35,30,.5),0 20px 44px -24px rgba(12,35,30,.95);
-  --shadow-lg:0 4px 8px rgba(12,35,30,.5),0 40px 80px -32px rgba(12,35,30,1);
+  /* elevacao leve sobre o campo claro */
+  --shadow-sm:0 1px 2px rgba(12,35,30,.08),0 8px 20px -14px rgba(12,35,30,.18);
+  --shadow-md:0 2px 4px rgba(12,35,30,.08),0 20px 44px -24px rgba(12,35,30,.20);
+  --shadow-lg:0 4px 8px rgba(12,35,30,.08),0 40px 80px -32px rgba(12,35,30,.22);
 
   /* ======================================================================
      3. TIPOGRAFIA - familias e pesos

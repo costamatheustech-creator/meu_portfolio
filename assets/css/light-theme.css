@@ -1,0 +1,118 @@
+/*
+ * Ajustes de composição do tema claro global.
+ * A paleta e os papéis 50/30/20 vivem em tokens.css; esta camada corrige
+ * acentos herdados do antigo tema escuro e aplica os três blocos primários da home.
+ */
+
+/* Acentos que antes usavam tons pálidos sobre o fundo escuro. */
+.brand:hover .brand-name,
+.project:hover .project-meta h3{color:var(--fg-accent)}
+.brand:hover .brand-avatar{border-color:var(--fg-accent)}
+.job:hover::before{background:var(--color-primary)}
+
+.home-page .brand-mark span,
+.home-page .hero-note span,
+.home-page .hero-stamp i,
+.home-page .intro-section h2 span,
+.home-page .text-link span,
+.home-page .audience-item>span,
+.home-page .statement-mark,
+.home-page .process-steps li>span,
+.home-page .about-title .grad{color:var(--fg-accent)}
+
+/* 1/3 — Serviços: bloco principal da oferta. */
+.home-page #servicos{
+  --fg:var(--sage-50);
+  --fg-muted:var(--sage-100);
+  --fg-subtle:var(--sage-100);
+  --fg-accent:var(--sage-50);
+  --fg-accent-sm:var(--sage-100);
+  --border:rgba(245,248,244,.24);
+  --border-strong:rgba(245,248,244,.42);
+}
+.home-page #servicos::before{background:var(--color-primary)}
+.home-page #servicos .eyebrow,
+.home-page #servicos .service-index,
+.home-page #servicos .service-label{color:var(--sage-100)}
+.home-page #servicos :focus-visible{outline-color:var(--sage-50)}
+
+/* 2/3 — Feedbacks: faixa de confiança com painel secundário claro. */
+.home-page #feedbacks{
+  position:relative;
+  z-index:0;
+  isolation:isolate;
+  --fg:var(--sage-50);
+  --fg-muted:var(--sage-100);
+  --fg-subtle:var(--sage-100);
+  --fg-accent:var(--sage-50);
+  --fg-accent-sm:var(--sage-100);
+  --border:rgba(245,248,244,.24);
+  --border-strong:rgba(245,248,244,.42);
+  border-top:0;
+}
+.home-page #feedbacks::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0 auto 0 50%;
+  width:100vw;
+  transform:translateX(-50%);
+  background:var(--color-primary);
+}
+.home-page #feedbacks .feedback-panel{
+  --fg:var(--sage-950);
+  --fg-muted:var(--sage-700);
+  --fg-subtle:var(--sage-600);
+  --fg-accent:var(--sage-600);
+  --fg-accent-sm:var(--sage-600);
+  --border:var(--border-on-light);
+  --border-strong:var(--border-on-light-strong);
+  background:var(--color-secondary);
+}
+.home-page .feedback-slide blockquote::before{color:var(--fg-accent)}
+.home-page .feedback-buttons button:hover{border-color:var(--fg-accent-sm)}
+
+/* 3/3 — Contacto: bloco de conversão final. */
+.home-page .contact-section{
+  position:relative;
+  z-index:0;
+  isolation:isolate;
+  --fg:var(--sage-50);
+  --fg-muted:var(--sage-100);
+  --fg-subtle:var(--sage-100);
+  --fg-accent:var(--sage-50);
+  --fg-accent-sm:var(--sage-100);
+  --border:rgba(245,248,244,.24);
+  --border-strong:rgba(245,248,244,.42);
+}
+.home-page .contact-section::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0 auto 0 50%;
+  width:100vw;
+  transform:translateX(-50%);
+  background:var(--color-primary);
+}
+.home-page .contact-dot{
+  background:var(--sage-100);
+  box-shadow:0 0 0 5px rgba(224,237,228,.18);
+}
+.home-page .contact-section h2 span{color:var(--fg-accent-sm)}
+.home-page .contact-actions .btn{
+  background:var(--sage-50);
+  border-color:var(--sage-50);
+  color:var(--sage-950);
+}
+.home-page .contact-actions .btn:hover{
+  background:var(--sage-100);
+  border-color:var(--sage-100);
+}
+.home-page .contact-section :focus-visible{outline-color:var(--sage-50)}
+
+/* A FAQ continua como superfície secundária, com texto escuro de alto contraste. */
+.home-page #faq::before{background:var(--color-secondary)}
+
+/* O rótulo copiado e a amostra de cor continuam distinguíveis no Design System claro. */
+.doc-swatch[data-copied]{border-color:var(--border-focus)}
+.doc-chipcolor{border-color:var(--border-strong)}
