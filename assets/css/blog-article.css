@@ -1,4 +1,4 @@
-/* Template editorial do site Matheus Costa; Sora e tokens Sage Dark são servidos localmente. */
+/* Template editorial do site Matheus Costa; Sora e tokens Sage são servidos localmente. */
 .blog-article-page .article-main{display:block;width:100%;max-width:none;padding:0 0 var(--section)}
 .blog-article-page .article-header{
   width:100%;max-width:var(--container-wide);margin-inline:auto;padding:var(--space-7) var(--gutter) 0;
@@ -31,6 +31,21 @@
   border-radius:50%;object-fit:cover;object-position:center 28%;filter:grayscale(1);
 }
 .blog-article-page .article-meta span:first-of-type{color:var(--fg);font-weight:var(--fw-medium)}
+.blog-article-page .article-cover{
+  display:block;width:100%;margin:var(--space-6) 0 0;overflow:hidden;
+  border:var(--border-width) solid var(--border);border-radius:var(--radius-lg);background:var(--surface);
+}
+.blog-article-page .article-cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.blog-article-page .article-figure{
+  width:100%;margin:var(--space-7) 0 var(--space-8);overflow:hidden;
+  border:var(--border-width) solid var(--border);border-radius:var(--radius-md);background:var(--surface);
+}
+.blog-article-page .article-figure img{display:block;width:100%;height:auto;max-width:100%;object-fit:cover}
+.blog-article-page .article-cover figcaption,
+.blog-article-page .article-figure figcaption{
+  padding:var(--space-3) var(--space-4);color:var(--fg-subtle);
+  font-size:var(--f-caption-font-size);line-height:1.5;
+}
 .blog-article-page .article-content{
   width:100%;max-width:var(--container-narrow);margin:var(--space-7) auto 0;
   padding-inline:var(--gutter);color:var(--fg-muted);
@@ -51,9 +66,7 @@
 .blog-article-page .article-content strong{color:var(--fg);font-weight:var(--fw-semibold)}
 .blog-article-page .article-content a{color:var(--fg-accent-sm);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
 .blog-article-page .article-content a:hover{color:var(--fg)}
-.blog-article-page .article-content .article-citation{
-  margin-left:.15em;font-size:.8em;vertical-align:super;text-decoration:none;
-}
+.blog-article-page .article-content .article-citation{margin-left:.15em;font-size:.8em;vertical-align:super;text-decoration:none}
 .blog-article-page .article-references{margin-top:var(--space-8);padding-top:var(--space-4);border-top:var(--border-width) solid var(--border)}
 .blog-article-page .article-references h2{margin-top:0;font-size:var(--f-heading-03-font-size)}
 .blog-article-page .article-references ol{padding-left:1.4em}
@@ -63,6 +76,7 @@
   .blog-article-page .article-header{padding-top:var(--space-6)}
   .blog-article-page .article-header .blog-breadcrumb{margin-bottom:var(--space-5)}
   .blog-article-page .article-title{max-width:18ch}
+  .blog-article-page .article-cover{margin-top:var(--space-5);border-radius:var(--radius-md)}
   .blog-article-page .article-content{margin-top:var(--space-6)}
   .blog-article-page .article-content h2{margin-top:var(--space-7)}
 }

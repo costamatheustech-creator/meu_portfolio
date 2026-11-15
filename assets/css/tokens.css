@@ -42,13 +42,21 @@
      Contraste medido (WCAG 2.1) contra o fundo --bg #0C231E.
      ====================================================================== */
 
+  /* Composição visual 50/30/20 — terciária no campo e no respiro (50%),
+     secundária nas superfícies de apoio (30%) e primária nos CTAs/conversão
+     (20%). Os papéis são remapeados no tema claro do Blog para preservar contraste. */
+  --color-tertiary:var(--sage-950);
+  --color-secondary:var(--sage-600);
+  --color-primary:var(--sage-100);
+  --color-primary-foreground:var(--sage-950);
+
   /* superficies - cor solida, sem gradiente nem pattern; a unica
-     textura e o grao sutil de --noise (ver body::after) */
-  --bg:var(--sage-950);                   /* fundo da pagina                */
+     textura e o grao de --noise (ver body::after) */
+  --bg:var(--color-tertiary);             /* terciaria: campo dominante     */
   --bg-raised:var(--sage-900);            /* faixas alternadas de secao     */
   --surface:var(--sage-850);              /* cards, inputs, dropdowns       */
   --surface-hover:var(--sage-800);        /* estado hover das superficies   */
-  --surface-brand:var(--sage-600);        /* bloco de marca preenchido      */
+  --surface-brand:var(--color-secondary); /* secundária: bloco de marca     */
   --surface-invert:var(--sage-100);       /* bloco claro sobre o dark       */
 
   /* texto */
@@ -62,17 +70,25 @@
   /* bordas e divisores */
   --border:rgba(199,223,205,.10);         /* divisor discreto               */
   --border-strong:rgba(199,223,205,.20);  /* contorno de card               */
-  --border-brand:var(--sage-600);         /* contorno de marca              */
+  --border-brand:var(--color-secondary);  /* contorno de marca              */
+  --border-on-light:rgba(12,35,30,.16);   /* linhas em faixas claras        */
+  --border-on-light-strong:rgba(12,35,30,.28);
   --border-focus:var(--sage-200);         /* anel de foco - 9.07:1          */
 
   /* acao */
-  --action:var(--sage-100);               /* botao primario (fill claro)    */
-  --action-fg:var(--sage-950);            /* texto do botao primario        */
+  --action:var(--color-primary);          /* primária: CTA de conversão     */
+  --action-fg:var(--color-primary-foreground);
   --action-hover:var(--sage-50);
   --action-ghost:rgba(199,223,205,.07);   /* fill de hover fantasma         */
 
   /* apoio */
   --overlay:rgba(12,35,30,.72);
+  --scrollbar-track:rgba(199,223,205,.16);
+  --scrollbar-track-active:rgba(199,223,205,.24);
+  --scrollbar-thumb:var(--sage-300);
+  --scrollbar-thumb-hover:var(--sage-200);
+  --scrollbar-thumb-active:var(--sage-100);
+  --scrollbar-shadow:rgba(12,35,30,.24);
 
   /* grao de fundo - SVG feTurbulence embutido, sem arquivo externo.
      Sobe --noise-opacity para mais textura, zera para voltar ao fundo liso. */

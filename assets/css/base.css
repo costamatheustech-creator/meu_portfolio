@@ -108,16 +108,16 @@ footer,footer::before,footer::after,footer *,footer *::before,footer *::after{an
 .site-scrollbar__track{position:absolute;inset:0;display:block}
 .site-scrollbar__track::before{
   content:"";position:absolute;top:0;bottom:0;left:9px;width:2px;border-radius:var(--radius-pill);
-  background:rgba(199,223,205,.16);transition:background var(--duration-fast) var(--ease);
+  background:var(--scrollbar-track);transition:background var(--duration-fast) var(--ease);
 }
 .site-scrollbar__thumb{
   position:absolute;top:0;right:7px;display:block;width:6px;min-height:42px;border-radius:var(--radius-pill);
-  background:var(--sage-300);box-shadow:0 0 12px rgba(12,35,30,.24);
+  background:var(--scrollbar-thumb);box-shadow:0 0 12px var(--scrollbar-shadow);
   transition:width var(--duration-fast) var(--ease),background var(--duration-fast) var(--ease);
 }
-#site-scrollbar:hover .site-scrollbar__thumb,#site-scrollbar:focus-visible .site-scrollbar__thumb{right:6px;width:8px;background:var(--sage-200)}
-#site-scrollbar.is-dragging .site-scrollbar__thumb{right:5px;width:10px;background:var(--sage-100)}
-#site-scrollbar.is-dragging .site-scrollbar__track::before{background:rgba(199,223,205,.24)}
+#site-scrollbar:hover .site-scrollbar__thumb,#site-scrollbar:focus-visible .site-scrollbar__thumb{right:6px;width:8px;background:var(--scrollbar-thumb-hover)}
+#site-scrollbar.is-dragging .site-scrollbar__thumb{right:5px;width:10px;background:var(--scrollbar-thumb-active)}
+#site-scrollbar.is-dragging .site-scrollbar__track::before{background:var(--scrollbar-track-active)}
 html.scrollbar-dragging{scroll-behavior:auto!important}
 @media (pointer:fine){
   html.has-custom-scrollbar{scrollbar-width:none}

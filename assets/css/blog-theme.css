@@ -1,0 +1,50 @@
+/* Tema claro do Blog: conserva a identidade Sage e remapeia os papéis 50/30/20.
+   Terciária (fundo), secundária (superfícies) e primária (CTA) mudam de valor
+   para manter contraste, sem afetar a homepage nem as páginas de cases. */
+:root[data-theme="light"]{
+  color-scheme:light;
+
+  --color-tertiary:#F5F8F4;
+  --color-secondary:var(--sage-50);
+  --color-primary:var(--sage-600);
+  --color-primary-foreground:var(--sage-50);
+
+  --bg:var(--color-tertiary);
+  --bg-raised:var(--color-secondary);
+  --surface:#FFFFFF;
+  --surface-hover:var(--sage-50);
+  --surface-brand:var(--color-secondary);
+  --surface-invert:var(--sage-950);
+
+  --fg:var(--sage-950);
+  --fg-muted:var(--sage-700);
+  --fg-subtle:var(--sage-600);
+  --fg-accent:var(--sage-600);
+  --fg-accent-sm:var(--sage-600);
+  --fg-invert:var(--sage-50);
+
+  --border:rgba(12,35,30,.12);
+  --border-strong:rgba(12,35,30,.22);
+  --border-brand:var(--color-primary);
+  --border-on-light:rgba(12,35,30,.14);
+  --border-on-light-strong:rgba(12,35,30,.24);
+  --border-focus:var(--color-primary);
+
+  --action:var(--color-primary);
+  --action-fg:var(--color-primary-foreground);
+  --action-hover:var(--sage-700);
+  --action-ghost:rgba(43,87,72,.08);
+  --overlay:rgba(245,248,244,.96);
+  --noise-opacity:0;
+
+  --scrollbar-track:rgba(43,87,72,.14);
+  --scrollbar-track-active:rgba(43,87,72,.26);
+  --scrollbar-thumb:var(--sage-500);
+  --scrollbar-thumb-hover:var(--sage-600);
+  --scrollbar-thumb-active:var(--sage-700);
+  --scrollbar-shadow:rgba(12,35,30,.15);
+
+  --shadow-sm:0 1px 2px rgba(12,35,30,.08),0 8px 20px -14px rgba(12,35,30,.18);
+  --shadow-md:0 2px 4px rgba(12,35,30,.08),0 20px 44px -24px rgba(12,35,30,.20);
+  --shadow-lg:0 4px 8px rgba(12,35,30,.08),0 40px 80px -32px rgba(12,35,30,.22);
+}

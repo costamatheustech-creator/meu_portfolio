@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; frame-src 'none'"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
 <title>Design System Sage Dark | Matheus Costa</title>
-<meta name="description" content="Design system dark do portfólio de Matheus Costa: paleta, tipografia local, escala, layout e componentes."/>
+<meta name="description" content="Design system Sage de Matheus Costa: proporção cromática 50/30/20, tipografia local Sora, escala, layout e componentes."/>
 <meta name="theme-color" content="#0C231E"/>
 <meta name="color-scheme" content="dark"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230C231E'/%3E%3Ctext%20x='16'%20y='23'%20font-family='sans-serif'%20font-size='18'%20font-weight='700'%20fill='%23C7DFCD'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
@@ -142,22 +142,22 @@
         <div class="doc-swatch" data-copy="#C7DFCD">
           <div class="doc-chipcolor" style="background:#C7DFCD"></div>
           <div class="doc-meta"><b>sage-100</b><span>#C7DFCD</span></div>
-          <p class="ds-body-sm">Texto primário e ação principal. 11.66:1 sobre o fundo &mdash; AAA.</p>
+          <p class="ds-body-sm">Primária no tema dark: CTA de conversão e foreground claro. 11.66:1 sobre o fundo &mdash; AAA.</p>
         </div>
         <div class="doc-swatch" data-copy="#2B5748">
           <div class="doc-chipcolor" style="background:#2B5748"></div>
           <div class="doc-meta"><b>sage-600</b><span>#2B5748</span></div>
-          <p class="ds-body-sm">Marca. Superficies, bordas e fills &mdash; 2.01:1, nunca como texto.</p>
+          <p class="ds-body-sm">Secundária no tema dark: superfícies e bordas de marca. 2.01:1 contra o fundo dark; nunca como texto pequeno.</p>
         </div>
         <div class="doc-swatch" data-copy="#0C231E">
           <div class="doc-chipcolor" style="background:#0C231E"></div>
           <div class="doc-meta"><b>sage-950</b><span>#0C231E</span></div>
-          <p class="ds-body-sm">Fundo da página, em cor sólida. A única textura é o grão sutil de <code>--noise</code>.</p>
+          <p class="ds-body-sm">Terciária no tema dark: fundo e respiro dominante. A única textura é o grão sutil de <code>--noise</code>.</p>
         </div>
         <div class="doc-swatch" data-copy="#202F2B">
           <div class="doc-chipcolor" style="background:#202F2B"></div>
           <div class="doc-meta"><b>sage-850</b><span>#202F2B</span></div>
-          <p class="ds-body-sm">Superficie elevada: cards, inputs e dropdowns.</p>
+          <p class="ds-body-sm">Superfície secundária elevada: cards, inputs e dropdowns.</p>
         </div>
       </div>
       <h3 class="ds-h2 ds-reveal" style="margin:var(--space-8) 0 var(--space-4)">Rampa completa</h3>
@@ -176,7 +176,9 @@
         <div class="ds-row-item"><span class="doc-chipcolor" style="background:#0C231E;width:44px;height:32px;flex:0 0 44px"></span><span class="ds-row-value">sage-950</span><span class="ds-row-key">#0C231E</span><span class="ds-row-go ds-body-sm">fundo da página</span></div>
       </div>
       <div class="doc-note ds-reveal" style="margin-top:var(--space-6)">
-        <p class="ds-body"><strong>Regra de uso:</strong> #2B5748 e uma cor de <em>superficie</em>, não de texto &mdash; 2.01:1 não passa em nenhum criterio WCAG.</p>
+        <p class="ds-body"><strong>Composição global 50/30/20:</strong> aproximadamente 50% terciária (fundo e respiro), 30% secundária (superfícies de apoio, cards e faixas) e 20% primária (CTAs e pontos de conversão). É uma orientação visual, não uma contagem de variáveis CSS.</p>
+        <p class="ds-body" style="margin-top:var(--space-3)">A homepage e os cases mantêm o tema dark. No Blog, os mesmos papéis são remapeados para um fundo sage claro, superfícies secundárias suaves e CTAs em verde-floresta, preservando a hierarquia e o contraste.</p>
+        <p class="ds-body" style="margin-top:var(--space-3)"><strong>Contraste no tema dark:</strong> #2B5748 é uma cor de <em>superfície</em>, não de texto &mdash; 2.01:1 não passa em nenhum critério WCAG.</p>
         <p class="ds-body" style="margin-top:var(--space-3)">Para a marca em texto o token depende do tamanho: <code>--fg-accent</code> (sage-500, 3.58:1) só a partir de 24px ou em ícones; abaixo disso use <code>--fg-accent-sm</code> (sage-400, 5.19:1), que e o token dos cargos, rótulos e numerações. Em texto corrido, <code>--fg-muted</code> (sage-300, 7.07:1).</p>
       </div>
     </div>

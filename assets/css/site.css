@@ -751,7 +751,7 @@ footer{
 .home-page #servicos .section-heading h2,.home-page .work-section .section-heading h2{margin-top:0}
 .home-page .section-lead{max-width:42ch;margin-left:auto;color:var(--fg-muted);font-size:var(--f-lead-font-size)}
 .home-page #servicos .section-heading,.home-page .work-section .section-heading{margin-bottom:var(--space-5)}
-.home-page #servicos{z-index:0;isolation:isolate;--fg:var(--sage-950);--fg-muted:var(--sage-800);--fg-subtle:var(--sage-700);--fg-accent:var(--sage-600);--fg-accent-sm:var(--sage-600);--border:rgba(12,35,30,.16);--border-strong:rgba(12,35,30,.28);padding-block:clamp(4.5rem,9vw,8rem)}
+.home-page #servicos{z-index:0;isolation:isolate;--fg:var(--sage-950);--fg-muted:var(--sage-800);--fg-subtle:var(--sage-700);--fg-accent:var(--sage-600);--fg-accent-sm:var(--sage-600);--border:var(--border-on-light);--border-strong:var(--border-on-light-strong);padding-block:clamp(4.5rem,9vw,8rem)}
 .home-page #servicos::before{content:"";position:absolute;z-index:-1;inset:0 auto 0 50%;width:100vw;transform:translateX(-50%);background:var(--sage-50)}
 .home-page #servicos .eyebrow,.home-page #servicos .service-index,.home-page #servicos .service-label{color:var(--sage-600)}
 .home-page .service-list{border-top:1px solid var(--border-strong)}
@@ -807,7 +807,7 @@ footer{
 .home-page .about-stats{margin-top:var(--space-7);border-radius:var(--radius-md)}
 .home-page .about-stats .stat{background:var(--bg-raised);padding:var(--space-4) var(--space-5)}
 .home-page .about-stats .num{font-size:clamp(1.6rem,2.5vw,2.3rem)}
-.home-page #faq{z-index:0;isolation:isolate;--fg:var(--sage-950);--fg-muted:var(--sage-800);--fg-subtle:var(--sage-700);--fg-accent:var(--sage-600);--fg-accent-sm:var(--sage-600);--border:rgba(12,35,30,.16);--border-strong:rgba(12,35,30,.28);padding-block:var(--section-tight)}
+.home-page #faq{z-index:0;isolation:isolate;--fg:var(--sage-950);--fg-muted:var(--sage-800);--fg-subtle:var(--sage-700);--fg-accent:var(--sage-600);--fg-accent-sm:var(--sage-600);--border:var(--border-on-light);--border-strong:var(--border-on-light-strong);padding-block:var(--section-tight)}
 .home-page #faq::before{content:"";position:absolute;z-index:-1;inset:0 auto 0 50%;width:100vw;transform:translateX(-50%);background:var(--sage-100)}
 .home-page .faq-heading{margin:0 0 var(--space-5)}
 .home-page .faq-heading h2{margin:0;color:var(--sage-950);font-family:var(--f-heading-01-font-family);font-size:var(--f-heading-01-font-size);font-weight:var(--f-heading-01-font-weight);line-height:var(--f-heading-01-line-height);letter-spacing:var(--f-heading-01-letter-spacing)}
