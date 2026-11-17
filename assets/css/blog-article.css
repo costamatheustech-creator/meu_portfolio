@@ -66,6 +66,18 @@
 .blog-article-page .article-content strong{color:var(--fg);font-weight:var(--fw-semibold)}
 .blog-article-page .article-content a{color:var(--fg-accent-sm);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
 .blog-article-page .article-content a:hover{color:var(--fg)}
+.blog-article-page .article-service-cta{
+  margin:var(--space-7) 0 var(--space-8);padding:var(--space-5) 0;
+  border-block:var(--border-width) solid var(--border);
+}
+.blog-article-page .article-service-cta h2{margin-top:0}
+.blog-article-page .article-service-cta__action{margin-bottom:0}
+.blog-article-page .article-service-cta__action a{font-weight:var(--fw-semibold)}
+.blog-article-page .article-content blockquote{
+  margin:0 0 var(--space-5);padding:var(--space-4);
+  border-left:3px solid var(--border-strong);background:var(--surface);color:var(--fg);
+}
+.blog-article-page .article-content blockquote p{margin-bottom:0}
 .blog-article-page .article-recommendations{
   width:100%;max-width:var(--container-narrow);margin:var(--space-8) auto 0;
   padding:var(--space-5) var(--gutter) 0;border-top:var(--border-width) solid var(--border);
