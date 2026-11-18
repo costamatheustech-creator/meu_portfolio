@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; frame-src 'none'"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.google-analytics.com https://region1.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com; base-uri 'self'; form-action 'none'; object-src 'none'; frame-src 'none'"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
 <title>Design System Sage Light | Matheus Costa</title>
 <meta name="description" content="Design system Sage de Matheus Costa: proporção cromática 50/30/20, tipografia local Sora, escala, layout e componentes."/>
@@ -554,6 +554,7 @@
     </div>
   </div>
 </footer>
+<script src="/assets/js/analytics.js" defer></script>
 <script src="assets/js/vendor/lenis-1.0.42.min.js"></script>
 <script src="assets/js/smooth-scroll.js"></script>
 <script src="assets/js/design-system.js"></script>
