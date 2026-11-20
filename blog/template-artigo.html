@@ -85,14 +85,10 @@
       </article>
       <section class="article-recommendations" aria-labelledby="recommendations-title">
         <h2 id="recommendations-title">Assuntos relacionados</h2>
-        <p class="article-recommendations__intro">Adicione aqui recomendações de matérias publicadas com temas relacionados. Não use links para páginas que ainda não existem.</p>
-        <ul class="article-recommendation-list">
-          <li class="article-recommendation-card">
-            <span class="article-recommendation-status">Matéria relacionada</span>
-            <h3>[Título de uma matéria publicada]</h3>
-            <p>[Uma frase breve explicando por que esta leitura complementa o artigo atual.]</p>
-          </li>
-        </ul>
+        <p class="article-recommendations__intro">Outras leituras publicadas para você continuar explorando o tema.</p>
+        <div class="article-recommendation-list" data-blog-related-list aria-busy="true">
+          <p class="article-recommendations__fallback">Confira todas as matérias publicadas na <a href="/blog/">página do blog</a>.</p>
+        </div>
       </section>
     </main>
 
@@ -112,6 +108,7 @@
     </footer>
   </div>
 
+<script src="/assets/js/blog-related-readings.js" defer></script>
 <script src="/assets/js/analytics.js" defer></script>
 <script src="../assets/js/vendor/lenis-1.0.42.min.js"></script>
   <script src="../assets/js/smooth-scroll.js"></script>
