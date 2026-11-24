@@ -339,6 +339,9 @@ h3{
   width:100%;height:100%;object-fit:cover;
   transition:transform var(--duration-slow) var(--ease);
 }
+.project-cover picture{
+  display:block;width:100%;height:100%;
+}
 .project:hover .project-cover{
   transform:translateY(-6px);
   border-color:var(--border-strong);
@@ -714,8 +717,8 @@ footer{
 .home-page .hero .hero-actions{animation:hero-entry var(--duration-reveal) var(--ease) 360ms both}
 .home-page .hero .hero-photo{animation:hero-entry var(--duration-reveal) var(--ease) 280ms both}
 @keyframes hero-entry{
-  from{opacity:0;transform:translate3d(0,22px,0);filter:blur(6px)}
-  to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+  from{opacity:0;transform:translate3d(0,22px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
 }
 .home-page .hero-grid{grid-template-columns:1.05fr .95fr;gap:clamp(3rem,8vw,8rem)}
 .home-page .hero-copy{max-width:670px}

@@ -20,7 +20,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
 <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="assets/css/fonts.css"/>
-<link rel="stylesheet" href="assets/css/tokens.css"/>
+<link rel="stylesheet" href="assets/css/tokens.min.css"/>
 <link rel="stylesheet" href="assets/css/base.css"/>
 <link rel="stylesheet" href="assets/css/site.css"/>
 <link rel="canonical" href="https://www.costamatheustech.com/"/>
@@ -45,7 +45,7 @@
 </svg>
 <div class="shell">
   <nav class="nav" id="nav" aria-label="Navegação principal">
-    <a class="brand" href="#top" aria-label="Matheus Costa, início"><img class="brand-avatar" src="assets/matheus.jpg" alt="" width="56" height="56" srcset="assets/matheus-56.jpg 56w, assets/matheus-112.jpg 112w, assets/matheus-168.jpg 168w" sizes="56px" /></a>
+    <a class="brand" href="#top" aria-label="Matheus Costa, início"><img class="brand-avatar" src="assets/matheus.jpg" alt="" width="56" height="56" fetchpriority="high" srcset="assets/matheus-56.jpg 56w, assets/matheus-112.jpg 112w, assets/matheus-168.jpg 168w" sizes="56px" /></a>
     <div class="nav-links">
       <a href="#servicos">Serviços</a>
       <a href="#projetos">Cases</a>
@@ -55,13 +55,13 @@
     </div>
     <div class="nav-actions">
       <a class="nav-blog-link" href="blog/">Blog</a>
-      <a class="btn nav-contact" href="https://wa.me/5511917692288?text=Ol%C3%A1%2C%20Matheus!%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Contato</a>
+      <a class="btn nav-contact" href="/obrigado-whatsapp.html?text=Ol%C3%A1%2C%20Matheus%21%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Contato</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer"><span class="nav-toggle-line" aria-hidden="true"></span><span class="nav-toggle-line" aria-hidden="true"></span></button>
   </nav>
   <div class="drawer" id="drawer" role="navigation" aria-label="Navegação móvel" aria-hidden="true">
     <div class="drawer-links"><a href="#servicos">Serviços</a><a href="#projetos">Cases</a><a href="#feedbacks">Feedbacks</a><a href="#processo">Processo</a><a href="#sobre">Sobre</a><a href="blog/">Blog</a></div>
-    <a class="btn drawer-contact" href="https://wa.me/5511917692288?text=Ol%C3%A1%2C%20Matheus!%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Contato</a>
+    <a class="btn drawer-contact" href="/obrigado-whatsapp.html?text=Ol%C3%A1%2C%20Matheus%21%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Contato</a>
   </div>
   <main id="conteudo" class="home-content">
     <section class="hero" id="top">
@@ -70,12 +70,12 @@
           <h1 class="mask">Prazer, sou seu parceiro para a criação de sites e landing pages profissionais.</h1>
           <p class="tagline reveal d2">Transformo sua ideia em um negócio estratégico e pronto para mostrar o valor da sua marca.</p>
           <div class="hero-actions reveal d3">
-            <a class="btn" href="https://wa.me/5511917692288?text=Ol%C3%A1%2C%20Matheus!%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Vamos conversar <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn" href="/obrigado-whatsapp.html?text=Ol%C3%A1%2C%20Matheus%21%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Vamos conversar <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
         <div class="hero-photo reveal d2">
           <div class="photo-frame"><picture>
-      <source type="image/webp" srcset="assets/matheus-480.webp 480w, assets/matheus-960.webp 960w, assets/matheus-1040.webp 1040w" sizes="(max-width: 760px) 80vw, 440px"/>
+      <source type="image/webp" srcset="assets/matheus-480.webp 480w, assets/matheus-640.webp 640w, assets/matheus-960.webp 960w, assets/matheus-1040.webp 1040w" sizes="(max-width: 760px) 80vw, 440px"/>
       <img src="assets/matheus.jpg" alt="Retrato em preto e branco de Matheus Costa, usando óculos e camiseta escura." width="1040" height="1300" fetchpriority="high" srcset="assets/matheus-480.jpg 480w, assets/matheus-960.jpg 960w, assets/matheus.jpg 1040w" sizes="(max-width: 760px) 80vw, 440px" />
     </picture></div>
           <span class="photo-caption">MATHEUS COSTA&nbsp; / &nbsp;DESIGN + DIGITAL</span>
@@ -119,15 +119,15 @@
       </div>
       <div class="projects home-projects">
         <a class="project reveal d1" href="projeto-web-automacao.html">
-          <div class="project-cover"><img src="assets/projetos/web-drive.jpg" alt="Prévia da página da WEB Automação Industrial, com chamada sobre reparos e foto de técnico trabalhando em equipamento." width="810" height="634" loading="lazy"/><span class="case-open">Ver projeto <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          <div class="project-cover"><picture><source type="image/webp" srcset="assets/projetos/web-drive-480.webp 480w, assets/projetos/web-drive-800.webp 800w" sizes="(max-width: 760px) calc(100vw - 48px), (max-width: 960px) calc((100vw - 72px) / 2), 370px"/><img src="assets/projetos/web-drive.jpg" alt="Prévia da página da WEB Automação Industrial, com chamada sobre reparos e foto de técnico trabalhando em equipamento." width="810" height="634" loading="lazy" decoding="async"/></picture><span class="case-open">Ver projeto <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
           <div class="project-meta"><h3>WEB Automação Industrial</h3><span class="project-go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
         </a>
         <a class="project reveal d2" href="projeto-erika-muricy.html">
-          <div class="project-cover"><img src="assets/projetos/erika-muricy.jpg" alt="Prévia do site de Erika Muricy, com retrato e chamada sobre reconstruir vínculos e terapia de casal." width="810" height="634" loading="lazy"/><span class="case-open">Ver projeto <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          <div class="project-cover"><picture><source type="image/webp" srcset="assets/projetos/erika-muricy-480.webp 480w, assets/projetos/erika-muricy-800.webp 800w" sizes="(max-width: 760px) calc(100vw - 48px), (max-width: 960px) calc((100vw - 72px) / 2), 370px"/><img src="assets/projetos/erika-muricy.jpg" alt="Prévia do site de Erika Muricy, com retrato e chamada sobre reconstruir vínculos e terapia de casal." width="810" height="634" loading="lazy" decoding="async"/></picture><span class="case-open">Ver projeto <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
           <div class="project-meta"><h3>Erika Muricy</h3><span class="project-go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
         </a>
         <a class="project reveal d3" href="projeto-muricy-motors.html">
-          <div class="project-cover"><img src="assets/projetos/muricy-motors.jpg" alt="Prévia do site da Muricy Motors em um notebook, com a chamada “Exclusividade sobre quatro rodas” e imagem da concessionária." width="810" height="634" loading="lazy"/><span class="case-open">Ver projeto <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          <div class="project-cover"><picture><source type="image/webp" srcset="assets/projetos/muricy-motors-480.webp 480w, assets/projetos/muricy-motors-800.webp 800w" sizes="(max-width: 760px) calc(100vw - 48px), (max-width: 960px) calc((100vw - 72px) / 2), 370px"/><img src="assets/projetos/muricy-motors.jpg" alt="Prévia do site da Muricy Motors em um notebook, com a chamada “Exclusividade sobre quatro rodas” e imagem da concessionária." width="810" height="634" loading="lazy" decoding="async"/></picture><span class="case-open">Ver projeto <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
           <div class="project-meta"><h3>Muricy Motors</h3><span class="project-go"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
         </a>
       </div>
@@ -229,18 +229,18 @@
       <h2 class="mask" id="contact-title">Vamos criar algo<br/><span>bom para o seu negócio?</span></h2>
       <p class="contact-copy reveal d2">Me conte o que você está planejando. Vou conversar com você sobre as possibilidades e ajudar a encontrar o melhor caminho para tirar sua ideia do papel.</p>
       <div class="contact-actions reveal d3">
-        <a class="btn" href="https://wa.me/5511917692288?text=Ol%C3%A1%2C%20Matheus!%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Vamos conversar <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn" href="/obrigado-whatsapp.html?text=Ol%C3%A1%2C%20Matheus%21%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Vamos conversar <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </section>
   </main>
-  <footer><div class="foot-in"><span>© 2026 Matheus Costa</span><div class="footer-contact"><a class="footer-contact__primary" href="https://wa.me/5511917692288?text=Ol%C3%A1%2C%20Matheus!%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">11 917692288</a><a class="footer-contact__primary" href="mailto:costamatheustech@gmail.com">costamatheustech@gmail.com</a><nav class="footer-social" aria-label="Redes sociais"><a href="https://www.behance.net/matheuscostadesigner" target="_blank" rel="noopener noreferrer">Behance</a><a href="https://br.linkedin.com/in/mathhcosta" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.instagram.com/costaodesigner/" target="_blank" rel="noopener noreferrer">Instagram</a></nav>
+  <footer><div class="foot-in"><span>© 2026 Matheus Costa</span><div class="footer-contact"><a class="footer-contact__primary" href="/obrigado-whatsapp.html?text=Ol%C3%A1%2C%20Matheus%21%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">11 917692288</a><a class="footer-contact__primary" href="mailto:costamatheustech@gmail.com">costamatheustech@gmail.com</a><nav class="footer-social" aria-label="Redes sociais"><a href="https://www.behance.net/matheuscostadesigner" target="_blank" rel="noopener noreferrer">Behance</a><a href="https://br.linkedin.com/in/mathhcosta" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.instagram.com/costaodesigner/" target="_blank" rel="noopener noreferrer">Instagram</a></nav>
           <nav class="footer-legal" aria-label="Informações legais">
             <a href="/politica-de-uso/">Política de uso</a>
           </nav></div></div></footer>
 </div>
 <script src="/assets/js/analytics.js" defer></script>
-<script src="assets/js/vendor/lenis-1.0.42.min.js"></script>
-<script src="assets/js/smooth-scroll.js"></script>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/vendor/lenis-1.0.42.min.js" defer></script>
+<script src="assets/js/smooth-scroll.js" defer></script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>

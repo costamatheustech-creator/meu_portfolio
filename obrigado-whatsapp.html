@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#F5F8F4" />
+  <meta name="color-scheme" content="light" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.google-analytics.com https://region1.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com; base-uri 'self'; form-action 'none'; object-src 'none'; frame-src 'none'" />
+  <title>Redirecionando para o WhatsApp | Matheus Costa</title>
+  <meta name="description" content="Você será encaminhado para conversar com Matheus Costa pelo WhatsApp." />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preload" href="/assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/css/fonts.css" />
+  <link rel="stylesheet" href="/assets/css/tokens.min.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/whatsapp-redirect.css" />
+  <script src="/assets/js/analytics.js" defer data-eager="true"></script>
+  <script src="/assets/js/whatsapp-redirect.js" defer></script>
+</head>
+<body class="whatsapp-redirect-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <main id="conteudo" class="whatsapp-redirect-main" aria-labelledby="redirect-title">
+    <section class="whatsapp-redirect-card">
+      <a class="whatsapp-redirect-brand" href="/" aria-label="Matheus Costa — página inicial">
+        <img src="/assets/matheus.jpg" alt="" width="48" height="48" srcset="/assets/matheus-56.jpg 56w, /assets/matheus-112.jpg 112w, /assets/matheus-168.jpg 168w" sizes="48px" />
+        <span><strong>Matheus Costa</strong><small>Design + digital</small></span>
+      </a>
+
+      <div class="whatsapp-redirect-status" role="status" aria-live="polite">
+        <span class="whatsapp-redirect-spinner" aria-hidden="true"></span>
+        <p class="whatsapp-redirect-eyebrow">CONTATO</p>
+        <h1 id="redirect-title">Redirecionando você para o nosso WhatsApp...</h1>
+        <p class="whatsapp-redirect-copy">Você será encaminhado em instantes.</p>
+      </div>
+
+      <a class="whatsapp-redirect-fallback" data-whatsapp-fallback href="https://wa.me/5511917692288?text=Ol%C3%A1%2C%20Matheus%21%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer">Clique aqui se não for redirecionado automaticamente</a>
+      <noscript><p class="whatsapp-redirect-noscript">O redirecionamento automático precisa de JavaScript. Use o botão acima para abrir o WhatsApp.</p></noscript>
+      <a class="whatsapp-redirect-back" href="/">Voltar ao site</a>
+    </section>
+  </main>
+</body>
+</html>
