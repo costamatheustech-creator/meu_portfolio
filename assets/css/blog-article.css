@@ -35,6 +35,7 @@
   display:block;width:100%;margin:var(--space-6) 0 0;overflow:hidden;
   border:var(--border-width) solid var(--border);border-radius:var(--radius-lg);background:var(--surface);
 }
+.blog-article-page .article-cover picture,.blog-article-page .article-figure picture{display:block;width:100%}
 .blog-article-page .article-cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .blog-article-page .article-figure{
   width:100%;margin:var(--space-7) 0 var(--space-8);overflow:hidden;

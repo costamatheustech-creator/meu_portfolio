@@ -244,6 +244,7 @@ h3{
   background:var(--surface);
   box-shadow:var(--shadow-lg);
 }
+.photo-frame picture{display:block;width:100%;height:100%}
 .photo-frame img{
   width:100%;height:100%;object-fit:cover;
   /* Preto e branco permanente - nao volta a cor em nenhum estado.
@@ -503,6 +504,10 @@ footer{
   color:var(--fg-muted);font-size:inherit;font-weight:inherit;
 }
 .footer-contact a:hover,.footer-social a:hover{color:var(--fg-accent)}
+.footer-legal{margin-top:var(--space-1);font-size:var(--f-caption-font-size);font-weight:var(--fw-regular);letter-spacing:0;text-transform:none}
+.footer-legal a{display:inline-flex;align-items:center;min-height:44px;color:var(--fg-subtle);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+.footer-legal a:hover{color:var(--fg-accent)}
+.footer-legal a:focus-visible{outline:3px solid var(--fg-accent);outline-offset:3px;border-radius:2px}
 
 /* ==========================================================================
    BOTOES DO SITE (mapeiam .ds-btn sobre o markup existente)

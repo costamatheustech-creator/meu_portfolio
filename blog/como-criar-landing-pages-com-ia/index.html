@@ -8,16 +8,16 @@
   <meta name="robots" content="index, follow"/>
   <meta name="theme-color" content="#F5F8F4"/>
   <meta name="color-scheme" content="light"/>
-  <title>Como criar landing pages incríveis com IA | Matheus Costa</title>
-  <meta name="description" content="Aprenda um passo a passo simples para criar landing pages com IA: escolha uma base visual, prepare a copy, revise o design e publique."/>
+  <title>Landing page com IA: da ideia à publicação</title>
+  <meta name="description" content="Veja como escolher um design system em HTML, preparar a copy com IA, montar e revisar a página no Manus e publicar com GitHub e Vercel."/>
   <link rel="canonical" href="https://www.costamatheustech.com/blog/como-criar-landing-pages-com-ia/"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Como criar landing pages incríveis com IA"/>
-  <meta property="og:description" content="Um passo a passo simples para criar landing pages com IA, da escolha de uma base visual à publicação do site."/>
+  <meta property="og:title" content="Landing page com IA: da ideia à publicação"/>
+  <meta property="og:description" content="Veja como escolher um design system em HTML, preparar a copy com IA, montar e revisar a página no Manus e publicar com GitHub e Vercel."/>
   <meta property="og:url" content="https://www.costamatheustech.com/blog/como-criar-landing-pages-com-ia/"/>
   <meta property="og:site_name" content="Matheus Costa"/>
   <meta property="og:image" content="https://www.costamatheustech.com/assets/blog/landing-pages-ia-cover-v2.jpg"/>
-  <meta property="og:image:alt" content="Ilustração em vista superior de cartões de uma landing page organizados em círculo, com notebook, personagem e planta em tons de creme e verde-sálvia"/>
+  <meta property="og:image:alt" content="Ilustração de cartões de páginas web, notebook e pessoa organizando uma landing page."/>
   <meta property="og:image:width" content="2560"/>
   <meta property="og:image:height" content="1440"/>
   <meta property="og:image:type" content="image/jpeg"/>
@@ -25,10 +25,10 @@
   <meta property="article:modified_time" content="2026-11-20"/>
   <meta property="article:section" content="Landing pages e IA"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Como criar landing pages incríveis com IA"/>
-  <meta name="twitter:description" content="Um passo a passo simples para criar landing pages com IA, da escolha de uma base visual à publicação do site."/>
+  <meta name="twitter:title" content="Landing page com IA: da ideia à publicação"/>
+  <meta name="twitter:description" content="Veja como escolher um design system em HTML, preparar a copy com IA, montar e revisar a página no Manus e publicar com GitHub e Vercel."/>
   <meta name="twitter:image" content="https://www.costamatheustech.com/assets/blog/landing-pages-ia-cover-v2.jpg"/>
-  <meta name="twitter:image:alt" content="Ilustração em vista superior de cartões de uma landing page organizados em círculo, com notebook, personagem e planta em tons de creme e verde-sálvia"/>
+  <meta name="twitter:image:alt" content="Ilustração de cartões de páginas web, notebook e pessoa organizando uma landing page."/>
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png"/>
   <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
@@ -73,7 +73,7 @@
   <div class="shell">
     <nav class="nav" id="nav" aria-label="Navegação principal">
       <a class="brand" href="/#top" aria-label="Matheus Costa, início">
-        <img class="brand-avatar" src="../../assets/matheus.jpg" alt="" width="56" height="56"/>
+        <img class="brand-avatar" src="../../assets/matheus.jpg" alt="" width="56" height="56" srcset="../../assets/matheus-56.jpg 56w, ../../assets/matheus-112.jpg 112w, ../../assets/matheus-168.jpg 168w" sizes="56px" />
       </a>
       <div class="nav-links">
         <a href="/#servicos">Serviços</a>
@@ -115,13 +115,16 @@
         <h1 class="article-title" id="article-title">Como criar landing pages incríveis com IA</h1>
         <p class="article-deck">Meu passo a passo para sair da ideia e chegar a uma landing page publicada, com uma boa base visual, copy clara e revisão antes de colocar no ar.</p>
         <div class="article-meta">
-          <img src="../../assets/matheus.jpg" alt="" width="48" height="48"/>
+          <img src="../../assets/matheus.jpg" alt="" width="48" height="48" srcset="../../assets/matheus-56.jpg 56w, ../../assets/matheus-112.jpg 112w, ../../assets/matheus-168.jpg 168w" sizes="40px" />
           <span>Matheus Costa</span>
           <span class="article-meta-separator" aria-hidden="true">·</span>
           <time datetime="2026-11-17">17 nov. 2026</time>
         </div>
         <figure class="article-cover">
-          <img src="../../assets/blog/landing-pages-ia-cover-v2.jpg" alt="Ilustração em vista superior de cartões de uma landing page organizados em círculo, com notebook, personagem e planta em tons de creme e verde-sálvia" width="2560" height="1440" fetchpriority="high" decoding="async"/>
+          <picture>
+      <source type="image/webp" srcset="../../assets/blog/landing-pages-ia-cover-v2-800.webp 800w, ../../assets/blog/landing-pages-ia-cover-v2-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 1200px"/>
+      <img src="../../assets/blog/landing-pages-ia-cover-v2.jpg" alt="Cartões com elementos de páginas web dispostos em círculo, ao lado de um notebook e de uma pessoa montando um cartão, em tons claros e verde-sálvia." width="2560" height="1440" fetchpriority="high" decoding="async"/>
+    </picture>
         </figure>
       </header>
 
@@ -137,7 +140,10 @@
 
         <h2>1. Escolha uma base visual em HTML</h2>
         <figure class="article-figure">
-          <img src="/assets/blog/landing-page-asimov.webp" alt="Página do Asimov Design Systems com exemplos de bases visuais para escolher" width="893" height="768" loading="lazy" decoding="async"/>
+          <picture>
+      <source type="image/webp" srcset="/assets/blog/landing-page-asimov-640.webp 640w, /assets/blog/landing-page-asimov-893.webp 893w" sizes="(max-width: 760px) 100vw, 760px"/>
+      <img src="/assets/blog/landing-page-asimov.webp" alt="Página do Asimov Design Systems com grade de exemplos de design systems claros e escuros, incluindo Koisei, Glass Green e Sora." width="893" height="768" loading="lazy" decoding="async"/>
+    </picture>
         </figure>
         <p>Em vez de partir do zero, escolha um design system ou template em HTML que combine com a personalidade da marca. O Asimov Design Systems é uma opção para explorar estilos e encontrar uma base para adaptar.</p>
         <p>Antes de começar, confira se o arquivo inclui o HTML e os recursos necessários. Depois, personalize cores, fontes, imagens e componentes para que a página tenha a cara do negócio — não a de um modelo pronto.</p>
@@ -156,14 +162,17 @@
 
         <h2>4. Junte a base e a copy no Manus</h2>
         <figure class="article-figure">
-          <img src="/assets/blog/landing-page-manus.png" alt="Captura enviada pelo Matheus para ilustrar a montagem de uma landing page com Manus" width="1602" height="890" loading="lazy" decoding="async"/>
+          <img src="/assets/blog/landing-page-manus.png" alt="Tela inicial do Manus com opções de tarefas, incluindo criar um site, e campo para descrever uma tarefa." width="1602" height="890" loading="lazy" decoding="async"/>
         </figure>
         <p>Com a base visual escolhida e a copy revisada, envie os arquivos ao Manus e peça para começar a construir a página. Use o HTML do modelo ou o ZIP que contém os arquivos do design system, junto com o texto aprovado.</p>
         <p>Explique o que deve ser mantido e o que precisa mudar: identidade da marca, conteúdo das seções, imagens e objetivo dos botões. Quando a primeira versão ficar pronta, abra a página e confira se o resultado corresponde ao que você imaginou.</p>
 
         <h2>5. Refine o visual com boas referências</h2>
         <figure class="article-figure">
-          <img src="/assets/blog/landing-page-pinterest.png" alt="Captura de resultados do Pinterest para a busca landing page design" width="1898" height="893" loading="lazy" decoding="async"/>
+          <picture>
+      <source type="image/webp" srcset="/assets/blog/landing-page-pinterest-760.webp 760w, /assets/blog/landing-page-pinterest-1440.webp 1440w" sizes="(max-width: 760px) 100vw, 760px"/>
+      <img src="/assets/blog/landing-page-pinterest.png" alt="Resultados do Pinterest para a busca “landing page design”, com referências visuais de páginas em diferentes estilos." width="1898" height="893" loading="lazy" decoding="async"/>
+    </picture>
         </figure>
         <p>Eu gosto de buscar inspiração no Mobbin, no Dribbble e no Pinterest. Não precisa copiar um site inteiro: observe o que funciona, como a hierarquia dos títulos, o uso das cores, o espaço entre as seções ou o estilo dos botões.</p>
         <p>Depois, transforme essas referências em orientações simples para a IA, como “quero títulos marcantes, bastante espaço em branco e uma paleta mais natural”. Isso ajuda a direcionar o visual sem perder a identidade da sua marca.</p>
@@ -174,7 +183,10 @@
 
         <h2>7. Conecte o GitHub e a Vercel para publicar</h2>
         <figure class="article-figure">
-          <img src="/assets/blog/landing-page-conectores.png" alt="Tela de conectores do Manus mostrando GitHub e Vercel conectados" width="1492" height="870" loading="lazy" decoding="async"/>
+          <picture>
+      <source type="image/webp" srcset="/assets/blog/landing-page-conectores-760.webp 760w, /assets/blog/landing-page-conectores-1440.webp 1440w" sizes="(max-width: 760px) 100vw, 760px"/>
+      <img src="/assets/blog/landing-page-conectores.png" alt="Tela de conectores do Manus com GitHub, Vercel e outros serviços listados como adicionados." width="1492" height="870" loading="lazy" decoding="async"/>
+    </picture>
         </figure>
         <p>Conecte suas contas do GitHub e da Vercel ao Manus. Depois, envie o projeto para o GitHub e use a Vercel para publicar a landing page. A Vercel cria uma URL pública com final <code>.vercel.app</code>, então você já pode compartilhar o site sem comprar um domínio próprio. Se quiser, pode conectar um domínio personalizado depois.</p>
         <p>Antes de divulgar o link, faça uma última revisão da página publicada: confira os textos, os botões, os links e a visualização no celular.</p>
@@ -204,6 +216,9 @@
             <a href="https://www.behance.net/matheuscostadesigner" target="_blank" rel="noopener noreferrer">Behance</a>
             <a href="https://br.linkedin.com/in/mathhcosta" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://www.instagram.com/costaodesigner/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </nav>
+          <nav class="footer-legal" aria-label="Informações legais">
+            <a href="/politica-de-uso/">Política de uso</a>
           </nav>
         </div>
       </div>

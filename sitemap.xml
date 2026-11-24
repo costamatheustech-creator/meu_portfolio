@@ -2,22 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.costamatheustech.com/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.costamatheustech.com/politica-de-uso/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://www.costamatheustech.com/projeto-muricy-motors.html</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.costamatheustech.com/projeto-erika-muricy.html</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.costamatheustech.com/projeto-web-automacao.html</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -32,27 +37,27 @@
   </url>
   <url>
     <loc>https://www.costamatheustech.com/blog/como-escolher-cta-landing-page/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.costamatheustech.com/blog/copy-landing-page-com-ia/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.costamatheustech.com/blog/escolher-base-html-landing-page/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.costamatheustech.com/blog/como-criar-landing-pages-com-ia/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.costamatheustech.com/blog/site-claro-clientes-qualificados/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
